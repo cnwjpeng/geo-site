@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>GEO智见 · 服务合同 · 在线签署</title>
+<style>
+*{box-sizing:border-box}
+body{font-family:'Microsoft YaHei','PingFang SC','SimSun',serif;color:#1f2430;background:#eef1f6;margin:0;padding:0 12px 60px;line-height:1.8}
+.topbar{position:sticky;top:0;z-index:9;background:linear-gradient(90deg,#0f2a5c,#1d4ed8);color:#fff;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+.topbar b{font-size:16px}
+.badge{display:inline-block;padding:3px 12px;border-radius:20px;font-size:13px;font-weight:bold}
+.badge.wait{background:#f59e0b;color:#fff}
+.badge.done{background:#16a34a;color:#fff}
+.page{max-width:840px;margin:20px auto 0;background:#fff;padding:44px 56px;box-shadow:0 2px 14px rgba(0,0,0,.08)}
+h1{font-size:22px;text-align:center;margin:0 0 6px}
+.sub{text-align:center;color:#666;font-size:13px;margin-bottom:24px}
+h2{font-size:15px;margin:20px 0 8px;border-left:4px solid #1d4ed8;padding-left:10px}
+p{margin:6px 0;font-size:14px}
+table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px}
+th,td{border:1px solid #cfd6e4;padding:7px 10px;text-align:left}
+th{background:#eef2f9}
+.fv{display:inline-block;min-width:110px;font-weight:600;color:#111827;border-bottom:1px dotted #888;padding:0 4px}
+.box{border:1px solid #cfd6e4;background:#fafbfe;padding:10px 14px;margin:8px 0;font-size:13px}
+.small{font-size:12px;color:#666}
+.sign{display:flex;justify-content:space-between;margin-top:36px}
+.sign div{width:46%}
+.line{border-bottom:1px solid #333;height:34px}
+.panel{max-width:840px;margin:16px auto 0;background:#fff;border:1px solid #dbe1ec;border-radius:10px;padding:20px 24px;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.panel h3{margin:0 0 12px;font-size:15px}
+.field{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px}
+.field label{width:88px;font-size:13px;color:#444}
+.field input{flex:1;min-width:200px;padding:8px 10px;border:1px solid #c3ccdb;border-radius:6px;font-size:14px}
+.agree{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:#333;margin:12px 0}
+.btn{display:inline-block;border:none;border-radius:8px;padding:12px 28px;font-size:15px;cursor:pointer;font-weight:bold}
+.btn.primary{background:#1d4ed8;color:#fff}
+.btn.primary:hover{background:#153fb0}
+.btn.ghost{background:#fff;color:#1d4ed8;border:1px solid #1d4ed8;margin-left:10px}
+.receipt{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:16px 20px;font-size:13px;color:#14532d}
+.receipt b{font-size:14px}
+.err{background:#fef2f2;border:1px solid #fecaca;color:#991b1b;border-radius:8px;padding:10px 14px;font-size:13px;margin:10px 0;display:none}
+.notice{max-width:840px;margin:14px auto 0;font-size:12px;color:#666;text-align:center}
+@media print{
+  body{background:#fff;padding:0}
+  .topbar,.panel,.notice,.noprint{display:none!important}
+  .page{margin:0;box-shadow:none;padding:20px 30px;width:100%;max-width:none}
+}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <b>GEO智见 · 品牌AI可见性优化服务合同</b>
+  <span id="badge" class="badge wait">加载中…</span>
+</div>
+
+<div class="page" id="doc">
+  <h1>GEO 品牌 AI 可见性（GEO）优化服务合同</h1>
+  <div class="sub">合同编号：<span id="vNo" class="fv"></span>　|　签订日期：<span id="vDate"></span></div>
+
+  <h2>第一条　合同双方</h2>
+  <p><b>甲方（客户）</b>：<span id="vCustomer" class="fv"></span>　统一社会信用代码：<span id="vUscc" class="fv"></span></p>
+  <p>联系人：<span id="vContact" class="fv"></span>　联系电话：<span id="vPhone" class="fv"></span>　地址：<span id="vAddr" class="fv"></span></p>
+  <p><b>乙方（服务方）</b>：深圳市凤栖灵犀科技有限公司</p>
+  <p>统一社会信用代码：91440300MAKEJKLH7Q　|　开户行：深圳前海微众银行　对公账号：9999658868350100227021</p>
+
+  <h2>第二条　服务内容与选型</h2>
+  <p>甲方选定套餐：<b><span id="vPackage"></span></b>（详见《GEO智见报价方案（v3.1）》与<a href="GEO智见_附件一_交付清单.html">附件一《交付清单》</a>）。主要服务包括：AI 引擎真实探针诊断、可见度月度报告、优化内容草稿、竞品监控、行业基准线对比等（按所选套餐对应交付项执行）。</p>
+
+  <h2>第三条　合同金额与支付</h2>
+  <table>
+    <tr><th>项目</th><th>金额（含税）</th><th>支付节点</th></tr>
+    <tr><td>基础服务费</td><td><b><span id="vAmount"></span></b></td><td>合同签订后 5 个工作日内</td></tr>
+    <tr><td>提到率保障（触发时）</td><td>免收后续基础服务费，最长 2 个月续航（详见第四条）</td><td>触发后自第 91 天起执行</td></tr>
+  </table>
+  <p class="small">支付方式：<span id="vPay"></span>　|　发票：乙方按实收金额开具增值税（普通/专用）发票，税率 6%。</p>
+
+  <h2>第四条　效果保障条款（摘要）</h2>
+  <div class="box">
+    <b>提到率保障</b>：签约生效后 90 天内，按合同约定的查询集、引擎与统计口径核算的<b>提到率</b>低于约定值时，乙方免收后续<b>基础服务费</b>，直至达标（最长 2 个月续航）；限于已实测引擎与约定查询集。<br>
+    <span class="small">执行流程：签约第 0 天基线诊断并双方书面确认 → 每月输出月度报告 → 第 90 天终期评估，未达标则自第 91 天起免收基础服务费，达标即恢复收费。免赔条件（4 条）与完整条款以<a href="GEO智见_附件二_效果保障补充协议.html">附件二《效果保障补充协议》</a>为准。</span>
+  </div>
+
+  <h2>第五条　排他锁定条款（仅按需定制方案适用，附件三）</h2>
+  <p>行业界定采用国家标准《国民经济行业分类》（GB/T 4754）中类（三位代码），签约前双方书面确认；乙方在排他期内不再向同行业直接竞争对手提供约定等级的服务。本条仅在双方书面确认的按需定制方案（浅层托管及以上）中适用；未书面确认时，乙方不承担排他义务。详见<a href="GEO智见_附件三_排他锁定附录.html">附件三《排他锁定附录》</a>。</p>
+
+  <h2>第六条　数据所有权与保密</h2>
+  <p>1. 甲方品牌的诊断数据、优化内容、可见度历史数据归甲方所有；行业汇总数据（匿名化）乙方可用于基准线与白皮书编制。</p>
+  <p>2. 双方对客户数据、定价结构、赔付信息严格保密，自本合同生效之日起 5 年。</p>
+
+  <h2>第七条　违约与争议</h2>
+  <p>1. 甲方逾期付款超 15 日，乙方有权暂停服务。</p>
+  <p>2. 争议友好协商；协商不成，提交乙方住所地有管辖权的人民法院诉讼。</p>
+
+  <h2>第八条　其他</h2>
+  <p>1. 本合同经双方在线签署确认（甲方实名信息 + 一次性验证码确认本人意愿），自双方确认且首期款到账后生效。签署时间、签署主体与合同全文指纹由电子签署系统以数字签名方式记录，任一方可按《电子签署凭证》载明的方法独立验签。</p>
+  <p>2. <a href="GEO智见_附件一_交付清单.html">附件一《交付清单》</a>、<a href="GEO智见_附件二_效果保障补充协议.html">附件二《效果保障补充协议》</a>、<a href="GEO智见_附件三_排他锁定附录.html">附件三《排他锁定附录》</a>为本合同组成部分；其中附件三仅在双方书面确认的按需定制方案（浅层托管及以上）中适用。</p>
+
+  <div class="sign">
+    <div>
+      <p>甲方（在线签署确认）：</p>
+      <div class="line" id="vSignerName"></div>
+      <p class="small" id="vSignerMeta">签署后自动生成</p>
+    </div>
+    <div>
+      <p>乙方（盖章）：深圳市凤栖灵犀科技有限公司</p>
+      <div class="line"></div>
+      <p class="small" id="vSellerMeta">合同生效以首期款到账为准</p>
+    </div>
+  </div>
+</div>
+
+<div class="panel noprint" id="signPanel">
+  <h3>甲方在线签署确认</h3>
+  <div class="err" id="errBox"></div>
+  <div class="field"><label>签署人姓名 *</label><input id="iName" placeholder="请填写签署人真实姓名" maxlength="30"></div>
+  <div class="field"><label>手机号 *</label><input id="iPhone" placeholder="用于身份确认与短信验证码" maxlength="20" inputmode="numeric"></div>
+  <div class="field"><label>邮箱</label><input id="iEmail" placeholder="选填，接收验证码与签署凭证（短信不可用时必填）" maxlength="60"></div>
+  <div class="field"><label>所在公司</label><input id="iCompany" placeholder="选填，公司全称（如有）" maxlength="60"></div>
+  <div class="field"><label>验证码 *</label><div style="flex:1;display:flex;gap:8px;min-width:200px"><input id="iOtp" placeholder="6 位验证码" maxlength="8" inputmode="numeric" style="flex:1;min-width:110px"><button class="btn ghost" id="btnOtp" onclick="sendOtp()" style="margin:0;white-space:nowrap">获取验证码</button></div></div>
+  <div class="agree"><input type="checkbox" id="iAgree"> <span>本人/本公司已仔细阅读并同意本合同全部条款，确认以上甲方信息准确无误，同意以电子形式签署本合同。</span></div>
+  <button class="btn primary" id="btnSign" onclick="doSign()">确认并提交签署</button>
+  <button class="btn ghost" onclick="window.print()">打印 / 另存 PDF</button>
+</div>
+
+<div class="panel noprint" id="donePanel" style="display:none">
+  <h3>签署回执</h3>
+  <div class="receipt" id="receipt"></div>
+  <div style="margin-top:14px">
+    <button class="btn primary" onclick="window.print()">打印 / 另存 PDF（含合同全文）</button>
+    <a class="btn ghost" id="lnkProof" target="_blank" style="text-decoration:none">下载《电子签署凭证》</a>
+    <a class="btn ghost" id="lnkReport" target="_blank" style="text-decoration:none">下载《证据链报告》</a>
+    <a class="btn ghost" id="lnkEvid" download style="text-decoration:none">下载验证包</a>
+    <button class="btn ghost" onclick="location.reload()">刷新查看</button>
+  </div>
+</div>
+
+<div class="notice">本页为正式签署入口：填写甲方信息并完成验证码确认后，系统即时生成数字签名，并可下载《电子签署凭证》《电子证据链报告》随时复核。</div>
+
+<script>
+var Q = {};
+location.search.replace(/^\?/, "").split("&").forEach(function (kv) {
+  var p = kv.split("=");
+  if (p[0]) Q[decodeURIComponent(p[0])] = decodeURIComponent(p[1] || "");
+});
+var OID = Q.id || "", CODE = Q.code || "";
+
+function esc(s) {
+  return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
+    return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+  });
+}
+function setBadge(txt, cls) {
+  var b = document.getElementById("badge");
+  b.textContent = txt;
+  b.className = "badge " + cls;
+}
+function fmtDate(s) {
+  if (!s) return "____年__月__日";
+  return s.replace("T", " ").slice(0, 16);
+}
+function fmtMoney(n) {
+  n = Number(n);
+  if (!isFinite(n)) return "";
+  return "¥" + n.toLocaleString("zh-CN");
+}
+function showErr(msg) {
+  var e = document.getElementById("errBox");
+  e.textContent = msg;
+  e.style.display = "block";
+  e.style.background = "#fef2f2";
+  e.style.border = "1px solid #fecaca";
+  e.style.color = "#991b1b";
+}
+function showMsg(msg) {
+  var e = document.getElementById("errBox");
+  e.textContent = msg;
+  e.style.display = "block";
+  e.style.background = "#f0fdf4";
+  e.style.border = "1px solid #bbf7d0";
+  e.style.color = "#14532d";
+}
+var OTP_CD = 0, OTP_TM = null;
+function sendOtp() {
+  var phone = document.getElementById("iPhone").value.trim();
+  var email = document.getElementById("iEmail").value.trim();
+  var btn = document.getElementById("btnOtp");
+  if (OTP_CD > 0) return;
+  if (!phone) { showErr("请先填写手机号"); return; }
+  if (phone.length < 6) { showErr("请填写有效手机号"); return; }
+  btn.disabled = true;
+  btn.textContent = "发送中…";
+  fetch("/api/contract/" + encodeURIComponent(OID) + "/otp", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ id: OID, code: CODE, phone: phone, email: email })
+  })
+    .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+    .then(function (res) {
+      if (!res.ok) { btn.disabled = false; btn.textContent = "获取验证码"; showErr(res.j.error || "发送失败，请重试"); return; }
+      showMsg(res.j.channel === "email" ? "验证码已发送至邮箱，请查收" : "验证码已发送至手机，请查收");
+      startOtpCd();
+    })
+    .catch(function (e) { btn.disabled = false; btn.textContent = "获取验证码"; showErr("网络异常：" + e.message); });
+}
+function startOtpCd() {
+  OTP_CD = 60;
+  var btn = document.getElementById("btnOtp");
+  btn.disabled = true;
+  btn.textContent = "重新获取(" + OTP_CD + "s)";
+  if (OTP_TM) clearInterval(OTP_TM);
+  OTP_TM = setInterval(function () {
+    OTP_CD--;
+    if (OTP_CD <= 0) { clearInterval(OTP_TM); OTP_TM = null; btn.disabled = false; btn.textContent = "获取验证码"; }
+    else { btn.textContent = "重新获取(" + OTP_CD + "s)"; }
+  }, 1000);
+}
+
+function fillContract(d) {
+  document.getElementById("vNo").textContent = d.contract_no || "";
+  var dstr = (d.contract_ts || "").slice(0, 10);
+  document.getElementById("vDate").textContent = dstr ? dstr.replace(/-/g, "/") : "____年__月__日";
+  document.getElementById("vCustomer").textContent = d.customer || "";
+  document.getElementById("vUscc").textContent = d.uscc || "";
+  document.getElementById("vContact").textContent = d.contact || "";
+  document.getElementById("vPhone").textContent = d.phone || "";
+  document.getElementById("vAddr").textContent = d.addr || "";
+  document.getElementById("vPackage").textContent = d.package || "";
+  document.getElementById("vAmount").textContent = fmtMoney(d.amount);
+  document.getElementById("vPay").textContent = d.pay_method || "对公转账 / 微信商户";
+  if (d.company) document.getElementById("iCompany").value = d.company;
+}
+
+function showReceipt(d) {
+  var s = d.sign || {};
+  setBadge("已签署", "done");
+  document.getElementById("signPanel").style.display = "none";
+  var p = document.getElementById("donePanel");
+  p.style.display = "block";
+  document.getElementById("vSignerName").textContent = s.name || "";
+  document.getElementById("vSignerMeta").textContent = "甲方签署人：" + (s.name || "-") + "　时间：" + fmtDate(s.ts) + "　IP：" + (s.ip || "-");
+  var rows = [
+    ["合同编号", d.contract_no],
+    ["签署状态", "已签署 ✓（数字签名有效）"],
+    ["签署人", s.name],
+    ["手机号", s.phone],
+    ["所在公司", s.company || "-"],
+    ["意愿确认", s.channel === "email" ? "邮箱验证码" : "短信验证码"],
+    ["签名证书编号", s.cert_id || "-"],
+    ["数字签名算法", s.algo || "-"],
+    ["权威时间戳", s.tsa && s.tsa.gen_time ? s.tsa.gen_time.slice(0, 8) + " " + s.tsa.gen_time.slice(8, 14) : "未启用（可配置后自动加盖）"],
+    ["签署时间", fmtDate(s.ts)],
+    ["签署 IP", s.ip],
+    ["合同内容指纹", (s.digest || "").slice(0, 24) + "…"],
+    ["数字签名值", (s.sig || "").slice(0, 24) + "…"]
+  ];
+  document.getElementById("receipt").innerHTML =
+    "<b>本合同已由甲方在线签署确认（数字签名有效）</b><br>" +
+    rows.map(function (r) { return esc(r[0]) + "：" + esc(r[1]) + "<br>"; }).join("") +
+    "<br><span style='color:#14532d'>乙方将于首期款到账后正式生效并启动服务。签署凭证与验证包可下载复核。</span>";
+  document.getElementById("lnkProof").href = "/api/contract/" + encodeURIComponent(OID) + "/proof?code=" + encodeURIComponent(CODE);
+  document.getElementById("lnkReport").href = "/api/contract/" + encodeURIComponent(OID) + "/report?code=" + encodeURIComponent(CODE);
+  document.getElementById("lnkEvid").href = "/api/contract/" + encodeURIComponent(OID) + "/evidence?code=" + encodeURIComponent(CODE);
+}
+
+function load() {
+  if (!OID || !CODE) { showErr("链接不完整，请联系商务重新获取签署链接。"); return; }
+  fetch("/api/contract/" + encodeURIComponent(OID) + "?code=" + encodeURIComponent(CODE))
+    .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+    .then(function (res) {
+      if (!res.ok) { showErr(res.j.error || "加载失败"); setBadge("链接无效", "wait"); return; }
+      fillContract(res.j);
+      if (res.j.status === "已签署") { showReceipt(res.j); } else { setBadge("待签署", "wait"); }
+    })
+    .catch(function (e) { showErr("网络异常：" + e.message); });
+}
+
+function doSign() {
+  var name = document.getElementById("iName").value.trim();
+  var phone = document.getElementById("iPhone").value.trim();
+  var email = document.getElementById("iEmail").value.trim();
+  var company = document.getElementById("iCompany").value.trim();
+  var otp = document.getElementById("iOtp").value.trim();
+  var agree = document.getElementById("iAgree").checked;
+  if (!name) { showErr("请填写签署人姓名"); return; }
+  if (phone.length < 6) { showErr("请填写有效手机号"); return; }
+  if (!otp) { showErr("请先点击“获取验证码”并填写验证码，确认本人签署意愿"); return; }
+  if (!agree) { showErr("请先勾选“已阅读并同意全部条款”"); return; }
+  var btn = document.getElementById("btnSign");
+  btn.disabled = true;
+  fetch("/api/contract/" + encodeURIComponent(OID) + "/sign", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ id: OID, code: CODE, name: name, phone: phone, email: email, company: company, otp: otp, agree: agree })
+  })
+    .then(function (r) { return r.json().then(function (j) { return { ok: r.ok, j: j }; }); })
+    .then(function (res) {
+      if (!res.ok) { btn.disabled = false; showErr(res.j.error || "签署失败，请重试"); return; }
+      load();
+    })
+    .catch(function (e) { btn.disabled = false; showErr("网络异常：" + e.message); });
+}
+
+load();
+</script>
+</body>
+</html>

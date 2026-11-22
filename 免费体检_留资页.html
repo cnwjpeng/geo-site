@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<title>免费领取 · 品牌AI可见性体检</title>
+<link rel="stylesheet" href="theme-noir.css?v=origtheme">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', sans-serif; background: var(--bg); color: var(--ink); line-height: 1.6; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 32px 16px 60px; }
+  .hero { background: linear-gradient(180deg,rgba(7,9,13,.10),rgba(7,9,13,.38)), url("img/geo-hero-bg.png") center 35% / cover no-repeat, #07090d; color: #fff; border-radius: 16px; padding: 28px 26px; margin-bottom: 20px; border: 1px solid var(--line); box-shadow: 0 16px 40px rgba(0,0,0,.22); }
+  .hero .badge { display: inline-block; background: rgba(196,165,116,.18); color: var(--gold); padding: 3px 12px; border-radius: 20px; font-size: 12px; margin-bottom: 10px; border: 1px solid rgba(196,165,116,.28); }
+  .hero h1 { font-size: 24px; margin-bottom: 8px; }
+  .hero p { font-size: 14px; opacity: .92; color: #c5ced9; }
+  .card { background: var(--card); border-radius: 14px; padding: 24px; border: 1px solid var(--line); backdrop-filter: blur(14px); box-shadow: 0 12px 40px rgba(0,0,0,.28); }
+  .card h2 { font-size: 17px; margin-bottom: 14px; color: var(--ink); }
+  .f { margin-bottom: 14px; }
+  .f label { display: block; font-size: 13px; font-weight: 600; margin-bottom: 5px; color: var(--mut); }
+  .f input, .f select, .f textarea { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 8px; font-size: 14px; font-family: inherit; background: rgba(8,10,14,.55); color: var(--ink); }
+  .f input:focus, .f select:focus { outline: none; border-color: rgba(196,165,116,.45); box-shadow: 0 0 0 2px rgba(196,165,116,.15); }
+  .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .btn { width: 100%; background: linear-gradient(120deg,#c4a574,#d8c4a0); color: #14110c; border: none; border-radius: 10px; padding: 13px; font-size: 16px; font-weight:700; cursor: pointer; margin-top: 6px; }
+  .btn:hover { filter: brightness(1.08); }
+  .ok { display: none; margin-top: 14px; background: rgba(52,211,153,.12); border: 1px solid rgba(52,211,153,.28); border-radius: 10px; padding: 12px 16px; font-size: 13.5px; color: #86efac; }
+  .note { margin-top: 16px; font-size: 12px; color: var(--mut); line-height: 1.7; }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 18px 0; }
+  .step { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 12px; text-align: center; font-size: 12.5px; color: var(--mut); backdrop-filter: blur(14px); }
+  .step b { display: block; color: var(--gold); font-size: 13px; margin-bottom: 3px; }
+  @media(max-width:640px){ .row2 { grid-template-columns: 1fr; } .steps { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<div class="page-bg" aria-hidden="true"></div>
+<div class='wrap'>
+  <div class='hero'>
+    <span class='badge'>GEO智见 · 免费名额开放中</span>
+    <h1>你的品牌在 AI 答案里被看见了吗？</h1>
+    <p>免费领取「品牌AI可见性体检」：1 品牌 × 5 条核心查询实测，3 个工作日交付，原始响应快照可逐条复核。</p>
+  </div>
+
+  <div class='steps'>
+    <div class='step'><b>① 填写申请</b>留下品牌与联系方式</div>
+    <div class='step'><b>② 我们实测</b>智谱GLM 联网实测 5 条核心查询</div>
+    <div class='step'><b>③ 交付报告</b>提到率 / 平均首次出现位置 / 价格不一致条数</div>
+  </div>
+
+  <div class='card'>
+    <h2>申请免费体检（每线索限 1 次）</h2>
+    <form id='form'>
+      <div class='row2'>
+        <div class='f'><label>姓名 *</label><input id='name' type='text' placeholder='怎么称呼您' required></div>
+        <div class='f'><label>电话 / 微信 *</label><input id='contact' type='text' placeholder='手机号或微信号' required></div>
+      </div>
+      <div class='row2'>
+        <div class='f'><label>公司 / 品牌 *</label><input id='company' type='text' placeholder='品牌名称' required></div>
+        <div class='f'><label>行业</label>
+          <select id='industry'>
+            <option>消费电子与智能家居</option>
+            <option>SaaS 与 B2B 软件</option>
+            <option>医疗健康</option>
+            <option>本地生活与零售</option>
+            <option>其他</option>
+          </select>
+        </div>
+      </div>
+      <div class='f'><label>品牌官网 / 主推渠道</label><input id='url' type='text' placeholder='官网或电商/内容主页（可选）'></div>
+      <div class='f'><label>你更关心什么</label>
+        <select id='goal'>
+            <option value="先看一份免费体检报告">先看一份免费体检报告</option>
+            <option value="想开通 7 天诊断（¥8,800）">想开通 7 天诊断（¥8,800）</option>
+            <option value="想开通 90 天优化（¥38,800）">想开通 90 天优化（¥38,800）</option>
+            <option value="想了解监测（可月付）">想了解监测（可月付）</option>
+            <option value="想谈浅层托管（托管另谈，¥1.5–3 万 / 月）">想谈浅层托管（托管另谈，¥1.5–3 万 / 月）</option>
+            <option value="其它 / 先聊聊">其它 / 先聊聊</option>
+          </select>
+      </div>
+      <button class='btn' type='submit'>提交申请 · 免费领取体检</button>
+    </form>
+    <div class='ok' id='ok'>
+      提交成功！我们会在 1 个工作日内联系您确认体检排期。若未收到回复，请留意邮箱/微信。
+      <div style='margin-top:10px'><a href='/#pricing' style='display:inline-block;background:linear-gradient(120deg,#c4a574,#d8c4a0);color:#14110c;padding:8px 16px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700'>查看服务套餐与报价 →</a></div>
+    </div>
+    <p class='note'>
+      口径说明：体检采用智谱GLM（glm-4.5）联网实测，结果反映当次模型与搜索索引状态，判定附原始响应快照可复核；不承诺排名/流量。您的信息仅用于本次体检与跟进，不会向第三方共享。
+    </p>
+  </div>
+</div>
+
+  <div style='text-align:center;margin-top:18px'><a href='/#pricing' style='display:inline-block;padding:12px 26px;background:rgba(8,10,14,.55);color:var(--ink);border:1px solid var(--line);border-radius:10px;text-decoration:none;font-weight:700'>想先看服务套餐与报价 →</a></div>
+<script>
+  var qs = {};
+  (location.search.replace(/^\?/, '').split('&')).forEach(function (kv) {
+    var p = kv.split('=');
+    if (p[0]) { qs[decodeURIComponent(p[0])] = decodeURIComponent(p[1] || ''); }
+  });
+  if (qs.pkg === '7d') document.getElementById('goal').value = '想开通 7 天诊断（¥8,800）';
+  if (qs.pkg === '90d') document.getElementById('goal').value = '想开通 90 天优化（¥38,800）';
+  if (qs.pkg === 'monitor') document.getElementById('goal').value = '想了解监测（可月付）';
+  if (qs.pkg === 'hosting') document.getElementById('goal').value = '想谈浅层托管（托管另谈，¥1.5–3 万 / 月）';
+  if (qs.pkg === 'other') document.getElementById('goal').value = '其它 / 先聊聊';
+  var form = document.getElementById('form');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var payload = {
+      name: document.getElementById('name').value,
+      contact: document.getElementById('contact').value,
+      company: document.getElementById('company').value,
+      industry: document.getElementById('industry').value,
+      url: document.getElementById('url').value,
+      goal: document.getElementById('goal').value,
+      source: (qs.source || '免费体检留资页') + (qs.campaign ? '-' + qs.campaign : '')
+    };
+    function showOk() { document.getElementById('ok').style.display = 'block'; }
+    function fallbackMail() {
+      var body = '姓名：' + payload.name + '\n电话/微信：' + payload.contact + '\n公司/品牌：' + payload.company + '\n行业：' + payload.industry + '\n官网：' + payload.url + '\n需求：' + payload.goal;
+      var mailto = 'mailto:geo@example.com?subject=' + encodeURIComponent('免费体检申请：' + payload.company) + '&body=' + encodeURIComponent(body);
+      window.location.href = mailto;
+      showOk();
+    }
+    fetch('/api/lead', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
+      .then(function (res) { return res.json(); })
+      .then(function (j) {
+        if (j && j.ok) { showOk(); form.reset(); }
+        else { alert((j && j.error) || '提交失败，请稍后再试'); }
+      })
+      .catch(function () { fallbackMail(); });
+  });
+</script>
+</body>
+</html>

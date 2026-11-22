@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="48%" r="78%">
+      <stop offset="0%" stop-color="#0e1a24"/>
+      <stop offset="55%" stop-color="#0a1118"/>
+      <stop offset="100%" stop-color="#06080c"/>
+    </radialGradient>
+    <radialGradient id="geoGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#2a5568" stop-opacity="0.24"/>
+      <stop offset="60%" stop-color="#1b3a4b" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#1b3a4b" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="aaoGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a85a35" stop-opacity="0.24"/>
+      <stop offset="60%" stop-color="#8a3f1f" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#8a3f1f" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#e0a385" stop-opacity="0.55"/>
+      <stop offset="55%" stop-color="#c4a574" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#c4a574" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="flow" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2a5568" stop-opacity="0"/>
+      <stop offset="18%" stop-color="#2a5568" stop-opacity="0.55"/>
+      <stop offset="50%" stop-color="#c4a574" stop-opacity="0.65"/>
+      <stop offset="82%" stop-color="#a85a35" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#a85a35" stop-opacity="0"/>
+    </linearGradient>
+    <pattern id="grid" width="52" height="52" patternUnits="userSpaceOnUse">
+      <path d="M52 0H0V52" fill="none" stroke="#c4a574" stroke-width="0.4" opacity="0.055"/>
+    </pattern>
+    <radialGradient id="vig" cx="50%" cy="48%" r="63%">
+      <stop offset="58%" stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#06080c" stop-opacity="0.62"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+
+  <!-- GEO 大圆（左） -->
+  <circle cx="540" cy="450" r="345" fill="url(#geoGlow)"/>
+  <circle cx="540" cy="450" r="320" fill="#1b3a4b" fill-opacity="0.06" stroke="#2a5568" stroke-width="1.6" opacity="0.72"/>
+  <circle cx="540" cy="450" r="330" fill="none" stroke="#2a5568" stroke-width="0.6" opacity="0.24"/>
+
+  <!-- AAO 大圆（右） -->
+  <circle cx="1060" cy="450" r="345" fill="url(#aaoGlow)"/>
+  <circle cx="1060" cy="450" r="320" fill="#8a3f1f" fill-opacity="0.06" stroke="#a85a35" stroke-width="1.6" opacity="0.72"/>
+  <circle cx="1060" cy="450" r="330" fill="none" stroke="#a85a35" stroke-width="0.6" opacity="0.24"/>
+
+  <!-- 交集核心 -->
+  <circle cx="800" cy="450" r="125" fill="url(#coreGlow)"/>
+  <circle cx="800" cy="450" r="88" fill="#0a1420" fill-opacity="0.55" stroke="#c4a574" stroke-width="1.5" opacity="0.62"/>
+  <circle cx="800" cy="450" r="96" fill="none" stroke="#c4a574" stroke-width="0.5" opacity="0.3"/>
+
+  <!-- GEO 节点网络（AI 引擎监测点，避开交集 x<720） -->
+  <g stroke="#2a5568" stroke-width="0.5" opacity="0.2" fill="none">
+    <path d="M360,300 L460,250 L560,290 L420,520 L480,650 L340,600 L290,450 L360,300"/>
+    <path d="M300,350 L400,180 M420,520 L300,350"/>
+  </g>
+  <g fill="#2a5568">
+    <circle cx="360" cy="300" r="5"/><circle cx="290" cy="450" r="4"/><circle cx="340" cy="600" r="5"/>
+    <circle cx="460" cy="250" r="4"/><circle cx="480" cy="650" r="5"/><circle cx="420" cy="520" r="4"/>
+    <circle cx="300" cy="350" r="4"/><circle cx="560" cy="290" r="5"/><circle cx="400" cy="180" r="3"/>
+  </g>
+  <g fill="#7fb5cc" opacity="0.85">
+    <circle cx="360" cy="300" r="2"/><circle cx="290" cy="450" r="1.8"/><circle cx="340" cy="600" r="2"/>
+    <circle cx="460" cy="250" r="1.8"/><circle cx="480" cy="650" r="2"/><circle cx="420" cy="520" r="1.8"/>
+    <circle cx="300" cy="350" r="1.8"/><circle cx="560" cy="290" r="2"/><circle cx="400" cy="180" r="1.4"/>
+  </g>
+
+  <!-- AAO 节点网络（回答校准点，避开交集 x>880） -->
+  <g stroke="#a85a35" stroke-width="0.5" opacity="0.2" fill="none">
+    <path d="M1240,300 L1140,250 L1040,290 L1180,520 L1120,650 L1260,600 L1310,450 L1240,300"/>
+    <path d="M1300,350 L1200,180 M1180,520 L1300,350"/>
+  </g>
+  <g fill="#8a3f1f">
+    <circle cx="1240" cy="300" r="5"/><circle cx="1310" cy="450" r="4"/><circle cx="1260" cy="600" r="5"/>
+    <circle cx="1140" cy="250" r="4"/><circle cx="1120" cy="650" r="5"/><circle cx="1180" cy="520" r="4"/>
+    <circle cx="1300" cy="350" r="4"/><circle cx="1040" cy="290" r="5"/><circle cx="1200" cy="180" r="3"/>
+  </g>
+  <g fill="#d9a485" opacity="0.85">
+    <circle cx="1240" cy="300" r="2"/><circle cx="1310" cy="450" r="1.8"/><circle cx="1260" cy="600" r="2"/>
+    <circle cx="1140" cy="250" r="1.8"/><circle cx="1120" cy="650" r="2"/><circle cx="1180" cy="520" r="1.8"/>
+    <circle cx="1300" cy="350" r="1.8"/><circle cx="1040" cy="290" r="2"/><circle cx="1200" cy="180" r="1.4"/>
+  </g>
+
+  <!-- 主流向线：提问 → GEO → 交集 → AAO → 回答 -->
+  <path d="M30,815 C 230,795 380,720 540,712 C 680,705 740,500 800,460 C 860,500 920,705 1060,712 C 1220,720 1370,795 1570,815"
+        fill="none" stroke="url(#flow)" stroke-width="2.4" opacity="0.6"/>
+  <path d="M30,815 C 230,795 380,720 540,712 C 680,705 740,500 800,460 C 860,500 920,705 1060,712 C 1220,720 1370,795 1570,815"
+        fill="none" stroke="#c4a574" stroke-width="0.6" stroke-dasharray="4 7" opacity="0.32"/>
+  <g fill="#c4a574" opacity="0.5">
+    <circle cx="30" cy="815" r="3.5"/><circle cx="1570" cy="815" r="3.5"/>
+    <circle cx="540" cy="712" r="2.6"/><circle cx="1060" cy="712" r="2.6"/><circle cx="800" cy="460" r="2.8"/>
+  </g>
+
+  <!-- 文字标注（极淡，背景级） -->
+  <g font-family="'Noto Serif SC','Cormorant Garamond',serif" text-anchor="middle" opacity="0.46">
+    <text x="540" y="108" font-size="28" font-weight="700" fill="#7fb5cc" letter-spacing="4">GEO</text>
+    <text x="540" y="138" font-size="13" fill="#6f9aad" letter-spacing="2.5">让 AI 提到你 · 被看到</text>
+    <text x="1060" y="108" font-size="28" font-weight="700" fill="#d9a485" letter-spacing="4">AAO</text>
+    <text x="1060" y="138" font-size="13" fill="#b8835f" letter-spacing="2.5">让 AI 说对 · 被看懂、选得中</text>
+  </g>
+  <g font-family="'Noto Serif SC',serif" text-anchor="middle">
+    <text x="800" y="446" font-size="22" font-weight="700" fill="#ecd9b8" opacity="0.72">一套系统</text>
+    <text x="800" y="472" font-size="10.5" fill="#a8946a" opacity="0.52" letter-spacing="2.5">GEO ∩ AAO</text>
+  </g>
+
+  <!-- 散布装饰数据点 -->
+  <g fill="#c4a574">
+    <circle cx="90" cy="320" r="1.8" opacity="0.16"/><circle cx="1480" cy="280" r="1.8" opacity="0.16"/>
+    <circle cx="80" cy="640" r="1.6" opacity="0.14"/><circle cx="1520" cy="660" r="1.6" opacity="0.14"/>
+    <circle cx="760" cy="55" r="1.8" opacity="0.18"/><circle cx="840" cy="55" r="1.6" opacity="0.15"/>
+    <circle cx="760" cy="860" r="1.6" opacity="0.15"/><circle cx="840" cy="860" r="1.8" opacity="0.17"/>
+    <circle cx="240" cy="120" r="1.4" opacity="0.13"/><circle cx="1360" cy="120" r="1.4" opacity="0.13"/>
+  </g>
+
+  <rect width="1600" height="900" fill="url(#vig)"/>
+</svg>

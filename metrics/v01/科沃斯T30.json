@@ -1,0 +1,99 @@
+{
+ "brand": "科沃斯T30",
+ "caliber": "v0.1",
+ "caliber_source": "官网 llms.txt（对外口径①，2026-09-25 锁定）",
+ "caliber_text": {
+  "mention_rate": "提到率（口径①）= 提到品牌的答案条数 / 本轮问题总条数（字面命中含别名，排除引用来源区）；未取到答案的问题照样进分母，记为「未提到」。对外只报口径①。",
+  "mention_rate_by_total": "与口径①同值（同一算法两个字段名同时输出，便于历史对照）。",
+  "mention_rate_raw": "参考值（batch113 之前的旧口径）；只用于与历史数字对照，不对外。",
+  "answer_kind": "答案成色 = 有效 / 套话 / 工具壳 / 空；逐条记在 answer_kind，可复核。",
+  "answers_valid": "有效答案条数（口径②的分母；口径②不对外，仅供本机诊断）。",
+  "answers_invalid": "无效答案条数 = 套话 + 工具壳 + 空；另行报出，不把它们静默移出分母。",
+  "avg_first_position": "平均首次出现位置 = 在提到品牌的答案里，品牌第一次出现在第几段（自然段从 1 数）的平均值；没提到的答案不进分母。",
+  "price_conflicts": "价格不一致条数 = 同一价格对象（同品牌 + 同时间单位）在不同答案里出现不止一个价格取值，就记 1 条；只统计提到本品牌、且价格与品牌名同一自然段的答案。",
+  "queries_total": "本轮问题总条数（口径①的分母）。",
+  "searched_n": "触发联网检索条数。",
+  "answers_missing": "未取到答案条数（属无效答案「空」）。",
+  "not_defined": "综合评分、引用占比、份额占比、首位占比这类指标在 v0.1 中明确不定义，不得用于对客材料。"
+ },
+ "snapshot_ts": "2026-09-26T08:21:17+08:00",
+ "snapshot_stale": false,
+ "snapshot_note": "本目录由本机 data/metrics 现算（口径①）；按引擎分列，不同引擎不可直接比大小。",
+ "count": 1,
+ "data_through": "2026-09-21_20-14-21",
+ "primary_provider_key": "zhipu",
+ "provider": "实测模式（智谱GLM）",
+ "model": "glm-4.5（代码默认）",
+ "latest": {
+  "ts": "2026-09-21_20-14-21",
+  "mention_rate": 100.0,
+  "mention_rate_source": "本批由 mention_rows 重算（口径①）",
+  "avg_first_position": 1.2,
+  "price_conflicts": 0,
+  "total_answers": 5,
+  "answers_valid": null,
+  "answers_invalid": 0,
+  "searched_n": 5,
+  "caliber": "①",
+  "provider_key": "zhipu",
+  "provider": "实测模式（智谱GLM）",
+  "model": "glm-4.5（代码默认）",
+  "runs_all_providers": 1
+ },
+ "series": [
+  {
+   "ts": "2026-09-21_20-14-21",
+   "mention_rate": 100.0,
+   "mention_rate_source": "本批由 mention_rows 重算（口径①）",
+   "avg_first_position": 1.2,
+   "price_conflicts": 0,
+   "total_answers": 5,
+   "answers_valid": null,
+   "answers_invalid": 0,
+   "searched_n": 5
+  }
+ ],
+ "by_provider": {
+  "zhipu": {
+   "provider": "实测模式（智谱GLM）",
+   "provider_key": "zhipu",
+   "model": "glm-4.5（代码默认）",
+   "count": 1,
+   "data_through": "2026-09-21_20-14-21",
+   "comparable": false,
+   "comparable_note": "按引擎分列（provider_key）：不同引擎不可直接比大小（联网检索口径 vs 纯答案口径）。同一品牌同一天同一引擎只留最新一条。",
+   "latest": {
+    "ts": "2026-09-21_20-14-21",
+    "mention_rate": 100.0,
+    "mention_rate_source": "本批由 mention_rows 重算（口径①）",
+    "avg_first_position": 1.2,
+    "price_conflicts": 0,
+    "total_answers": 5,
+    "answers_valid": null,
+    "answers_invalid": 0,
+    "searched_n": 5,
+    "caliber": "①",
+    "answer_kind": null
+   },
+   "series": [
+    {
+     "ts": "2026-09-21_20-14-21",
+     "mention_rate": 100.0,
+     "mention_rate_source": "本批由 mention_rows 重算（口径①）",
+     "avg_first_position": 1.2,
+     "price_conflicts": 0,
+     "total_answers": 5,
+     "answers_valid": null,
+     "answers_invalid": 0,
+     "searched_n": 5
+    }
+   ]
+  }
+ },
+ "providers_note": "按引擎分列（provider_key）：不同引擎不可直接比大小（联网检索口径 vs 纯答案口径）。同一品牌同一天同一引擎只留最新一条。",
+ "answers_note": "无效答案条数（套话 / 工具壳 / 空）另行报出（answers_invalid），不静默移出分母。",
+ "method_url": "/实测说明_2026年8月品牌AI可见性.html",
+ "source_note": "三指标由本机引擎探针计算；公网只放结果，不放原始回答原文。",
+ "note": "综合评分、引用占比、份额占比、首位占比这类指标在 v0.1 中明确不定义，不得用于对客材料。",
+ "runs_skipped_n": 0
+}

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>华碳科技 · GEO复访诊断提议</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', 'Segoe UI', sans-serif; background: #f4f5f9; color: #2c2f3a; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+.container { max-width: 920px; margin: 0 auto; padding: 32px 20px 60px; }
+.header { background: linear-gradient(135deg, #5b6cf9 0%, #7a4fd4 100%); color: #fff; border-radius: 18px; padding: 44px 40px; margin-bottom: 28px; position: relative; overflow: hidden; }
+.header::after { content: ""; position: absolute; right: -60px; top: -60px; width: 240px; height: 240px; background: rgba(255,255,255,0.08); border-radius: 50%; }
+.header .eyebrow { font-size: 0.82rem; letter-spacing: 2px; text-transform: uppercase; opacity: 0.85; margin-bottom: 12px; font-weight: 600; }
+.header h1 { font-size: 2rem; line-height: 1.35; margin-bottom: 10px; font-weight: 800; }
+.header .tagline { font-size: 1.02rem; opacity: 0.92; }
+.header .meta { margin-top: 18px; font-size: 0.84rem; opacity: 0.82; display: flex; gap: 18px; flex-wrap: wrap; }
+.header .meta span::before { content: "●"; margin-right: 6px; opacity: 0.6; }
+.kpi-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 28px; }
+.kpi-card { background: #fff; border-radius: 14px; padding: 20px 18px; box-shadow: 0 4px 14px rgba(40,50,90,0.06); text-align: center; }
+.kpi-card .value { font-size: 2.2rem; font-weight: 800; color: #5b6cf9; line-height: 1.1; }
+.kpi-card .unit { font-size: 0.8rem; color: #9aa0b4; font-weight: 600; }
+.kpi-card .label { font-size: 0.82rem; color: #6b7180; margin-top: 6px; }
+.kpi-card.danger .value { color: #c62828; }
+.kpi-card.warn .value { color: #c47700; }
+.section { background: #fff; border-radius: 16px; padding: 30px 32px; margin-bottom: 22px; box-shadow: 0 4px 14px rgba(40,50,90,0.06); }
+.section h2 { font-size: 1.32rem; color: #1f2230; margin-bottom: 18px; padding-bottom: 12px; border-bottom: 3px solid; border-image: linear-gradient(90deg, #5b6cf9, #7a4fd4) 1; font-weight: 700; }
+.section h3 { font-size: 1.05rem; color: #3a3f52; margin: 20px 0 10px; font-weight: 700; }
+.section p { margin-bottom: 12px; color: #444; }
+.section ul, .section ol { margin: 10px 0 14px 22px; color: #444; }
+.section li { margin-bottom: 6px; }
+.hl { color: #5b6cf9; font-weight: 700; }
+.hl-red { color: #c62828; font-weight: 700; }
+.tag { display: inline-block; padding: 3px 11px; border-radius: 20px; font-size: 0.78rem; font-weight: 600; margin: 0 4px 4px 0; }
+.tag-blue { background: #eef1fe; color: #3a52d8; }
+.tag-amber { background: #fff5e0; color: #c47700; }
+table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 0.9rem; border-radius: 10px; overflow: hidden; }
+th { background: linear-gradient(135deg, #5b6cf9, #7a4fd4); color: #fff; padding: 12px 14px; text-align: left; font-weight: 600; }
+td { padding: 11px 14px; border-bottom: 1px solid #eef0f5; color: #3a3f52; }
+tr:nth-child(even) td { background: #f9fafe; }
+td.center, th.center { text-align: center; }
+.callout { border-radius: 12px; padding: 18px 22px; margin: 16px 0; font-size: 0.94rem; }
+.callout-trust { background: #eef1fe; border-left: 4px solid #5b6cf9; }
+.callout-warn { background: #fff5e0; border-left: 4px solid #c47700; }
+.callout-invite { background: linear-gradient(135deg, #5b6cf9, #7a4fd4); color: #fff; border: none; }
+.callout-invite strong { color: #ffe27a; }
+.signal-card { border-radius: 14px; padding: 22px 24px; margin: 16px 0; }
+.signal-intl { background: linear-gradient(135deg, #eef1fe, #f3eefe); border-left: 4px solid #5b6cf9; }
+.signal-cn { background: linear-gradient(135deg, #fff5e0, #fef3e0); border-left: 4px solid #c47700; }
+.signal-card h4 { font-size: 1.05rem; margin-bottom: 10px; font-weight: 700; }
+.signal-intl h4 { color: #3a52d8; }
+.signal-cn h4 { color: #c47700; }
+.signal-card ul { margin: 8px 0 0 20px; font-size: 0.92rem; }
+.timeline { display: flex; justify-content: space-between; margin: 20px 0; position: relative; }
+.timeline::before { content: ""; position: absolute; top: 18px; left: 5%; right: 5%; height: 3px; background: linear-gradient(90deg, #5b6cf9, #7a4fd4); border-radius: 2px; }
+.tl-step { text-align: center; position: relative; z-index: 1; flex: 1; }
+.tl-dot { width: 36px; height: 36px; line-height: 36px; border-radius: 50%; background: #fff; border: 3px solid #5b6cf9; color: #5b6cf9; font-weight: 800; margin: 0 auto 8px; font-size: 0.95rem; }
+.tl-label { font-size: 0.82rem; color: #444; font-weight: 600; }
+.tl-sub { font-size: 0.74rem; color: #9aa0b4; margin-top: 2px; }
+.sources { font-size: 0.82rem; color: #6b7180; background: #f9fafe; border-radius: 10px; padding: 16px 20px; margin-top: 14px; }
+.sources h4 { font-size: 0.9rem; color: #1f2230; margin-bottom: 10px; font-weight: 700; }
+.sources a { color: #5b6cf9; text-decoration: none; word-break: break-all; }
+.sources a:hover { text-decoration: underline; }
+.sources .src-item { margin-bottom: 8px; padding-left: 14px; position: relative; }
+.sources .src-item::before { content: "▸"; position: absolute; left: 0; color: #7a4fd4; }
+.footer { text-align: center; padding: 28px 20px; color: #9aa0b4; font-size: 0.82rem; }
+.footer .contact { color: #5b6cf9; font-weight: 600; }
+.footer .disclaimer { margin-top: 10px; font-size: 0.76rem; color: #b4b8c8; }
+@media print { body { background: #fff; } .container { max-width: 100%; padding: 0; } .section, .header { box-shadow: none; } }
+@media (max-width: 640px) { .kpi-grid { grid-template-columns: 1fr; } .header h1 { font-size: 1.6rem; } .timeline { flex-wrap: wrap; } .tl-step { flex: 0 0 50%; margin-bottom: 16px; } .timeline::before { display: none; } }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="eyebrow">GEO复访诊断提议 · Confidential</div>
+    <h1>当AI回答"碳纳米管供应商哪家好"时，<br>被推荐的是华碳，还是竞品？</h1>
+    <div class="tagline">华碳科技 · AI可见度复访诊断方案 —— 基于雅诗兰黛与北京日报两大行业信号</div>
+    <div class="meta">
+      <span>凤栖灵犀科技</span>
+      <span>2026-09-26</span>
+      <span>全程免费 · 无绑定条件</span>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-card danger"><div class="value">12.5<small style="font-size:1rem">%</small></div><div class="label">华碳AI提及率（8月）</div></div>
+    <div class="kpi-card warn"><div class="value">4</div><div class="unit">个引擎</div><div class="label">完全隐形</div></div>
+    <div class="kpi-card"><div class="value">900<small style="font-size:1rem">+</small></div><div class="unit">家</div><div class="label">京报信源联盟</div></div>
+  </div>
+
+  <div class="section">
+    <h2>一、行业正在发生的两件事</h2>
+    <p>过去一个月，GEO（生成式引擎优化）从"可选营销手段"快速演变为"结构性议题"。两个信号值得华碳管理层关注：</p>
+
+    <div class="signal-card signal-intl">
+      <h4>信号一 · 国际巨头已主动入局</h4>
+      <p><strong>雅诗兰黛集团</strong>（NYSE: EL）于2026年9月14日宣布与AI营销平台 <strong>Profound</strong> 达成全球战略合作，成为高端美妆行业第一家大规模实施GEO的企业。</p>
+      <ul>
+        <li>规格：纳入集团 <strong>One Operating Ecosystem</strong> 统一运营生态，近25个品牌全球同步推进</li>
+        <li>核心逻辑：品牌知名度 ≠ AI认可度，AI重信息可验证性与结构化程度</li>
+        <li>战略意图：在品牌资产从"老账本"迁移到"AI新账本"前，抢注初始余额</li>
+      </ul>
+    </div>
+
+    <div class="signal-card signal-cn">
+      <h4>信号二 · 国内官媒已定义规则</h4>
+      <p>2026年9月22日，<strong>北京日报社</strong>在中国科技会堂发布「智源GEO可信传播解决方案」，与<strong>智谱</strong>达成深度战略合作，成立<strong>「京报信源联盟」</strong>。</p>
+      <ul>
+        <li><strong>900+家认证信源</strong>（100+政务号 + 600+北京号 + 日报矩阵）系统化结构化</li>
+        <li>AI答案的"货源结构"已变：官媒定点供菜，不在名单的内容AI优先忽略</li>
+        <li>对企业的三个影响：铺稿性价比降低、准确成为入场券、优化保鲜期缩短</li>
+      </ul>
+    </div>
+
+    <div class="callout callout-warn">
+      <strong>关键判断：</strong>雅诗兰黛在抢"AI新账本"的初始余额，北京日报在定义"AI新账本"的准入规则。华碳现在不是"要不要做GEO"的问题，是"还能不能拿到入场券"的问题。
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>二、华碳在AI中的现状（8月诊断数据）</h2>
+    <p>2026年8月，我们对华碳科技在国内10大AI引擎中的可见度进行了诊断，结果如下：</p>
+    <table>
+      <tr><th>维度</th><th>数据</th><th>含义</th></tr>
+      <tr><td>AI提及率</td><td><span class="hl-red">12.5%</span></td><td>10次探测中仅1.25次被提及</td></tr>
+      <tr><td>完全隐形引擎</td><td><span class="hl-red">4个</span></td><td>Kimi / 通义 / 元宝 / 360 中零提及</td></tr>
+      <tr><td>隐形时AI推荐</td><td>OCSiAl、天奈科技、道氏</td><td>100%推荐竞品，无华碳</td></tr>
+      <tr><td>信源池匹配</td><td><span class="hl-red">未在京报信源联盟内</span></td><td>AI采信优先级低于认证信源</td></tr>
+    </table>
+    <div class="callout callout-trust">
+      <strong>对比参照：</strong>Anker（消费电子出海品牌）同期AI提及率为 <strong>100%</strong>，6/8引擎排名第1。差距不是产品力，是<strong>信息基础设施与AI采信逻辑的匹配度</strong>。
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>三、本次复访诊断内容（升级版）</h2>
+    <p>相比8月，本次新增 <span class="tag tag-blue">信源池匹配度</span> 和 <span class="tag tag-blue">信息结构化评分</span> 两个维度，帮助华碳看清离"AI新账本"的真实距离。</p>
+    <table>
+      <tr><th>模块</th><th>内容</th><th>8月</th><th>本次</th></tr>
+      <tr><td>① AI提及率复访</td><td>10大引擎×3视角prompt，当前提及率</td><td class="center">✅</td><td class="center">✅ 含8月对比</td></tr>
+      <tr><td>② 竞品推荐分析</td><td>隐形时AI推荐了谁、是否有新增</td><td class="center">✅</td><td class="center">✅</td></tr>
+      <tr><td>③ 信源池匹配度</td><td>是否在京报信源联盟900+认证信源内、距离多远</td><td class="center">—</td><td class="center">✅ <span class="tag tag-amber">新增</span></td></tr>
+      <tr><td>④ 信息结构化评估</td><td>官网/新闻/产品页对照AI采信标准打分</td><td class="center">—</td><td class="center">✅ <span class="tag tag-amber">新增</span></td></tr>
+      <tr><td>⑤ 行业标杆对照</td><td>Anker对标 + 雅诗兰黛GEO实践参照</td><td class="center">✅</td><td class="center">✅ 含雅诗兰黛</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>四、交付物清单</h2>
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 10px;">
+      <div class="callout callout-trust" style="margin:0;">
+        <strong>交付物 1</strong><br>
+        《华碳AI可见度复访诊断报告》<br>
+        <small style="color:#6b7180;">含提及率趋势、竞品矩阵、信源池匹配、结构化评分、雅诗兰黛对照</small>
+      </div>
+      <div class="callout callout-trust" style="margin:0;">
+        <strong>交付物 2</strong><br>
+        一页纸执行摘要<br>
+        <small style="color:#6b7180;">给高管看的：3个结论 + 1个建议</small>
+      </div>
+      <div class="callout callout-trust" style="margin:0;">
+        <strong>交付物 3</strong><br>
+        《GEO趋势参考资料》<br>
+        <small style="color:#6b7180;">雅诗兰黛案例 + 北京日报信源池说明</small>
+      </div>
+      <div class="callout callout-trust" style="margin:0;">
+        <strong>交付物 4</strong><br>
+        当面/线上讲解<br>
+        <small style="color:#6b7180;">报告交付时30分钟讲解 + 答疑</small>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>五、需要华碳配合的3件事</h2>
+    <p>为保证诊断精准，仅需华碳提供以下信息（无商业敏感内容）：</p>
+    <ol>
+      <li><strong>确认诊断品牌范围</strong> —— 仅查"华碳科技"，还是包含旗下子品牌/产品线名称？</li>
+      <li><strong>提供3-5个核心竞品名称</strong> —— 你们认为的直接竞争对手是谁？（我们会对比AI推的和你们认为的是否一致）</li>
+      <li><strong>指定一位对接人</strong> —— 负责确认报告内容和后续沟通（建议品牌部或战略部）</li>
+    </ol>
+  </div>
+
+  <div class="section">
+    <h2>六、时间安排</h2>
+    <div class="timeline">
+      <div class="tl-step"><div class="tl-dot">0</div><div class="tl-label">发出提议</div><div class="tl-sub">今日</div></div>
+      <div class="tl-step"><div class="tl-dot">1</div><div class="tl-label">确认配合</div><div class="tl-sub">提供3项信息</div></div>
+      <div class="tl-step"><div class="tl-dot">2-3</div><div class="tl-label">跑探针</div><div class="tl-sub">10引擎×3视角</div></div>
+      <div class="tl-step"><div class="tl-dot">4</div><div class="tl-label">生成报告</div><div class="tl-sub">含摘要+趋势</div></div>
+      <div class="tl-step"><div class="tl-dot">5</div><div class="tl-label">交付讲解</div><div class="tl-sub">线上/线下</div></div>
+    </div>
+    <p style="text-align:center; color:#6b7180; font-size:0.85rem; margin-top: 16px;">全程约 <strong>5个工作日</strong>，视华碳确认时间顺延</p>
+  </div>
+
+  <div class="callout callout-invite">
+    <strong>本次诊断全程免费，无任何绑定条件。</strong><br><br>
+    我们的目的不是推销服务，而是让华碳管理层看到：<br>
+    在AI正在重写"品牌权威"定义的当下，华碳的真实位置在哪里、竞品已经走到了哪里。<br><br>
+    看完报告，<strong>华碳自行决定后续是否需要采取行动</strong>。
+  </div>
+
+  <div class="section">
+    <h2>信息来源</h2>
+    <div class="sources">
+      <h4>信号一 · 雅诗兰黛 × Profound</h4>
+      <div class="src-item">雅诗兰黛集团官方新闻稿（2026-09-14）：<a href="https://www.elcompanies.com/en/news-and-media/newsroom/press-releases/2026/09-14-2026-173210983">The Estée Lauder Companies Announces Partnership with Profound</a></div>
+      <div class="src-item">BusinessWire原文：<a href="https://www.businesswire.com/news/home/20260913741575/en/">https://www.businesswire.com/news/home/20260913741575/en/</a></div>
+      <div class="src-item">搜狐转载：<a href="https://news.sohu.com/a/1076783297_114872">The Estée Lauder Companies宣布与Profound达成合作</a></div>
+      <div class="src-item">新浪美妆报道：<a href="https://www.sina.cn/news/detail/5344226704885222.html">搜索排名之后，雅诗兰黛把战场搬进了 AI 答案里</a></div>
+
+      <h4 style="margin-top: 14px;">信号二 · 北京日报 × 智谱</h4>
+      <div class="src-item">北京日报客户端（2026-09-23）：<a href="https://bjrb-app.bjd.com.cn/content/s6ab2daebe4b0e42f8f00ad80.html">北京日报社联手人工智能企业共筑可信传播</a></div>
+      <div class="src-item">京报网（2026-09-22）：<a href="https://news.bjd.com.cn/2026/09/22/90092449.shtml">北京日报社与智谱正式达成深度战略合作</a></div>
+      <div class="src-item">北京商报报道：<a href="http://m.toutiao.com/group/7688360472139104823/">北京日报社智源GEO正式发布，携手智谱、百度共筑可信传播生态</a></div>
+      <div class="src-item">DoNews报道：<a href="https://www.donews.com/news/detail/4/6720510.html">北京日报社发布智源GEO可信传播解决方案</a></div>
+
+      <p style="margin-top: 14px; color: #9aa0b4; font-size: 0.78rem;">以上链接均为公开发布的权威来源，华碳管理层可自行点击核实。</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>凤栖灵犀科技 · GEO引擎</div>
+    <div class="contact">微信：fengqilingxi &nbsp;|&nbsp; 邮箱：l.peng@fengqilingxi.cn</div>
+    <div class="disclaimer">本文件为机密商业沟通材料，仅供华碳科技内部决策参考，请勿外传</div>
+  </div>
+
+</div>
+</body>
+</html>

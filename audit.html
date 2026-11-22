@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=20260925b">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=20260925b">
+<title>站点就绪审计 · 官网对 AI 爬虫是否可读 | 闻见AI</title>
+<meta name="description" content="检查官网 robots.txt、llms.txt、Sitemap、Schema.org 与 13 个主流 AI 爬虫放行情况。分数按公开文件实时计算，可复核。就绪分不是可见性分数。">
+<script src="track.js?v=20261113a" defer></script>
+<link rel="stylesheet" href="theme-paper.css?v=20261102a">
+<meta name="theme-color" content="#0A0A0A">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+body::before{content:"";position:fixed;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--geo),var(--gold),transparent);opacity:.9;z-index:99}
+.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:24px;height:76px}
+.logo{display:flex;align-items:center;gap:14px;font-weight:800;font-size:21px;white-space:nowrap}
+.logo i{width:44px;height:44px;border-radius:10px;background:var(--grad);display:grid;place-items:center;font-style:normal;font-size:21px;color:#fff;font-weight:900}
+.logo .en{display:block;font-size:8.5px;font-weight:600;letter-spacing:2px;color:var(--gold);margin-top:1px}
+.logo .slogan{color:var(--gold);font-size:10.5px;font-weight:600;margin-left:7px}
+.nav .r{margin-left:auto;display:flex;gap:14px;align-items:center}
+.nav a.back{font-size:13px;color:var(--mut);transition:.18s}
+.nav a.back:hover{color:var(--brand)}
+.cta{background:var(--grad-dual);color:#fff;font-weight:700;padding:9px 20px;border-radius:8px;font-size:13px;box-shadow:0 8px 22px rgba(42,85,104,.3);transition:.2s}
+.cta:hover{filter:brightness(1.07);transform:translateY(-1px)}
+.hero{padding:64px 0 32px;text-align:center}
+.hero .tag{display:inline-block;font-size:12px;letter-spacing:3px;color:var(--gold);border:1px solid rgba(196,165,116,.3);border-radius:999px;padding:6px 16px;background:rgba(196,165,116,.08);margin-bottom:18px}
+.hero h1{font-family:var(--font-display);font-size:clamp(26px,4.2vw,40px);font-weight:700;line-height:1.25;color:var(--ink);letter-spacing:.4px}
+.hero h1 em{font-style:normal;background:linear-gradient(100deg,var(--gold-light),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{max-width:640px;margin:14px auto 0;color:var(--mut);font-size:15px}
+.query{max-width:640px;margin:28px auto 0;display:flex;gap:10px}
+.query input{flex:1;height:52px;border:1px solid var(--line2);border-radius:10px;padding:0 18px;font-size:15px;color:var(--ink,#F2F2F2);caret-color:var(--ink,#F2F2F2);background:var(--bg2,#171717);outline:none;transition:.18s;color-scheme:dark}
+.query input::placeholder{color:var(--mut,#9A9A9A);opacity:1}
+.query input:focus{border-color:var(--geo);box-shadow:0 0 0 3px rgba(20,184,166,.18);color:var(--ink,#F2F2F2)}
+.query button{height:52px;padding:0 26px;border:none;border-radius:10px;background:var(--grad-dual);color:#fff;font-size:15px;font-weight:700;cursor:pointer;white-space:nowrap;box-shadow:0 8px 24px rgba(42,85,104,.28);transition:.2s}
+.query button:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.hint{margin-top:12px;font-size:12.5px;color:var(--mut);text-align:center}
+.err{display:none;margin:16px auto 0;max-width:640px;background:#fde8e8;border:1px solid rgba(155,28,28,.3);color:#9b1c1c;border-radius:10px;padding:10px 14px;font-size:13px}
+.err.show{display:block}
+.panel{display:none;margin:28px 0 20px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:28px;box-shadow:var(--shadow-glow)}
+.panel.show{display:block}
+.pbody{display:flex;gap:28px;flex-wrap:wrap;align-items:center}
+.ring{position:relative;width:140px;height:140px}
+.ring svg{width:140px;height:140px;transform:rotate(-90deg)}
+.ring circle{fill:none;stroke-width:11}
+.ring circle.bg{stroke:rgba(20,20,20,.08)}
+.ring circle.fg{stroke:var(--gold);stroke-linecap:round}
+.rnum{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.rnum b{font-size:34px;font-weight:800;color:var(--ink)}
+.rnum span{font-size:12px;color:var(--mut)}
+.meta h2{font-size:22px;font-weight:800;color:var(--ink)}
+.meta p{font-size:13px;color:var(--mut);margin-top:6px}
+.grade{display:inline-block;margin-top:8px;font-size:12px;font-weight:800;padding:3px 10px;border-radius:999px}
+.grade.ok{background:#e6f4ea;color:#1e6b3a}
+.grade.mid{background:rgba(196,165,116,.12);color:#8a3f1f}
+.grade.bad{background:#fde8e8;color:#9b1c1c}
+.check{display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink)}
+.check .pt{width:54px;flex-shrink:0;font-weight:800;font-variant-numeric:tabular-nums}
+.check .ok{color:#1e6b3a}.check .no{color:#9b1c1c}
+.bots{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px;margin-top:8px}
+.bot{border:1px solid #d1d5db;border-radius:10px;padding:10px 12px;font-size:12.5px;color:#111;-webkit-text-fill-color:#111}
+.bot b{display:block;color:#0a0a0a;-webkit-text-fill-color:#0a0a0a}
+.bot.ok{background:#e6f4ea;color:#14532d;-webkit-text-fill-color:#14532d;border-color:#86efac}
+.bot.ok b{color:#14532d;-webkit-text-fill-color:#14532d}
+.bot.no{background:#fde8e8;color:#9b1c1c;-webkit-text-fill-color:#9b1c1c;border-color:#fca5a5}
+.bot.no b{color:#9b1c1c;-webkit-text-fill-color:#9b1c1c}
+.actions{margin-top:18px;background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.actions h3{font-size:14px;margin-bottom:8px;color:var(--ink)}
+.actions li{margin-left:18px;font-size:13px;color:var(--mut)}
+.cta-row{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
+.cta-row a{padding:11px 22px;border-radius:8px;font-weight:700;font-size:14px;transition:.2s}
+.audit-lead{margin-top:24px;padding-top:22px;border-top:1px solid var(--line)}
+.audit-lead h3{font-size:17px;color:var(--ink)}
+.audit-lead>p{margin-top:6px;font-size:13px;color:var(--mut)}
+.lead-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:16px}
+.lead-field{display:flex;flex-direction:column;gap:6px}
+.lead-field.full{grid-column:1/-1}
+.lead-field label{font-size:12.5px;font-weight:700;color:var(--ink)}
+.lead-field input,.lead-field textarea{width:100%;border:1px solid var(--line2);border-radius:8px;background:var(--bg2);color:var(--ink);padding:11px 12px;font:inherit;font-size:14px;outline:none}
+.lead-field textarea{min-height:76px;resize:vertical}
+.lead-field input:focus,.lead-field textarea:focus{border-color:var(--geo);box-shadow:0 0 0 3px rgba(20,184,166,.14)}
+.lead-field input[readonly]{color:var(--mut);cursor:default}
+.lead-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-top:14px}
+.lead-submit{border:none;border-radius:8px;background:var(--grad-dual);color:#fff;font-weight:700;padding:11px 20px;cursor:pointer}
+.lead-submit:disabled{opacity:.65;cursor:wait}
+.lead-msg{display:none;font-size:12.5px;color:#9b1c1c}
+.lead-msg.show{display:block}
+.lead-success{display:none;margin-top:14px;padding:13px 14px;border:1px solid rgba(14,122,69,.28);background:rgba(14,122,69,.08);color:#14532d;border-radius:8px;font-size:13px}
+.lead-success.show{display:block}
+.solid{background:var(--grad-dual);color:#fff;box-shadow:0 8px 22px rgba(42,85,104,.3)}
+.solid:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.ghost{border:1px solid var(--line2);color:var(--geo-bright,#14B8A6);background:var(--bg2,#171717)}
+.ghost:hover{background:var(--bg2);transform:translateY(-1px)}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin:36px 0 50px}
+.why div{border:1px solid var(--line);border-radius:12px;padding:18px;background:var(--card);box-shadow:var(--shadow-card);transition:.25s}
+.why div:hover{transform:translateY(-3px);border-color:rgba(196,165,116,.3);box-shadow:var(--shadow-gold)}
+.why b{display:block;margin-bottom:6px;color:var(--ink)}
+.why p{font-size:13px;color:var(--mut)}
+.foot{margin:10px 0 48px;text-align:center;font-size:12px;color:var(--mut);line-height:2}
+@media(max-width:640px){.query{flex-direction:column}.query button{width:100%}.nav .r{display:none}.lead-grid{grid-template-columns:1fr}.lead-field.full{grid-column:auto}}
+</style>
+</head>
+<body>
+<div class="page-bg" aria-hidden="true"></div>
+<nav><div class="wrap nav">
+  <a class="logo logo-mark" href="index.html" aria-label="闻见AI">
+    <img src="assets/phoenix-logo.png?v=20260925b" width="120" height="120" alt="PHOENIX 0518" style="height:40px;width:auto;display:block">
+    <span>闻见AI<span class="slogan"> · GEO智见Insight</span></span>
+  </a>
+  <div class="r"><a class="back" href="index.html#about">公司与产品</a><a class="back" href="index.html#system">怎么做</a><a class="back" href="audit.html">就绪审计</a><a class="back" href="/pricing/">服务定价</a><a class="back" href="index.html#method">公司口径</a><a class="cta" href="demo/">看样报</a></div>
+</div></nav>
+<div class="wrap">
+  <div class="hero">
+    <span class="tag">SELF-SERVE · 免费审计</span>
+    <h1>官网对 AI 爬虫，<em>可读吗？</em></h1>
+    <p class="sub">检查 robots.txt、llms.txt、Sitemap、Schema.org 与 GPTBot / ClaudeBot / Bytespider 等爬虫放行。分数按公开文件实时计算，不调用生成模型。</p>
+    <div class="query">
+      <input id="q" placeholder="输入官网域名，如 geo.fqlx0518.cn" onkeydown="if(event.key==='Enter'){run();}">
+      <button onclick="run()">开始审计</button>
+    </div>
+    <p class="hint">只抓取站点公开文件 · 拒绝内网地址 · 每 IP 每小时 20 次</p>
+    <div class="err" id="err"></div>
+  </div>
+  <div class="panel" id="panel">
+    <div class="pbody">
+      <div class="ring"><svg viewBox="0 0 140 140"><circle class="bg" cx="70" cy="70" r="58"/><circle class="fg" id="fg" cx="70" cy="70" r="58"/></svg><div class="rnum"><b id="score">—</b><span>就绪分</span></div></div>
+      <div class="meta">
+        <h2 id="host">—</h2>
+        <p id="title">—</p>
+        <span class="grade mid" id="grade">—</span>
+      </div>
+    </div>
+    <div id="checks" style="margin-top:18px"></div>
+    <h3 style="margin:18px 0 8px;font-size:14px">AI 爬虫放行明细</h3>
+    <div class="bots" id="bots"></div>
+    <div class="actions" id="acts"></div>
+    <p style="margin-top:12px;font-size:12.5px;color:var(--mut)" id="note"></p>
+    <div class="cta-row">
+      <a class="solid" href="prompts.html">下一步：生成无提示查询清单 →</a>
+      <a class="ghost" href="index.html#pricing">四档服务与当期价格</a>
+      <a class="ghost" href="index.html#contact">联系我们 · 微信 fengqilingxi</a>
+    </div>
+    <section class="audit-lead" id="auditLead">
+      <h3>需要进一步诊断？</h3>
+      <p>留下联系方式，我们结合本次公开文件审计结果与你沟通。这里只描述可复核事实，不承诺任何检索、引用或成交结果。</p>
+      <form id="auditLeadForm" novalidate>
+        <div class="lead-grid">
+          <div class="lead-field full"><label for="leadDomain">审计域名</label><input id="leadDomain" readonly></div>
+          <div class="lead-field"><label for="leadName">称呼 *</label><input id="leadName" autocomplete="name" placeholder="怎么称呼你"></div>
+          <div class="lead-field"><label for="leadContact">联系方式 *</label><input id="leadContact" inputmode="tel" autocomplete="tel" placeholder="11 位手机号"></div>
+          <div class="lead-field"><label for="leadCompany">公司</label><input id="leadCompany" autocomplete="organization" placeholder="公司全称（选填）"></div>
+          <div class="lead-field"><label for="leadGoal">想进一步了解什么</label><input id="leadGoal" placeholder="例如：优先修复项（选填）"></div>
+          <div class="lead-field full"><label for="leadNote">补充说明</label><textarea id="leadNote" placeholder="可补充你的业务背景或当前问题（选填）"></textarea></div>
+        </div>
+        <div class="lead-field full">
+          <label for="leadPrivacy"><input type="checkbox" id="leadPrivacy" name="privacy_consent" value="1"> 我已阅读并同意<a href="/privacy.html">隐私政策</a>，同意为本次联系提供称呼和手机号。</label>
+        </div>
+        <div class="lead-actions">
+          <button type="submit" class="lead-submit" id="leadSubmit">预约进一步诊断</button>
+          <div class="lead-msg" id="leadMsg"></div>
+        </div>
+      </form>
+      <div class="lead-success" id="leadSuccess">已收到你的信息，我们会用你留下的联系方式进一步沟通。</div>
+    </section>
+  </div>
+  <div class="why">
+    <div><b>为什么先审计站点</b><p>AI 看不见你的页面，再好的内容也不会被引用。Otterly 把 GEO Audit 做成产品入口，我们也把这件事做成免费自助工具。</p></div>
+    <div><b>llms.txt 是什么</b><p>给大模型看的品牌说明书：产品事实、官方口径、可引用段落。部署后可被 ChatGPT / Perplexity 等直接读取。</p></div>
+    <div><b>就绪分不是可见性分数</b><p>就绪分只回答「能不能被读到」，不回答读到之后会不会引用你。口径 v0.1 明确不定义无法复核的综合评分，想知道 AI 实际怎么说你，需要 7 天实地诊断。</p></div>
+  </div>
+  <div class="foot">深圳市凤栖灵犀科技有限公司 · 闻见AI<br>本页不承诺可见性提升，只报告站点公开文件的可审计事实。七项权重：robots.txt 12、爬虫放行 28（13 个）、llms.txt 18、Sitemap 10、Schema.org 20、Open Graph 7、canonical / 标题 5。<br><a href="terms.html">服务说明</a> · <a href="privacy.html">隐私政策</a> · <a href="disclaimer.html">免责声明</a></div>
+</div>
+<script>
+var CIRC=2*Math.PI*58;
+var auditAbort=null;
+var leadForm=document.getElementById("auditLeadForm");
+var leadSubmit=document.getElementById("leadSubmit");
+var leadMsg=document.getElementById("leadMsg");
+var leadSuccess=document.getElementById("leadSuccess");
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];});}
+function showLeadMsg(text){leadMsg.textContent=text;leadMsg.classList.add("show");}
+function resetAudit(){
+  var panel=document.getElementById("panel");
+  panel.classList.remove("show");
+  document.getElementById("host").textContent="—";
+  document.getElementById("title").textContent="—";
+  document.getElementById("score").textContent="—";
+  var g=document.getElementById("grade");
+  g.textContent="—";
+  g.className="grade mid";
+  document.getElementById("checks").innerHTML="";
+  document.getElementById("bots").innerHTML="";
+  document.getElementById("acts").innerHTML="";
+  document.getElementById("note").textContent="";
+  leadForm.style.display="";
+  leadSuccess.classList.remove("show");
+  leadMsg.classList.remove("show");
+  var fg=document.getElementById("fg");
+  fg.style.strokeDasharray=CIRC;
+  fg.style.strokeDashoffset=CIRC;
+}
+function run(){
+  var domain=document.getElementById("q").value.trim();
+  var err=document.getElementById("err");
+  var btn=document.querySelector(".query button");
+  err.classList.remove("show");
+  resetAudit();
+  if(!domain){err.textContent="请输入官网域名";err.classList.add("show");return;}
+  if(auditAbort){auditAbort.abort();}
+  auditAbort=(typeof AbortController!=="undefined")?new AbortController():null;
+  btn.disabled=true;
+  var opts={method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({domain:domain})};
+  if(auditAbort) opts.signal=auditAbort.signal;
+  fetch("/api/geo_audit",opts)
+    .then(function(r){return r.json().then(function(d){return {ok:r.ok,d:d};});})
+    .then(function(x){
+      btn.disabled=false;
+      if(!x.ok){resetAudit();err.textContent=(x.d&&x.d.error)||"审计失败";err.classList.add("show");return;}
+      render(x.d);
+    }).catch(function(e){
+      btn.disabled=false;
+      if(e&&e.name==="AbortError") return;
+      resetAudit();
+      err.textContent=(e&&e.message)||"网络失败";err.classList.add("show");
+    });
+}
+function render(d){
+  var panel=document.getElementById("panel");
+  panel.classList.add("show");
+  document.getElementById("host").textContent=d.host;
+  document.getElementById("title").textContent=d.title||"未读到标题";
+  document.getElementById("score").textContent=d.score;
+  var g=document.getElementById("grade");
+  g.textContent=d.grade;
+  g.className="grade "+(d.score>=80?"ok":d.score>=55?"mid":"bad");
+  var col=d.score>=80?"#0e7a45":d.score>=55?"#b26a00":"#b42318";
+  var fg=document.getElementById("fg");
+  fg.style.stroke=col;
+  fg.style.strokeDasharray=CIRC;
+  fg.style.strokeDashoffset=CIRC*(1-Math.max(0,Math.min(100,d.score))/100);
+  document.getElementById("checks").innerHTML=(d.checks||[]).map(function(c){
+    return '<div class="check"><span class="pt '+(c.ok?"ok":"no")+'">'+c.score+'/'+c.max+'</span><div><b>'+esc(c.label)+'</b><div style="color:var(--mut)">'+esc(c.detail)+'</div></div></div>';
+  }).join("");
+  document.getElementById("bots").innerHTML=(d.bots||[]).map(function(b){
+    return '<div class="bot '+(b.allowed?"ok":"no")+'"><b>'+esc(b.bot)+'</b>'+esc(b.label)+' · '+(b.allowed?"允许":"拦截")+'</div>';
+  }).join("");
+  var acts=d.actions||[];
+  document.getElementById("acts").innerHTML=acts.length
+    ? "<h3>优先修复</h3><ol>"+acts.map(function(a){return "<li>"+esc(a)+"</li>";}).join("")+"</ol>"
+    : "<h3>优先修复</h3><p>公开文件层已就绪。下一步用查询扇出生成问句，再看样报、加微信约 7 天诊断。</p>";
+  document.getElementById("note").textContent=d.note||"";
+  document.getElementById("leadDomain").value=d.host||"";
+  leadForm.style.display="";
+  leadSuccess.classList.remove("show");
+  leadMsg.classList.remove("show");
+  panel.scrollIntoView({behavior:"smooth",block:"start"});
+}
+leadForm.addEventListener("submit",function(e){
+  e.preventDefault();
+  leadMsg.classList.remove("show");
+  var domain=document.getElementById("leadDomain").value.trim();
+  var name=document.getElementById("leadName").value.trim();
+  var contact=document.getElementById("leadContact").value.trim();
+  var company=document.getElementById("leadCompany").value.trim();
+  var goal=document.getElementById("leadGoal").value.trim();
+  var note=document.getElementById("leadNote").value.trim();
+  if(!domain)return showLeadMsg("请先完成一次站点审计");
+  if(!name)return showLeadMsg("请填写称呼");
+  if(!/^1[3-9]\d{9}$/.test(contact))return showLeadMsg("请填写正确的 11 位手机号");
+  if(!document.getElementById("leadPrivacy").checked)return showLeadMsg("请先阅读并勾选隐私政策");
+  var goalText=goal||"结合站点就绪审计结果进一步沟通";
+  if(note) goalText+="\n补充：" + note;
+  leadSubmit.disabled=true;
+  leadSubmit.textContent="提交中…";
+  if(window.gxTrack) window.gxTrack("audit_lead_submit","readiness_audit");
+  fetch("/api/lead",{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({
+      kind:"audit_lead",
+      name:name,
+      contact:contact,
+      company:company,
+      url:domain,
+      goal:goalText,
+      sources:["闻见AI官网"],
+      source:"readiness_audit"
+    })
+  }).then(function(r){
+    return r.json().then(function(d){return {ok:r.ok,d:d};});
+  }).then(function(x){
+    leadSubmit.disabled=false;
+    leadSubmit.textContent="预约进一步诊断";
+    if(!x.ok)return showLeadMsg((x.d&&x.d.error)||"提交失败，请稍后再试");
+    leadForm.style.display="none";
+    leadSuccess.classList.add("show");
+  }).catch(function(){
+    leadSubmit.disabled=false;
+    leadSubmit.textContent="预约进一步诊断";
+    showLeadMsg("网络异常，请稍后再试");
+  });
+});
+</script>
+</body>
+</html>

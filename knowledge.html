@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=20260925b">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=20260925b">
+<title>闻见AI 品牌知识库 · 可引用事实 | 凤栖灵犀</title>
+<meta name="description" content="深圳市凤栖灵犀科技有限公司公开知识库：GEO 口径 v0.1、站点就绪审计、四档服务与可引用事实。可下载 llms.txt。">
+<link rel="stylesheet" href="theme-paper.css?v=20261102a">
+<meta name="theme-color" content="#0A0A0A">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:var(--brand);text-decoration:none}
+body::before{content:"";position:fixed;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--geo),var(--gold),transparent);opacity:.9;z-index:99}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:24px;height:76px}
+.logo{display:flex;align-items:center;gap:14px;font-weight:800;font-size:21px;color:var(--ink);white-space:nowrap}
+.logo i{width:44px;height:44px;border-radius:10px;background:var(--grad);display:grid;place-items:center;font-style:normal;font-size:21px;color:#fff;font-weight:900}
+.logo .en{display:block;font-size:8.5px;font-weight:600;letter-spacing:2px;color:var(--gold);margin-top:1px}
+.logo .slogan{color:var(--gold);font-size:10.5px;font-weight:600;margin-left:7px}
+.nav .r{margin-left:auto;display:flex;gap:14px;align-items:center}
+.nav a.back{font-size:13px;color:var(--mut);transition:.18s}
+.nav a.back:hover{color:var(--brand)}
+.cta{background:var(--grad-dual);color:#fff;font-weight:700;padding:9px 20px;border-radius:8px;font-size:13px;box-shadow:0 8px 22px rgba(42,85,104,.3);transition:.2s}
+.cta:hover{filter:brightness(1.07);transform:translateY(-1px)}
+.hero{padding:56px 0 16px}
+.tag{display:inline-block;font-size:12px;letter-spacing:3px;color:var(--gold);border:1px solid rgba(196,165,116,.3);border-radius:999px;padding:6px 16px;background:rgba(196,165,116,.08);margin-bottom:16px}
+h1{font-family:var(--font-display);font-size:clamp(26px,4vw,38px);font-weight:700;line-height:1.25;color:var(--ink);letter-spacing:.4px}
+.sub{color:var(--mut);margin-top:10px;font-size:15.5px}
+.meta{margin:18px 0;font-size:13.5px;color:var(--mut);background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:14px 18px}
+.meta a{color:var(--brand)}
+h2{font-size:18px;margin:28px 0 10px;color:var(--ink);font-weight:700}
+ul{margin:0 0 8px 18px}
+li{margin:5px 0;color:var(--ink);line-height:1.7}
+li b{color:var(--ink)}
+.donts li{color:#9b1c1c}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:22px 0 10px}
+.cta-row a{padding:11px 20px;border-radius:8px;font-weight:700;font-size:14px;border:1px solid var(--line2);background:#fff;color:var(--brand);transition:.2s}
+.cta-row a:hover{background:var(--bg2);transform:translateY(-1px)}
+.cta-row a.solid{background:var(--grad-dual);color:#fff;border:none;box-shadow:0 8px 22px rgba(42,85,104,.3)}
+.cta-row a.solid:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.cta-row a.ghost{background:#fff;color:#111;-webkit-text-fill-color:#111}
+.cta-sub{margin:0 0 28px;font-size:12.5px;color:var(--mut);line-height:1.6}
+.cta-sub a{color:var(--mut);font-weight:600;text-decoration:underline;text-underline-offset:3px;border:none;background:none;padding:0}
+.cta-sub a:hover{color:var(--brand);background:none;transform:none}
+.note{font-size:13px;color:var(--mut);margin:16px 0 40px;line-height:1.7}
+.foot{margin:10px 0 48px;text-align:center;font-size:12px;color:var(--mut);line-height:2}
+.err{color:#9b1c1c;margin:20px 0}
+.err a{color:#8a3f1f;text-decoration:underline}
+</style>
+</head>
+<body>
+<div class="page-bg" aria-hidden="true"></div>
+<nav><div class="wrap nav">
+  <a class="logo logo-mark" href="index.html" aria-label="闻见AI">
+    <img src="assets/phoenix-logo.png?v=20260925b" width="120" height="120" alt="PHOENIX 0518" style="height:40px;width:auto;display:block">
+    <span>闻见AI<span class="slogan"> · 方法论站</span></span>
+  </a>
+  <div class="r"><a class="back" href="index.html#about">公司与产品</a><a class="back" href="audit.html">就绪审计</a><a class="back" href="/pricing/">服务定价</a><a class="back" href="index.html#method">公司口径</a><a class="cta" href="demo/">看样报</a></div>
+</div></nav>
+<div class="wrap">
+  <div class="hero">
+    <span class="tag">PUBLIC KB · 凤栖灵犀</span>
+    <h1 id="title">闻见AI 品牌知识库</h1>
+    <p class="sub" id="one">公开可引用事实。口径与官网、报价单一致；竞品取舍表不在此页。</p>
+    <div class="meta" id="meta">加载中…</div>
+  </div>
+  <div class="cta-row">
+    <a class="solid" href="llms.txt">打开 AI 说明书 /llms.txt</a>
+    <a class="ghost" href="demo/">看样报 →</a>
+  </div>
+  <p class="cta-sub">给爬虫或本地解析用：另有 <a href="/kb/fengqilingxi.txt">TXT 副本</a> · <a href="/kb/fengqilingxi.json">JSON</a>。与说明书冲突时，以 <a href="llms.txt">llms.txt</a> 为准。</p>
+  <div id="body"></div>
+  <p class="note" id="note"></p>
+  <div class="foot">深圳市凤栖灵犀科技有限公司 · 统一社会信用代码 91440300MAKEJKLH7Q<br><a href="terms.html">用户协议</a> · <a href="privacy.html">隐私政策</a> · <a href="disclaimer.html">免责声明</a></div>
+</div>
+<script>
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];});}
+function lis(arr){return "<ul>"+(arr||[]).map(function(x){return "<li>"+esc(x)+"</li>";}).join("")+"</ul>";}
+fetch("/kb/fengqilingxi.json").then(function(r){if(!r.ok) throw new Error("kb"); return r.json();}).then(function(kb){
+  document.getElementById("title").textContent=kb.brand+" 品牌知识库";
+  document.getElementById("one").textContent=kb.one_liner||"";
+  document.getElementById("meta").innerHTML=[kb.company,kb.category,kb.site?"<a href='"+esc(kb.site)+"'>"+esc(kb.site)+"</a>":"",kb.contact,kb.updated?"更新 "+esc(kb.updated):""].filter(Boolean).join(" · ");
+  var html="";
+  if(kb.products&&kb.products.length) html+="<h2>产品</h2>"+lis(kb.products);
+  if(kb.facts&&kb.facts.length) html+="<h2>可引用事实</h2>"+lis(kb.facts);
+  if(kb.faqs&&kb.faqs.length){
+    html+="<h2>常见问题</h2><ul>"+kb.faqs.map(function(qa){return "<li><b>"+esc(qa.q)+"</b><br>"+esc(qa.a)+"</li>";}).join("")+"</ul>";
+  }
+  if(kb.donts&&kb.donts.length) html+="<h2>不要这样描述</h2><ul class='donts'>"+kb.donts.map(function(x){return "<li>"+esc(x)+"</li>";}).join("")+"</ul>";
+  if(kb.sources&&kb.sources.length) html+="<h2>来源</h2><ul>"+kb.sources.map(function(s){return "<li><a href='"+esc(s)+"'>"+esc(s)+"</a></li>";}).join("")+"</ul>";
+  document.getElementById("body").innerHTML=html;
+  document.getElementById("note").textContent=kb.note||"";
+  if(kb.jsonld){
+    var s=document.createElement("script"); s.type="application/ld+json";
+    s.textContent=JSON.stringify(kb.jsonld);
+    document.head.appendChild(s);
+  }
+}).catch(function(){
+  document.getElementById("meta").innerHTML="<span class='err'>知识库加载失败，请直接打开 <a href='llms.txt'>llms.txt</a>。</span>";
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=20260925b">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=20260925b">
+<title>GEO 行业标准白皮书（方法论与口径倡议版）| 闻见AI</title>
+<meta name="description" content="闻见AI（深圳市凤栖灵犀科技有限公司）发布的 GEO 方法论与口径倡议白皮书：三个指标定义、测量方法、证据与可复核要求、服务分层、不做的事、客户侧验收清单。本文不构成行业协会、标准化组织或监管机构发布的官方标准，也未获任何机构背书。">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="stylesheet" href="theme-paper.css?v=20261119p2">
+<script src="track.js?v=20261113a" defer></script>
+<meta property="og:title" content="GEO 行业标准白皮书（方法论与口径倡议版）| 闻见AI">
+<meta property="og:description" content="闻见AI（深圳市凤栖灵犀科技有限公司）发布的 GEO 方法论与口径倡议白皮书：三个指标定义、测量方法、证据与可复核要求、服务分层、不做的事、客户侧验收清单。本文不构成行业协会、标准化组织或监管机构发布的官方标准，也未获任何机构背书。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://geo.fqlx0518.cn/whitepaper.html">
+<meta property="og:image" content="https://geo.fqlx0518.cn/assets/phoenix-logo.png">
+<meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://geo.fqlx0518.cn/whitepaper.html">
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://geo.fqlx0518.cn/#org","name":"深圳市凤栖灵犀科技有限公司","alternateName":["闻见AI","PHOENIX 0518"],"url":"https://geo.fqlx0518.cn/","email":"l.peng@fengqilingxi.cn"},{"@type":"Article","headline":"GEO 行业标准白皮书（方法论与口径倡议版）","url":"https://geo.fqlx0518.cn/whitepaper.html","inLanguage":"zh-CN","isPartOf":{"@id":"https://geo.fqlx0518.cn/#org"},"datePublished":"2026-11-20","dateModified":"2026-11-20","version":"1.0"}]}</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--ink);line-height:1.8;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+body::before{content:"";position:fixed;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--geo),var(--gold),transparent);opacity:.9;z-index:99}
+.wrap{max-width:920px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:24px;height:76px}
+.logo{display:flex;align-items:center;gap:14px;font-weight:800;font-size:21px;white-space:nowrap}
+.logo .en{display:block;font-size:8.5px;font-weight:600;letter-spacing:2px;color:var(--gold);margin-top:1px}
+.logo .slogan{color:var(--gold);font-size:10.5px;font-weight:600;margin-left:7px}
+.nav .r{margin-left:auto;display:flex;gap:14px;align-items:center}
+.nav a.back{font-size:13px;color:var(--mut);transition:.18s}
+.nav a.back:hover{color:var(--brand2)}
+.cta{background:var(--grad-dual);color:#fff;font-weight:700;padding:9px 20px;border-radius:8px;font-size:13px;box-shadow:0 8px 22px rgba(42,85,104,.3);transition:.2s}
+.cta:hover{filter:brightness(1.07);transform:translateY(-1px)}
+.hero{padding:64px 0 26px}
+.kicker{display:inline-block;font-size:12px;letter-spacing:3px;color:var(--gold);border:1px solid rgba(234,88,12,.3);border-radius:999px;padding:6px 16px;background:var(--gold-soft);margin-bottom:18px}
+.hero h1{font-family:var(--font-display);font-size:clamp(26px,4.2vw,42px);font-weight:800;line-height:1.25;letter-spacing:.4px}
+.hero .sub{margin-top:14px;color:var(--mut);font-size:15px;max-width:680px}
+.notice{margin:26px 0 8px;border:1px solid var(--line2);border-left:5px solid var(--warn);background:var(--panel-2);padding:22px 24px;border-radius:10px}
+.notice-k{font-size:13px;font-weight:800;letter-spacing:1px;color:var(--warn);margin-bottom:12px}
+.notice p{font-size:14.5px;color:var(--ink);margin-top:10px}
+.notice-strong{font-size:15.5px !important;font-weight:700;color:#fff;background:rgba(234,179,8,.1);border-left:3px solid var(--warn);padding:12px 14px;margin-top:14px !important;line-height:1.9}
+.tbl{width:100%;border-collapse:collapse;margin:20px 0;font-size:13.5px}
+.tbl th,.tbl td{border:1px solid var(--line);padding:10px 12px;vertical-align:top;text-align:left;line-height:1.7}
+.tbl thead th{background:var(--panel-2);color:var(--gold-light);font-weight:800;font-size:13px;white-space:nowrap}
+.tbl tbody td:first-child{color:var(--mut);font-weight:700}
+.tbl-wrap{overflow-x:auto}
+h2{font-family:var(--font-display);font-size:clamp(20px,3vw,26px);font-weight:800;margin:44px 0 14px;padding-top:8px;border-top:1px solid var(--line);color:var(--ink)}
+h2:before{content:"";display:inline-block;width:8px;height:8px;background:var(--grad);margin-right:12px;transform:translateY(-3px) skewX(-12deg)}
+h3{font-size:16.5px;font-weight:800;margin:26px 0 8px;color:var(--gold-light)}
+p{margin:12px 0;font-size:15px;color:var(--ink)}
+b{font-weight:800}
+code{font-family:var(--font-mono);font-size:13px;background:var(--panel-2);border:1px solid var(--line);padding:1px 6px;border-radius:4px;color:var(--brand2)}
+hr.rule{border:none;height:1px;background:var(--line);margin:34px 0}
+ul,ol{margin:12px 0 12px 22px}
+li{font-size:15px;margin:6px 0}
+.doc-nav{margin:26px 0 6px;border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:16px 20px;font-size:13.5px;color:var(--mut);line-height:2}
+.doc-nav b{color:var(--ink)}
+.doc-nav a{color:var(--brand2)}
+.xlink{margin:40px 0 10px;border:1px solid var(--line2);background:var(--panel-2);border-radius:10px;padding:18px 22px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.xlink p{font-size:14px;color:var(--mut);margin:0}
+.xlink a{background:var(--grad-dual);color:#fff;font-weight:700;padding:9px 18px;border-radius:8px;font-size:13.5px}
+.foot{margin:34px 0 48px;text-align:center;font-size:12px;color:var(--mut);line-height:2}
+.foot a{color:var(--brand2)}
+@media(max-width:640px){.nav .r{display:none}.tbl{font-size:12.5px}}
+</style>
+</head>
+<body>
+<div class="page-bg" aria-hidden="true"></div>
+<nav><div class="wrap nav">
+  <a class="logo logo-mark" href="index.html" aria-label="闻见AI">
+    <img src="assets/phoenix-logo.png?v=20260925b" width="120" height="120" alt="PHOENIX 0518" style="height:40px;width:auto;display:block">
+    <span>闻见AI<span class="slogan"> · GEO智见Insight</span></span>
+  </a>
+  <div class="r"><a class="back" href="index.html#about">公司与产品</a><a class="back" href="index.html#system">怎么做</a><a class="back" href="audit.html">就绪审计</a><a class="back" href="/pricing/">服务定价</a><a class="back" href="index.html#method">公司口径</a><a class="back" href="faq.html">100 问 FAQ</a><a class="cta" href="demo/">看样报</a></div>
+</div></nav>
+<div class="wrap">
+  <div class="hero">
+    <span class="kicker">WHITEPAPER · 方法论与口径倡议</span>
+    <h1>GEO 行业标准白皮书</h1>
+    <p class="sub">方法论与口径倡议版 v1.0 · 对应指标口径 v0.1（生效日 2026-09-16）· 口径基准抓取 2026-11-20</p>
+  </div>
+<div class="notice">
+  <div class="notice-k">阅读前必读：本文的性质与边界</div>
+  <p>本文是闻见AI（深圳市凤栖灵犀科技有限公司）发布的<b>方法论与口径倡议白皮书</b>，用于统一 GEO 领域的讨论语言。</p>
+  <p class="notice-strong">本文<b>不构成行业协会、标准化组织或监管机构发布的官方标准</b>，也未获任何机构背书。文中定义、分层与清单均为发布方的自我约束与对外说明，供客户、同行与采购方对照使用，不具有强制效力。</p>
+  <p>本文不承诺任何品牌在任一 AI 引擎的答案中出现，也不对第三方服务商或产品作评价。</p>
+  <p>口径基准：站点 llms.txt（其自述「最后更新 2026-11-13」），抓取日期 2026-11-20。llms.txt 声明「与页面文案冲突时，以本文件为准」，故凡与官网页面不一致处，本文以 llms.txt 为准。</p>
+</div>
+    <div class="doc-nav"><b>本文结构</b>：性质与边界 → 文档信息 → 十章正文 → 数据风险与置信度说明。指标定义以站点 <code>llms.txt</code> 口径文本为准；价格与档位以官网定价板块当期内容为准。<br>配套阅读：<a href="faq.html">AI 搜索引擎优化常见 100 问（FAQ）</a> · <a href="audit.html">站点就绪审计</a> · <a href="/pricing/">服务定价</a></div>
+
+  <div class="tbl-wrap"><table class="tbl"><thead><tr><th>项目</th><th>内容</th></tr></thead><tbody><tr><td>文档名称</td><td>GEO 行业标准白皮书（方法论与口径倡议版）</td></tr><tr><td>发布方</td><td>深圳市凤栖灵犀科技有限公司（统一社会信用代码 91440300MAKEJKLH7Q）</td></tr><tr><td>产品线</td><td>闻见AI（GEO 服务与交付）、GEO智见Insight（方法论与口径站点）</td></tr><tr><td>文档版本</td><td>白皮书 v1.0，对应指标口径 v0.1（生效日 2026-09-16）</td></tr><tr><td>口径基准抓取</td><td>2026-11-20；对象：llms.txt、首页定价板块、/pricing/ 定价页</td></tr><tr><td>适用范围</td><td>中文语境下 GEO 品类的讨论、采购、交付与验收</td></tr></tbody></table></div>
+<hr class="rule">
+<h2 id="ch1">一、为什么现在需要一套 GEO 的共同语言</h2>
+<p>买家开始问 AI「该找哪家」，而不是只在搜索框里敲关键词。这一行为变化改变了营销团队的工作对象：从前优化「排名位置」，现在优化「答案里有没有你、怎么介绍你、价格说得对不对」。</p>
+<p>混乱随之而来。我们在一线反复遇到同一种局面：三家服务商给出三份报告，都说自己「提升了 AI 可见度」，但分子、分母、引擎、问题集各不相同，谁也无法与谁对比；采购方想问「到底有没有变好」，得到的是一串没有定义支撑的形容词。</p>
+<p>这不是能力问题，是语言问题。<b>没有共同的分母，就没有可比的结论</b>。假设「提到率」在 A 家指「某一条回答里出现了品牌名」，在 B 家指「问题集里有品牌名的比例」，那么两份报告上恰好都写着 62% 这件事本身没有任何意义——它们算的不是同一件事，放在同一张表里就是误导。（此处 62% 为说明用的假设数值，不对应任何真实测量。）</p>
+<p>本文要做的不是发明品类，而是把「怎么算」写成白纸黑字：三个指标、一套测量方法、一份不做的事的清单、一张客户自己就能核对的验收表。它们来自官网已公开的口径文本，本文补充的是指标之间的逻辑、常见误用与失效模式。</p>
+<p>需提前说明：本文<b>不引用任何行业体量、增长幅度、覆盖比例、样本量或调研人数这类数字</b>。GEO 是形成中的品类，公开可核验的行业统计数据我们尚未取得，任何看起来精确的百分比都会是编造。凡推测处均在文末「数据风险与置信度说明」标注。这既是合规要求，也是这套方法论的态度：<b>如果我们自己用不可核验的数字说话，就没有资格要求别人交付可核验的证据。</b></p>
+<hr class="rule">
+<h2 id="ch2">二、品类边界：GEO 与 SEO、AEO、AAO、A2A 的关系</h2>
+<p>品类混乱的根源，是把层级不同的东西并列成「三件套」。先把层级摆正，指标与方法才有位置。</p>
+<h3 id="s1">GEO：主品类</h3>
+<p>GEO 即生成式引擎优化（Generative Engine Optimization），对外口径对标国际上的 GEO / AEO。工作对象是生成式问答引擎输出的答案文本，目标是被提到。这是对外唯一的主品类定位。</p>
+<h3 id="s2">SEO：不同的工作对象，不是 GEO 的替代品</h3>
+<p>SEO 优化检索结果页里的排序与展示，输入关键词，输出链接列表，衡量单位是位置和点击。GEO 优化答案正文，输入自然语言问题，输出一段生成的文字，衡量单位是「有没有提到、第几段提到、说对了没有」。两者共享「让内容被机器读到」这一层基础工作，但在此之上分叉：SEO 的终点是「点进来」，GEO 的终点是「被说出来」。把 GEO 当成「SEO 的下一代」，会导致错误的验收标准——用排名和流量去验收一件发生在答案文本里的事。</p>
+<h3 id="s3">AEO：相邻概念，不作独立品类对待</h3>
+<p>AEO（Answer Engine Optimization）在国际语境中与 GEO 高度重叠，关注点偏向「被选为答案」。我们的做法是在对外叙事中把 AEO 作为对标方向一并提及，但不拆第二套指标体系——若 GEO 和 AEO 各有一套分子分母，客户要为同一个现象签两份口径，这恰是本文要消除的成本。</p>
+<h3 id="s4">AAO：交付内涵，不是并列的第二品牌</h3>
+<p>AAO 在本体系里对应「说对」：同一台引擎、同一轮探针之上，检查价格、范围、资质是否按客户确认的口径被说出来。它<b>不是公网并列的第二主卖点</b>：对外主叙事只有 GEO，副线最多一句「提到之后还要说对」；只有在谈交付内容、写合同附件需要具体能力名时才亮出「说对」。这与产品结构一致：对外一个 GEO 品类，对内是 GEO（被看到）与说对（被看懂、被选得中）两层交付内涵。把它抬成第二主品牌，采购方会误以为要买两套东西，销售端也得用两套口径解释同一份报告。</p>
+<h3 id="s5">A2A：预埋，未上线，不得宣称已成交</h3>
+<p>A2A（Agent-to-Agent）定位是<b>预埋</b>。公开的 Agent Card 仅用于「被发现」和「转人工」，不自动下单、不自动支付、不自动派单，护理类场景永不自动派单，状态为 <b>live=false</b>。</p>
+<h3 id="s6">一张关系表</h3>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>名称</th><th>层级</th><th>工作对象</th><th>成功的样子</th><th>本文如何处理</th></tr></thead><tbody><tr><td>GEO</td><td>主品类</td><td>生成式答案正文</td><td>答案里被提到</td><td>主叙事，配 v0.1 三指标</td></tr><tr><td>说对（对内称 AAO）</td><td>交付内涵</td><td>同一批答案中的事实表述</td><td>价格、范围、资质说得对</td><td>交付能力名，不并列为主品牌</td></tr><tr><td>SEO</td><td>相邻品类</td><td>检索结果页排序</td><td>位置靠前、被点击</td><td>说明边界，不共用指标</td></tr><tr><td>AEO</td><td>相邻概念</td><td>答案中被选中</td><td>被选为答案</td><td>对标提及，不拆第二套指标</td></tr><tr><td>A2A</td><td>预埋能力</td><td>机器间发现与转人工</td><td>被发现、转人工</td><td>标注 live=false，不称已成交</td></tr></tbody></table></div>
+<hr class="rule">
+<h2 id="ch3">三、指标定义 v0.1：三个指标，原样引用</h2>
+<p>口径版本 v0.1，生效日 2026-09-16。对外可用指标只有三个，以下定义原文引用，不作改写：</p>
+<p><b>① 提到率</b>：提到品牌的答案条数 ÷ 本轮问题总条数（字面命中含别名，排除引用来源区）。未取到答案的问题照样计入分母，并记为「未提到」。按引擎分别统计，也统计合计。</p>
+<p><b>② 平均首次出现位置</b>：在提到品牌的答案里，品牌第一次出现在第几段（自然段从 1 数）的平均值。没提到的答案不进分母。</p>
+<p><b>③ 价格不一致条数</b>：同一价格对象（同品牌 + 同时间单位）在不同答案里出现不止一个价格取值，就记 1 条。v0.1 只统计条数，不判断谁对谁错。</p>
+<h3 id="s7">三个指标各自的分母</h3>
+<p><b>提到率的分母是本轮问题总条数，不是「取到答案的条数」。</b> 这是最容易被悄悄改动的一处。某个引擎某一轮没有返回可用答案（超时、风控拦截、返回空文本），把这条从分母删掉会得到更好看的百分比，但那个数字已不再描述「这一轮问下来多少比例会提到你」。口径要求未取到答案的问题照样计入分母并记为「未提到」，本质是保守原则：<b>缺数据不等于好消息。</b></p>
+<p>提到率同时是「按引擎分别统计，也统计合计」的双层结构。只报合计会掩盖引擎间差异——同一品牌在不同引擎上的提到率可能相差数倍，平均成一个数等于用综合印象替换具体事实。<b>只报合计、不报分引擎，是最常见的信息删减。</b></p>
+<p>分子判定也要说清：依据是品牌名或约定别名的字面出现，不看语义、不做情感判断，并排除答案末尾的引用来源区——出现在「参考来源」列表里，不等于在答案正文里被介绍给用户。两条正是分歧高发区：把引用来源算作命中会系统性虚高，只认全称不认别名会系统性虚低。</p>
+<p><b>平均首次出现位置的分母是「提到品牌的答案」，没提到的不进分母。</b> 它回答「提到的时候是开门见山还是排在末尾」，天然只在命中样本上成立。误用有两种：把未提到的答案按某个位置塞进分母，造出无意义的平均值；或与提到率混读，得出「位置靠前所以表现好」——位置靠前但只在极少数答案里出现，是另一种问题。两个指标必须成对阅读。</p>
+<p>还需注意「自然段从 1 数」这一约定：不同引擎的答案排版差异很大，同一内容算出的位置数值天然不可横比。位置指标的正确用法是<b>同引擎、同问题集、跨时间的纵向对比</b>，而非跨引擎横向排名。</p>
+<p><b>价格不一致条数是计数指标，不是比率，也不判断对错。</b> 判定单元是「同一价格对象」：同品牌 + 同时间单位，出现两个及以上不同取值记 1 条。它统计「不一致发生了几次」，不回答「哪个价格是真的」——后者需客户自己的价目表作裁判，不在探针职责内。典型误用是把「条数下降」读成「AI 说得更对了」，其实也可能只是这一轮提到得少了、样本变小了。<b>计数指标必须与提到率一起看。</b></p>
+<h3 id="s8">v0.1 明确不定义的，以及为什么</h3>
+<p>v0.1 明确不定义：引用占比、份额占比、首位占比、GEO 综合评分。原因一致——这四类都需要「品牌全集 + 多品牌对照」，必须先确定完整竞品集合、在同一轮对全部品牌做同等测量，才谈得上「占比」；「综合评分」还需一套权重方案，而权重怎么定本身无法被第三方复核。</p>
+<p>这些属 v0.2 范围，<b>在对客材料中不得使用</b>。这条自我限制主动让渡了营销便利：一个「综合评分 87」显然比「提到率 41%（引擎 A）／18%（引擎 B）」更好卖。但评分一旦不可复核，它就只是一句形容词，无法进入验收。（此处 87、41%、18% 均为说明用的假设数值，不对应任何真实测量。）</p>
+<hr class="rule">
+<h2 id="ch4">四、测量方法：探针、同轮配对、快照哈希、口径版本号</h2>
+<p>定义只是分子分母，这些数字怎么被生产出来，决定了它能不能站住。方法有四件事，缺一件，可信度就断一截。</p>
+<h3 id="s9">探针：在同一批问题上实地问一遍</h3>
+<p>探针指用固定问题集在各引擎上实地提问并记录答案原文。问题集在一轮内保持不变，这是「同轮」的前提——若问题被替换，前后数据不可比，因为分母变了。</p>
+<p>关于覆盖面，本站表述是「实际交付所测的引擎，以合同或当期报价单写明的为准」。这句话有意留白：<b>我们不宣称覆盖全部 AI 引擎</b>。国内部分引擎没有公开的爬虫 UA，未被列入目标清单不等于未被覆盖，也不等于已覆盖。</p>
+<h3 id="s10">同轮配对：让「改动前后」真的可比</h3>
+<p>同轮配对指在同一轮测量里，对同一问题同时记录「改动前基线」与「改动后结果」的成对数据，而不是拿三个月前的报告和今天的报告直接对比。原因很实际：AI 引擎的答案分布本身随时间漂移，把隔了很久的两份数据放在一起，容易把引擎自身的变化误记成自己的功劳。<b>配对的价值在于它是同轮、同问题、同引擎的三重对齐</b>，少了任何一重，差异都可能来自别处。</p>
+<h3 id="s11">快照哈希：让原始记录不可改</h3>
+<p>每次探针的原始回答落盘即计算哈希，文件只增不改。同一份快照重新计算哈希结果应当一致；若不一致，说明文件被替换过。</p>
+<p>这条针对行业里一个隐蔽问题：报告里的截图和「原话」可以被事后编辑。哈希不能证明引擎「本来就会这么说」，但能证明<b>交付给你的这份记录与当时落盘的那份是同一份</b>。这是一个范围有限但明确的保证，比「我们保证真实」这类无法验证的承诺有用得多。</p>
+<h3 id="s12">口径版本号：对不上就不可比</h3>
+<p>每次测量都必须绑定当时的指标口径版本号。规则只有一句：<b>口径版本对不上，两份报告不可比。</b></p>
+<p>口径是会演进的——分母是否含未取到答案的问题、别名算不算命中、位置怎么数段，任何一处调整都会改变数值。报告上不印版本号，客户就无法判断手里的两份报告是「表现变化」还是「算法变化」。v0.1 之后若有调整，一律升版本，不静默改定义。这本身也是一种承诺：<b>不为了让数字好看而偷偷改口径</b>；改了必须留痕。</p>
+<hr class="rule">
+<h2 id="ch5">五、证据与可复核：报告里应该能看到什么</h2>
+<p>一份报告的说服力不来自结论，而来自结论下面能被人自己动手核对的几层。至少三类证据，各自对应一个范围有限的保证。</p>
+<p><b>原话。</b> 引擎返回的答案文本原文，逐条留存。客户自己读一遍即可判断「这个提到算不算提到」「这个价格是不是说错了」。原话是所有指标的原始材料，也是唯一能让人绕过定义、直接看事实的入口。</p>
+<p><b>截图（配对截图）。</b> 同轮、同问题的成对截图，让「改动前 / 改动后」在同一屏上被看见。截图直观，但本身不可防伪，必须与原话和哈希一起存在才有意义。</p>
+<p><b>快照哈希。</b> 每次落盘即计算，文件只增不改。保证「记录未被替换」，不保证「引擎一定会这么说」。</p>
+<p>三件合起来构成闭环：<b>读原话看事实，看配对看变化，算哈希看有没有被改过。</b></p>
+<h3 id="s13">模拟数据必须首屏标注</h3>
+<p>报告里只要出现一条模拟数据——版式演示、脱敏样张、接口未通时的占位——<b>首屏就必须标出来</b>。</p>
+<p>这是本文最不愿意打折的一条。行业里常见两种做法：把模拟数据混进真实数据里让版面更饱满，或用一份「示意报告」暗示实际效果。前者是数据污染，后者是暗示性误导。我们的处理是把模拟数据单独隔离、显著标注，让它只承担「告诉你格子怎么排」的功能，不承担说服功能。</p>
+<p>本站公网样报即按此执行：打开的是标明假数据的样张，不是登录后台，也不承诺以后一定被问到那些问题。三指标真实结果不对公网开放，只对授权客户单独下发。</p>
+<hr class="rule">
+<h2 id="ch6">六、服务分层：诊断 → 优化 → 监测 → 托管</h2>
+<p>四档的划分依据不是价格高低，而是「客户现在卡在哪一步」。这一步判断比报价更重要：还没看清现状就去改，是最贵的做法。</p>
+<p><b>诊断</b>对应「还不清楚 AI 现在怎么提我」，交付一份明白账：提没提你、价说没说错、要不要继续改。产品价值在于<b>在花钱改之前先知道改什么</b>。</p>
+<p><b>优化</b>对应「看清了，想改」，工作内容是整理一份对外说法、给自动回答写可对照的说明书、按同样方法复测并留证。</p>
+<p><b>监测</b>对应「改完了要有人一直盯着」——AI 的答案会漂移，一次测量的结论有过期时间。</p>
+<p><b>托管</b>对应「材料有了但没人日常维护」，工作是把介绍材料、价格、范围、资质按确认口径持续更新。</p>
+<h3 id="s14">四档公开价（与官网定价板块一字不差）</h3>
+<p>以下价格照抄官网当期公开内容，<b>以官网定价板块当期内容为准</b>：</p>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>档位</th><th>公开价</th><th>交付要点</th><th>关于「很少被提到」</th></tr></thead><tbody><tr><td>7 天诊断</td><td>8,800 元 / 7 天</td><td>在常用问答里实地问一遍；交付原话与配对截图；实际交付所测的引擎以合同或当期报价单写明的为准</td><td>这一档不承诺提到百分之几</td></tr><tr><td>90 天优化</td><td>38,800 元 / 90 天</td><td>整理一份对外说法、给自动回答写可对照的说明书、同口径复测留证；不含代你成交、履约；第三方费用不免</td><td>到期提及仍不到 30% 的，基础服务费可免</td></tr><tr><td>监测</td><td>2,800 元 / 月起，分级 2,800 / 4,800 / 9,800，已上线可月付</td><td>月度监测交付；没有可登录的监测后台；成交走微信人工，页内不下单</td><td>不写承诺</td></tr><tr><td>浅层托管</td><td>1.5–3 万元 / 月</td><td>按确认口径维护对外介绍材料、价格、范围与资质；不代成交、履约</td><td>不承诺提到百分之几</td></tr></tbody></table></div>
+<p>90 天优化那一行必须补一句限定：<b>那不是效果对赌，也不承诺提到百分之几。免的是合同约定的后续基础服务费。</b> 把「不到 30% 可免基础服务费」读成「保证做到 30%」，是方向完全相反的误读。</p>
+<p>监测三档，公开材料写明的差异是月价与适用客户（单口径／小预算、多口径／中预算、多口径加多通道／大预算），<b>未写各档探针条数或功能清单，本文不补</b>；任何补充说明须来自当期报价单。托管报价区间另有静态计算器（/pricing/），用「预算 × 浪费基准 × 提升假设」估算，性质是<b>估算，不锁价、不下单</b>，用途是回答「为什么不是 1.5 万」这类问题。</p>
+<h3 id="s15">定价逻辑的要点</h3>
+<p><b>套餐定结构</b>：标准化套餐降低决策成本，前两档负责获客与转化，后两档负责高价值交付；套餐价不是唯一报价方式。<b>价值定价定数字</b>：托管档用价值锚定算出可辩护的区间。<b>成本锚定定底线</b>：监测是保险类产品，预防性收益不可证伪，因此刻意不用「避免损失」式定价，改用成本锚定加分级与捆绑留存。</p>
+<p>这套逻辑里有一处克制值得点出：<b>监测档明确不用「避免损失」式定价</b>，因为预防性收益不可证伪。把价格挂在可核算的成本上，买卖双方都更稳。</p>
+<hr class="rule">
+<h2 id="ch7">七、不做的事与失效模式</h2>
+<p>这一节比前面任何一节都重要。一个品类的可信度，往往由它公开拒绝做什么来决定。</p>
+<h3 id="s16">六条明确的「不做」</h3>
+<p><b>不承诺「提到百分之几」。</b> 承诺只给可复核的证据：原话、截图、快照哈希；不给无前提的分数承诺。</p>
+<p><b>不拿模拟当真实。</b> 报告里只要有一条模拟数据，首屏就必须标出来。</p>
+<p><b>不把就绪度说成可见性。</b> 就绪度只回答 AI 能不能读到你的站，不回答会不会引用你，它不是可见性分数。</p>
+<p><b>不招代理、不卖排名、不搞效果对赌，也不按提到率分成。</b> 分数、榜单不放在本站。</p>
+<p><b>不宣称覆盖全部 AI 引擎。</b> 国内部分引擎没有公开爬虫 UA，未列到不等于未覆盖。</p>
+<p><b>不宣称全球第一、独家专利，或给出无前提的分数保证。</b> 也不描述检索算法、探针通道密钥或原始回答接口。</p>
+<h3 id="s17">五个高频失效模式</h3>
+<p><b>失效一：就绪度被读成可见性。</b> 站点就绪审计检查七项：robots.txt 可访问 12 分、主流 AI 爬虫放行 28 分（针对 13 个有公开 UA 的目标爬虫）、llms.txt 品牌说明书 18 分、Sitemap 10 分、Schema.org / JSON-LD 20 分、Open Graph 摘要 7 分、canonical / 标题 5 分，七项合计 100 分（本站已逐项核加，合计为 100）。这些全是客观事实，谁跑都是同一结果。</p>
+<p>但它回答的问题只有「AI 能不能读到你的站」。<b>读到不等于引用，引用不等于推荐。</b> 一个 100 分的站点，在答案里可能一次都不出现。把就绪分当成绩单，是最不负责的误用——它用一个容易拿高分的指标，替代了一个真正难做、也无法保证的指标。</p>
+<p><b>失效二：把提到率当成可承诺的目标。</b> 引擎答案由第三方模型生成，其排序与选材机制不对外公开且持续变化。任何「保证把你做到某个百分比」的承诺都不是承诺，是赌。所以本站不搞效果对赌、不按提到率分成——分成结构会天然激励服务商挑选容易命中的问题集，而不是解决客户真正关心的那几句。</p>
+<p><b>失效三：口径版本混用。</b> 拿 v0.1 的报告与新版口径的报告并列，读出「提升了很多」。这不是提升，是换了尺子。防法很简单：看报告首页版本号，对不上就别放在同一张表里。</p>
+<p><b>失效四：分母被动过。</b> 未取到答案的问题被悄悄剔出分母，或只报合计不报分引擎。两种都让数字变好看，也都让数字失去意义。核法见第八章。</p>
+<p><b>失效五：计数指标被当比率读。</b> 价格不一致条数下降，可能是不一致真少了，也可能只是这一轮提到得少、样本池变小。计数类指标必须与分母规模一起呈现，否则单独看毫无信息量。</p>
+<h3 id="s18">关于 A2A</h3>
+<p>把预埋说成已上线，是最贵的话术滑坡。Agent Card 公开用途是「被发现、转人工」，live=false，不自动下单、支付、派单，护理类永不自动派单。<b>「全链路真成交已通」一旦说出口，后续所有交付都会被它绑住</b>，而它现在并不成立。</p>
+<hr class="rule">
+<h2 id="ch8">八、客户侧验收清单</h2>
+<p>拿到一份 GEO 报告，先核对下面八项。任一项对不上，先别讨论结论。</p>
+<ol><li><b>报告首页有没有口径版本号？</b> 没有版本号的报告无法与任何其他报告比较；有但对不上你上一份的，两份不可比。</li><li><b>提到率的分母写清楚了没有？</b> 确认是「本轮问题总条数」，且未取到答案的问题仍在分母里记为未提到。若被解释成「有效答案数」，这个百分比已不是口径定义的那个指标。</li><li><b>提到率有没有分引擎，也给了合计？</b> 只给合计的要求补分引擎，只给分引擎的要求补合计，两个都要。</li><li><b>分子判定规则说明了没有？</b> 是否含别名、是否排除引用来源区。这两条决定数值高低，必须写在报告里，不能让客户猜。</li><li><b>平均首次出现位置的分母是不是「提到品牌的答案」？</b> 若把未提到的答案塞进分母，这个平均值不可用。</li><li><b>价格不一致条数有没有和提到率一起看？</b> 单看「3 条不一致」不构成任何结论，必须知道对应样本规模。</li><li><b>原始证据齐不齐？</b> 原话、配对截图、快照哈希三样应可查。缺任一样，可复核性就断一环。</li><li><b>有没有模拟数据？有的话首屏标注了吗？</b> 一条未标注，整份报告的证据等级按模拟处理。</li></ol>
+<p>再补两条针对服务承诺的核对：</p>
+<ul><li><b>「不到 30% 免基础服务费」看清楚免的是什么</b>：免的是合同约定的后续基础服务费，不是保证达到 30%，不是效果对赌。</li><li><b>监测档没有可登录的后台</b>，这是官网明写的事实（「没有可登录的监测后台」），交付是月度监测交付。若你预期的是一个能自己登录、实时刷新数据的后台，这一档不满足该预期，需在签约前说清。</li></ul>
+<p>清单的用法是反向的：<b>它不只是验收表，也是采购前的提问清单。</b> 签约前把这八项问一遍，比签约后再核对有用得多。</p>
+<hr class="rule">
+<h2 id="ch9">九、术语表</h2>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>术语</th><th>定义与使用边界</th></tr></thead><tbody><tr><td>GEO</td><td>生成式引擎优化。工作对象是生成式问答引擎的答案正文，目标是品牌在答案里被提到。对外主品类。</td></tr><tr><td>说对（对内称 AAO）</td><td>同一台引擎、同一轮探针之上，检查价格、范围、资质是否按客户确认的口径被说出。交付内涵，不并列为主品牌。</td></tr><tr><td>AEO</td><td>答案引擎优化，国际上与 GEO 高度重叠的概念。作对标提及，不拆第二套指标。</td></tr><tr><td>A2A</td><td>Agent-to-Agent。预埋能力，公开 Agent Card 仅用于发现与转人工，live=false。</td></tr><tr><td>提到率</td><td>提到品牌的答案条数 ÷ 本轮问题总条数。字面命中含别名，排除引用来源区；未取到答案的问题计入分母并记为未提到；按引擎分别统计，也统计合计。</td></tr><tr><td>平均首次出现位置</td><td>在提到品牌的答案里，品牌第一次出现的段落序号（自然段从 1 数）的平均值。未提到的答案不进分母。</td></tr><tr><td>价格不一致条数</td><td>同一价格对象（同品牌 + 同时间单位）在不同答案中出现不止一个价格取值，记 1 条。只计条数，不判断对错。</td></tr><tr><td>探针</td><td>用固定问题集在各引擎实地提问并记录答案原文的测量动作。</td></tr><tr><td>同轮配对</td><td>同一轮、同一问题、同一引擎下，改动前基线与改动后结果的成对记录。</td></tr><tr><td>快照哈希</td><td>原始回答落盘即计算的哈希值，文件只增不改，用于证明记录未被替换。</td></tr><tr><td>口径版本号</td><td>绑定当次测量的指标定义版本。v0.1 生效日 2026-09-16。版本对不上，两份报告不可比。</td></tr><tr><td>就绪度</td><td>站点被 AI 读取的技术条件评分（七项合计 100）。只回答能不能读到，不回答会不会被引用，<b>不是可见性分数</b>。</td></tr><tr><td>模拟数据</td><td>非真实探针产出的数据，仅用于版式演示或占位。出现即须首屏标注。</td></tr><tr><td>live=false</td><td>A2A 的当前状态标注：能力未上线，仅可被发现与转人工。</td></tr></tbody></table></div>
+<hr class="rule">
+<h2 id="ch10">十、版本与修订边界</h2>
+<h3 id="s19">v0.1 的范围</h3>
+<p>v0.1（生效日 2026-09-16）只定义三个可交付指标：提到率、平均首次出现位置、价格不一致条数。三者的分子、分母、判定规则、统计层级（分引擎与合计）均已写明，可直接用于合同指标栏。</p>
+<p>同时明确不定义四类：引用占比、份额占比、首位占比、GEO 综合评分。原因同一个——都需要「品牌全集 + 多品牌对照」，在没有确定竞品全集与权重方案的前提下算出的任何数值，都无法被第三方复核。</p>
+<h3 id="s20">v0.2 待定项，明确未纳入</h3>
+<p>v0.2 的待定内容包括事实一致率、行动入口可发现性等。<b>它们现在不是对客指标，不得写入对客指标表或合同指标栏。</b></p>
+<p>这条边界最容易越界：一个指标从「内部在试」到「可以写进合同」，中间需要定义冻结、口径文档化与可复核的证据链，而不是它看起来有用。在冻结之前拿它去签约，等于把未完成的尺子交给客户去量。</p>
+<h3 id="s21">修订规则</h3>
+<p>一，定义只写在一份文档里，任何页面、话术、报价单不得自行解释指标。二，定义变了就升版本，不静默修改，版本号必须在报告首页可见。三，版本对不上，两份报告不可比，没有例外。</p>
+<h3 id="s22">本文与口径文档的关系</h3>
+<p>本文是「叙事层」：解释为什么这样定义、常见误用、怎么验收。定义的「原文层」是站点 llms.txt 的口径文本（v0.1，生效日 2026-09-16）。两者不一致时<b>以 llms.txt 为准</b>——这是它自己声明的优先级规则，本文遵守它，也建议任何引用本文的第三方遵守它。</p>
+<h3 id="s23">本文自身的有效期</h3>
+<p>价格、档位内容、交付形式都会调整，以官网定价板块当期内容为准。指标口径若升版，本文第三章定义需同步替换，落款版本号亦需更新。<b>本文不是可长期原样引用的文件</b>，引用时应连同抓取日期一并写明——本文口径基准抓取日期为 2026-11-20。</p>
+<hr class="rule">
+<h2 id="ch11">附：数据风险与置信度说明</h2>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>场景 / 主张</th><th>事实状态</th><th>数据风险与限制</th><th>置信度</th><th>核验方式</th></tr></thead><tbody><tr><td>公司主体名称与统一社会信用代码</td><td>已核验事实</td><td>无；源自官网 llms.txt 与首页主体信息</td><td>高</td><td>llms.txt「品牌」段、首页「主体信息」段，抓取 2026-11-20</td></tr><tr><td>产品线为闻见AI 与 GEO智见Insight、共用同一探针引擎与同一指标定义</td><td>已核验事实</td><td>官网自述，未作第三方交叉验证</td><td>高</td><td>llms.txt「品牌」「本站是什么」段；首页「两条产品线，一处口径」</td></tr><tr><td>三个指标的原文定义</td><td>已核验事实</td><td>定义即口径源；实际执行是否严格遵循需看具体报告</td><td>高</td><td>llms.txt「口径（v0.1，唯一真相源）」段；首页 Spec 板块逐条对照</td></tr><tr><td>口径版本 v0.1、生效日 2026-09-16</td><td>已核验事实</td><td>仅首页 Spec 板块载明，llms.txt 未重复该日期</td><td>中高</td><td>首页 Spec 板块原文「版本 v0.1，生效日 2026-09-16」</td></tr><tr><td>四档公开价 8,800／38,800／2,800 起／1.5–3 万</td><td>已核验事实</td><td>价格会调整；抓取时点 2026-11-20，以官网定价板块当期内容为准</td><td>高</td><td>llms.txt「服务与价格」段、首页定价板块、/pricing/ 页，三处一致</td></tr><tr><td>监测分级 2,800／4,800／9,800 与各档适用客户</td><td>已核验事实</td><td>公开材料未披露各档探针条数与功能清单，本文不补</td><td>中高</td><td>/pricing/ 页「监测分级」表，抓取 2026-11-20</td></tr><tr><td>就绪审计七项分值及合计 100</td><td>已核验事实</td><td>分值为官网公开口径；本文已逐项加总复核</td><td>高</td><td>llms.txt「自助工具」段；首页 Audit 板块；本地算术复核</td></tr><tr><td>A2A 状态 live=false、不自动下单／支付／派单</td><td>已核验事实</td><td>官网自述状态；能力若变更需重核 Agent Card</td><td>高</td><td>llms.txt「叙事与版本边界」段；首页「预埋」条</td></tr><tr><td>「不承诺提到百分之几」「不把就绪度说成可见性」等边界</td><td>已核验事实</td><td>属发布方自我约束，非行业外部约束</td><td>高</td><td>llms.txt「不做的事」「不要这样描述我们」段；首页 Bound 板块</td></tr><tr><td>90 天优化「到期提及仍不到 30%，基础服务费可免」</td><td>已核验事实（附条件）</td><td>免的是合同约定的后续基础服务费，不是保证达到 30%；条款细节以合同为准</td><td>中高</td><td>llms.txt「服务与价格」段；首页与 /pricing/ 页同条</td></tr><tr><td>GEO 品类正在形成、买家行为向生成式问答迁移</td><td>理论推演</td><td>无公开可核验统计支撑；按定性表述，未引用任何体量类数字</td><td>低</td><td>未取得公开数据</td></tr><tr><td>「没有共同分母就没有可比结论」</td><td>理论推演</td><td>方法论判断，非实证结论</td><td>中</td><td>依三指标分母结构推演</td></tr><tr><td>SEO 与 GEO 工作对象不同（排序 vs 答案正文）</td><td>理论推演</td><td>基于两类产品形态差异的定性判断</td><td>中高</td><td>品类定义对照，非实验数据</td></tr><tr><td>引擎答案随时间漂移，故需同轮配对</td><td>假设</td><td>漂移幅度未量化，本文不给出漂移率</td><td>中</td><td>依同轮配对设计逻辑；无实测幅度</td></tr><tr><td>定价页价值计算器示例数值（「一年约少浪费 480,000 元」等）</td><td>待核验事实</td><td>计算器算式未公开；按页面参数（800 万预算 × 40% 提升假设 × 50% 提取率）复算得 160 万，与页面示例数额不一致；本文不引用该示例数值，只引用「估算、不锁价」的性质</td><td>低</td><td>页面参数与示例值对照复算，差异已记录待官方说明</td></tr><tr><td>各引擎实际提到率的具体数值</td><td>未取得</td><td>三指标结果不对公网开放，仅授权客户单独下发；本文不出现任何品牌数值</td><td>不适用</td><td>需授权客户报告，本文不含此类数据</td></tr><tr><td>任何市场份额、行业体量、增长幅度、覆盖比例、样本量</td><td>未取得公开数据</td><td>全文不引用；后续引用须写明来源机构、报告名与发布日期</td><td>不适用</td><td>未取得公开数据</td></tr></tbody></table></div>
+<hr class="rule">
+<p>发布方：深圳市凤栖灵犀科技有限公司 ｜ 商务邮箱 l.peng@fengqilingxi.cn ｜ 微信 fengqilingxi（周一至周日 9:00–18:00）</p>
+<p>本文档为方法论与口径倡议白皮书，不构成任何机构发布的官方标准，也未获任何机构背书。价格与档位内容以官网定价板块当期内容为准；指标定义以站点 llms.txt 口径文本为准。口径基准抓取日期：2026-11-20。</p>
+  <div class="xlink">
+    <p>看完白皮书还想知道「为什么这么做、常见问题怎么答」，100 问逐条给了事实与建议。</p>
+    <a href="faq.html">读 100 问 FAQ →</a>
+  </div>
+
+  <div class="foot">
+    深圳市凤栖灵犀科技有限公司 · 闻见AI<br>
+    本文为方法论与口径倡议白皮书，不构成任何机构发布的官方标准，也未获任何机构背书。价格与档位内容以官网定价板块当期内容为准；指标定义以站点 llms.txt 口径文本为准。口径基准抓取日期：2026-11-20。<br>
+    <a href="faq.html">AI 搜索引擎优化常见 100 问</a> · <a href="terms.html">服务说明</a> · <a href="privacy.html">隐私政策</a> · <a href="disclaimer.html">免责声明</a>
+  </div>
+</div>
+<script>
+/* 内容页 CTA 统计：服务端白名单只接受既有 cta/surface 值，
+   内容页之间靠 page 字段区分（/whitepaper.html 与 /faq.html）。 */
+(function () {
+  var a = document.querySelector('a.cta[href="demo/"]');
+  if (!a) return;
+  a.addEventListener('click', function () {
+    if (window.gxTrack) window.gxTrack('home_plan_consult', 'homepage_consult');
+  });
+})();
+</script>
+</body>
+</html>

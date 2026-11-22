@@ -1,0 +1,18 @@
+/* 浅色叠层。必须同时改文字色：theme-paper 的 --ink 是近白，叠到浅底上会看不清标题。 */
+@import url("theme-paper.css");
+:root{
+  --bg:#f5f7fb;
+  --bg2:#e8eef6;
+  --card:#ffffff;
+  --nav-bg:rgba(255,255,255,.94);
+  --wash:#e8eef6;
+  --panel:#ffffff;
+  --panel-2:#f3f6fb;
+  --ink:#1a1d24;
+  --mut:#3f4854;
+  --line:#d5dde8;
+  --line2:#c5d0dc;
+}
+html{color-scheme:light;background-color:#f5f7fb;color:#1a1d24}
+body{background:#f5f7fb;color:#1a1d24}
+h1,h2,h3{color:#12151a}

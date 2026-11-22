@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>服务定价与报价计算器 | 闻见AI · GEO</title>
+<link rel="canonical" href="https://geo.fqlx0518.cn/pricing/">
+<meta property="og:title" content="闻见AI 服务与报价｜GEO 监测与优化">
+<meta property="og:description" content="四档 GEO 服务当期公开价：诊断、优化、监测、托管。监测 2,800 元/月起。">
+<meta property="og:url" content="https://geo.fqlx0518.cn/pricing/">
+<meta property="og:image" content="https://geo.fqlx0518.cn/assets/phoenix-logo.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="闻见AI 服务与报价｜GEO 监测与优化">
+<meta name="twitter:description" content="四档 GEO 服务当期公开价：诊断、优化、监测、托管。监测 2,800 元/月起。">
+<meta name="twitter:image" content="https://geo.fqlx0518.cn/assets/phoenix-logo.png">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"闻见AI 服务与报价","url":"https://geo.fqlx0518.cn/pricing/"}</script>
+<meta name="description" content="闻见AI 四档 GEO 服务当期公开价：7 天诊断 8,800、90 天优化 38,800、监测 2,800/月起（可月付订阅）、浅层托管 1.5–3 万/月。托管档可用价值报价计算器估算区间，成交走人工。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230D9488'/%3E%3Ctext x='16' y='22' font-size='16' font-family='Arial' font-weight='bold' fill='%23EA580C' text-anchor='middle'%3E%E5%87%A4%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#0A0A0A;
+    --bg2:#121212;
+    --card:#121212;
+    --panel:#121212;
+    --panel2:#171717;
+    --wash:#171717;
+    --nav-bg:#121212;
+    --line:#2A2A2A;
+    --line2:#3A3A3A;
+    --ink:#F2F2F2;
+    --mut:#9A9A9A;
+    --brand:#0D9488;
+    --brand2:#14B8A6;
+    --gold:#EA580C;
+    --gold-light:#F97316;
+    --gold-soft:rgba(234,88,12,.14);
+    --geo:#0D9488;
+    --geo-bright:#14B8A6;
+    --aao:#EA580C;
+    --aao-bright:#F97316;
+    --signal:#14B8A6;
+    --void:#0A0A0A;
+    --warn:#EAB308;
+    --grad:linear-gradient(135deg,#0D9488 0%,#14B8A6 100%);
+    --grad-gold:linear-gradient(135deg,#C2410C,#F97316);
+    --grad-dual:linear-gradient(105deg,#0D9488 0%,#14B8A6 42%,#EA580C 100%);
+    --shadow-card:none;
+    --clip-btn:polygon(8px 0,100% 0,calc(100% - 8px) 100%,0 100%);
+    --clip-card:polygon(0 0,calc(100% - 14px) 0,100% 14px,100% 100%,0 100%);
+    --sans:'PingFang SC','Hiragino Sans GB','Microsoft YaHei','Noto Sans SC',system-ui,sans-serif;
+    --display:'PingFang SC','Hiragino Sans GB','Microsoft YaHei',system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;color-scheme:dark}
+  body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.65;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+  section{scroll-margin-top:76px}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:50;background:rgba(18,18,18,.86);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{font-family:var(--display);font-weight:800;font-size:20px;color:var(--ink);letter-spacing:.02em}
+  .brand b{color:var(--signal)}
+  .nav-links{display:flex;gap:26px;list-style:none}
+  .nav-links a{color:var(--mut);text-decoration:none;font-size:14px;font-weight:500}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-cta{background:var(--brand);color:#04120F;border:none;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer;clip-path:var(--clip-btn)}
+  .nav-cta:hover{background:var(--brand2)}
+  @media(max-width:760px){.nav-links{display:none}}
+
+  /* hero */
+  header{background:var(--bg);color:var(--ink);padding:72px 0 84px;position:relative;overflow:hidden}
+  header::after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(900px 420px at 82% -8%,rgba(13,148,136,.16),transparent 62%),radial-gradient(700px 380px at 8% 112%,rgba(234,88,12,.12),transparent 60%)}
+  .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative;z-index:1}
+  .hero .eyebrow{font-size:13px;letter-spacing:.18em;color:var(--gold-light);margin-bottom:18px;text-transform:none;font-weight:600}
+  .hero h1{font-family:var(--display);font-weight:800;font-size:44px;line-height:1.22;margin-bottom:20px}
+  .hero h1 em{font-style:normal;background:var(--grad-dual);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero .lede{font-size:16px;color:var(--mut);max-width:44em;margin-bottom:26px}
+  .hero .principle{display:flex;gap:12px;flex-wrap:wrap}
+  .principle span{font-size:13px;color:var(--ink);background:var(--panel);border:1px solid var(--line2);padding:6px 14px;clip-path:var(--clip-btn)}
+  .principle span:first-child{color:var(--signal)}
+  .principle span:nth-child(2){color:var(--gold-light)}
+  .principle span:nth-child(3){color:var(--warn)}
+  @media(max-width:900px){.hero{grid-template-columns:1fr;gap:40px}}
+
+  /* calculator card (hero signature) */
+  .calc{background:var(--card);color:var(--ink);border:1px solid var(--line2);clip-path:var(--clip-card);padding:26px}
+  .calc h3{font-family:var(--display);font-weight:700;font-size:18px;margin-bottom:4px}
+  .calc .sub{font-size:12.5px;color:var(--mut);margin-bottom:20px}
+  .calc .row{display:flex;justify-content:space-between;align-items:center;padding:9px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+  .calc .row label{color:var(--mut)}
+  .calc input[type=range]{width:54%;accent-color:var(--signal)}
+  .calc .v{font-weight:600;color:var(--ink);min-width:88px;text-align:right}
+  .calc .v small{color:var(--mut);font-weight:400}
+  .calc select{font-family:var(--sans);font-size:13px;padding:3px 8px;border:1px solid var(--line);background:var(--panel);color:var(--ink)}
+  .calc .result{margin-top:18px;padding:18px;background:var(--gold-soft);border:1px solid rgba(234,88,12,.28);clip-path:var(--clip-btn)}
+  .calc .range{font-family:var(--display);font-weight:800;font-size:30px;color:var(--gold-light)}
+  .calc .range small{font-size:15px;color:var(--ink);font-family:var(--sans);font-weight:400}
+  .calc .floor{margin-top:8px;display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:13px;color:#AEBBC5}
+  .calc .floor b{font-family:var(--display);font-weight:800;font-size:18px;color:var(--warn)}
+  .calc .floor small{font-size:12px;color:var(--mut);font-weight:400}
+  .calc .verdict{margin-top:8px;font-size:13.5px;font-weight:600}
+  .calc .verdict.ok{color:var(--brand2)}
+  .calc .verdict.bad{color:var(--gold-light)}
+  .calc .pitch{margin-top:10px;font-size:12.5px;color:var(--mut);border-top:1px solid rgba(234,88,12,.2);padding-top:10px}
+
+  /* section common */
+  .sec{padding:72px 0}
+  .sec-head{margin-bottom:40px;max-width:640px}
+  .sec-head .kicker{font-size:12px;letter-spacing:.2em;color:var(--signal);font-weight:600;margin-bottom:12px}
+  .sec-head h2{font-family:var(--display);font-weight:800;font-size:30px;color:var(--ink);margin-bottom:10px}
+  .sec-head p{color:var(--mut);font-size:15px}
+
+  /* tiers */
+  .tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:stretch}
+  .tier{background:var(--card);border:1px solid var(--line);padding:24px;display:flex;flex-direction:column;position:relative;overflow:visible;min-width:0}
+  .tier h3,.tier ul li,.tier .price,.tier .tag,.calc .row,.hero h1,.hero .lede,.sec-head h2,.sec-head p{word-break:keep-all}
+  .nobr{white-space:nowrap}
+  .tier .tag{font-size:12px;color:var(--mut);letter-spacing:.06em;margin-bottom:16px}
+  .tier h3{font-family:var(--display);font-weight:700;font-size:20px;color:var(--ink);margin-bottom:4px}
+  .tier .price{font-family:var(--display);font-weight:800;font-size:26px;color:var(--ink);margin-bottom:14px}
+  .tier .price small{font-size:12.5px;color:var(--mut);font-weight:400;font-family:var(--sans)}
+  .tier ul{list-style:none;flex:1;font-size:13px;color:var(--mut);margin-bottom:18px}
+  .tier ul li{padding:5px 0;border-bottom:1px dashed var(--line)}
+  .tier .go{display:block;text-align:center;text-decoration:none;background:none;border:1px solid var(--line2);color:var(--ink);padding:9px;font-size:13px;font-weight:600;cursor:pointer}
+  .tier .go:hover{background:var(--signal);color:#04120F;border-color:var(--signal)}
+  .tier .cta-wechat{margin-top:10px;background:var(--gold-soft);border:1px solid var(--gold);color:var(--gold-light);padding:10px 12px;font-size:13px;font-weight:600;cursor:pointer;text-align:center;line-height:1.45;transition:background .15s,color .15s}
+  .tier .cta-wechat:hover{background:var(--gold);color:#0A0A0A}
+  .tier .cta-wechat b{font-weight:700;color:inherit}
+  .tier.featured{background:var(--grad-dual);color:#0A0A0A;border:none;transform:translateY(-8px)}
+  .tier.featured .tag,.tier.featured .price small,.tier.featured ul{color:rgba(10,10,10,.78)}
+  .tier.featured h3,.tier.featured .price{color:#0A0A0A}
+  .tier.featured .go{background:#0A0A0A;border-color:#0A0A0A;color:var(--ink)}
+  .tier.featured .go:hover{color:var(--brand2)}
+  .tier .flag{position:static;display:inline-block;align-self:flex-start;margin:0 0 12px;background:var(--gold);color:#0A0A0A;font-size:12px;font-weight:800;padding:4px 12px}
+  @media(max-width:1000px){.tiers{grid-template-columns:repeat(2,1fr)}.tier.featured{transform:none}}
+  @media(max-width:560px){.tiers{grid-template-columns:1fr}}
+
+  /* monitor */
+  .monitor{border:1px solid var(--line2);background:var(--card);clip-path:var(--clip-card)}
+  .monitor table{width:100%;border-collapse:collapse;table-layout:fixed}
+  .monitor caption{padding:20px 24px;text-align:left;font-family:var(--display);font-weight:700;font-size:18px;color:var(--ink);border-bottom:1px solid var(--line)}
+  .monitor th{background:var(--panel2);color:var(--signal);font-size:13px;font-weight:700;padding:12px 18px;text-align:left;border-bottom:1px solid var(--line)}
+  .monitor td{padding:12px 18px;font-size:13.5px;color:var(--mut);border-bottom:1px solid var(--line);vertical-align:top}
+  .monitor td strong{color:var(--ink)}
+  .monitor tr:last-child td{border-bottom:none}
+  .sel{margin-top:26px;display:grid;grid-template-columns:repeat(5,1fr);gap:12px;align-items:end}
+  .sel .f label{display:block;font-size:12px;color:var(--mut);margin-bottom:6px}
+  .sel select,.sel button{width:100%;padding:9px 10px;font-size:13px;border:1px solid var(--line);background:var(--panel);color:var(--ink);font-family:var(--sans);clip-path:var(--clip-btn)}
+  .sel button{background:var(--brand);color:#04120F;font-weight:700;cursor:pointer;border:none}
+  .sel button:hover{background:var(--brand2)}
+  .sel .quote{margin-top:12px;font-size:13px;color:var(--mut)}
+  .sel .quote b{color:var(--gold-light);font-family:var(--display);font-size:17px}
+  @media(max-width:1000px){.sel{grid-template-columns:repeat(2,1fr)}.monitor td,.monitor th{display:none}.monitor td:nth-child(2),.monitor th:nth-child(2),.monitor td:nth-child(3),.monitor th:nth-child(3){display:table-cell}}
+
+  /* sensitivity chart */
+  .chartbox{background:var(--card);border:1px solid var(--line2);padding:20px;clip-path:var(--clip-card)}
+  #sens{width:100%;height:460px}
+  .sens-note{font-size:12.5px;color:var(--mut);margin-top:12px}
+
+  /* why */
+  .why{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .why .w{background:var(--card);border:1px solid var(--line);padding:22px;clip-path:var(--clip-card)}
+  .why .w h3{font-family:var(--display);font-weight:700;font-size:16px;color:var(--signal);margin-bottom:8px}
+  .why .w p{font-size:13.5px;color:var(--mut)}
+  @media(max-width:900px){.why{grid-template-columns:1fr}}
+
+  footer{background:var(--bg2);color:var(--mut);padding:44px 0;margin-top:0;border-top:1px solid var(--line)}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;font-size:13px}
+  .foot .brand{color:var(--ink)}
+  .foot a{color:var(--signal);text-decoration:none}
+
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="brand" href="/" style="text-decoration:none">闻见AI<b>·GEO</b></a>
+    <ul class="nav-links">
+      <li><a href="/">首页</a></li>
+      <li><a href="#tiers">四档套餐</a></li>
+      <li><a href="#calc">价值计算器</a></li>
+      <li><a href="#monitor">监测试算</a></li>
+      <li><a href="#sens">定价区间</a></li>
+      <li><a href="#why">为什么这样定价</a></li>
+    </ul>
+    <a class="nav-cta" href="/demo/" style="text-decoration:none;display:inline-block">看样报</a>
+  </div>
+</nav>
+
+<header>
+  <div class="wrap hero">
+    <div>
+      <div class="eyebrow">闻见AI · GEO</div>
+      <h1>四档 GEO 服务，对应你现在卡在哪一步</h1>
+      <p class="lede">还不清楚 AI 怎么提你 → 先诊断。看清了想改 → 90 天优化。监测已上线，可月付。材料要有人维护 → 浅层托管另谈。</p>
+      <p class="lede" style="font-size:13px">托管档可以用下面的计算器看区间。让 AI 口径管理按价值付费，只说明这一档怎么估价，不是另一套服务。</p>
+      <div class="principle">
+        <span>套餐定结构</span>
+        <span>价值定价定数字</span>
+        <span>成本锚定定底线</span>
+      </div>
+    </div>
+    <div class="calc" id="calc">
+      <h3>浅层托管 · 价值报价计算器</h3>
+      <div class="sub">调整左侧滑块，实时算出建议报价区间与可行性</div>
+      <div class="row"><label>客户年营销预算</label><input type="range" id="c_budget" min="100" max="2000" step="50" value="800"><span class="v" id="v_budget">800万</span></div>
+      <div class="row"><label>口径版本数</label><input type="range" id="c_vers" min="1" max="20" step="1" value="5"><span class="v" id="v_vers">5</span></div>
+      <div class="row"><label>更新频率</label><select id="c_freq" aria-label="更新频率"><option>每周</option><option selected>每两周</option><option>每月</option><option>每季度</option></select></div>
+      <div class="row"><label>口径准确率提升假设</label><input type="range" id="c_lift" min="5" max="60" step="5" value="40"><span class="v" id="v_lift">40%</span></div>
+      <div class="row"><label>价值提取率</label><input type="range" id="c_extract" min="10" max="70" step="5" value="50"><span class="v" id="v_extract">50%</span></div>
+      <div class="result">
+        <div style="font-size:12.5px;color:#AEBBC5">建议报价区间</div>
+        <div class="range" id="r_range"><span id="r_low">15,000</span><small id="r_sep"> ~ </small><span id="r_high">20,000</span><small> 元/月</small></div>
+        <div class="floor"><span>更新频率维护成本底线</span><span><b id="r_floor">8,489</b><small> 元/月</small></span></div>
+        <div class="verdict ok" id="r_verdict">✔ 价值定价可覆盖成本，报价区间成立</div>
+        <div class="pitch" id="r_pitch">口径准确率保守提升，一年约少浪费 80 万；托管一年 24 万，只是避免浪费金额的 3%。</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="sec" id="tiers">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">四档套餐</div>
+      <h2>从诊断到托管，一条清晰的进阶路径</h2>
+      <p>前两档标准化获客、降低决策成本；后两档按价值定价，报价区间有据可依。</p>
+    </div>
+    <div class="tiers">
+      <div class="tier">
+        <div class="tag">01 · 诊断</div>
+        <h3>7 天诊断</h3>
+        <div class="price">¥8,800<small> / 7 天</small></div>
+        <ul>
+          <li>在常用问答里实地问一遍</li>
+          <li>告诉你提没提你、价说没说错</li>
+          <li>交付原话与配对截图</li>
+          <li>这一档不承诺提到百分之几</li>
+        </ul>
+        <a class="go" href="/demo/" style="text-align:center;text-decoration:none">看样报</a>
+        <button class="cta-wechat" type="button" onclick="copyWechat()">加微信 <b>fengqilingxi</b><span class="nobr">（约 15 分钟）</span></button>
+      </div>
+      <div class="tier">
+        <div class="tag">02 · 优化</div>
+        <h3>90 天优化</h3>
+        <div class="price">¥38,800<small> / 90 天</small></div>
+        <ul>
+          <li>整理对外说法，并写可对照的说明书</li>
+          <li>按同样方法复测，全程留证</li>
+          <li>到期仍很少被提到（不到 30%），基础服务费可免</li>
+          <li>不含代你成交、履约</li>
+        </ul>
+        <a class="go" href="/demo/" style="text-align:center;text-decoration:none">看样报</a>
+        <button class="cta-wechat" type="button" onclick="copyWechat()">加微信 <b>fengqilingxi</b><span class="nobr">（约 15 分钟）</span></button>
+      </div>
+      <div class="tier">
+        <div class="tag">03 · 监测 · 可月付</div>
+        <h3>监测</h3>
+        <div class="price">¥2,800 起<small> / 月</small></div>
+        <ul>
+          <li>已上线，可月付</li>
+          <li>分级 2,800 / 4,800 / 9,800</li>
+          <li>成交走微信，页内不下单</li>
+          <li>没有可登录的监测后台</li>
+        </ul>
+        <button class="go" type="button" onclick="document.querySelector('#monitor').scrollIntoView()">看分级试算</button>
+        <button class="cta-wechat" type="button" onclick="copyWechat()">加微信 <b>fengqilingxi</b><span class="nobr">（约 15 分钟）</span></button>
+      </div>
+      <div class="tier featured">
+        <div class="flag">价值定价</div>
+        <div class="tag">04 · 托管</div>
+        <h3>浅层托管</h3>
+        <div class="price">¥1.5–3万<small> / 月</small></div>
+        <ul>
+          <li>按确认口径维护介绍材料、价格、范围与<span class="nobr">资质</span></li>
+          <li>报价区间由价值计算器估算，不锁价</li>
+          <li>不代成交、履约，不承诺提到百分之几</li>
+        </ul>
+        <button class="go" onclick="document.querySelector('#calc').scrollIntoView()">算我的报价</button>
+        <button class="cta-wechat" type="button" onclick="copyWechat()">加微信 <b>fengqilingxi</b><span class="nobr">（约 15 分钟）</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="monitor" style="background:var(--card)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">监测订阅</div>
+      <h2>三级订阅，成本锚定，可捆绑留存</h2>
+      <p>三档的公开差异是月价和适用客户。成交方式相同：已上线，可月付，走微信，页内不下单。公开材料没有写各档的探针条数或功能清单，本表不补。</p>
+    </div>
+    <div class="monitor">
+      <table>
+        <caption>监测分级 · 订阅套餐</caption>
+        <colgroup><col style="width:20%"><col style="width:26%"><col style="width:27%"><col style="width:27%"></colgroup>
+        <thead><tr><th>维度</th><th>基础版 2,800/月</th><th>高级版 4,800/月</th><th>企业版 9,800/月</th></tr></thead>
+        <tbody>
+          <tr><td>公开月价</td><td>¥2,800</td><td>¥4,800</td><td>¥9,800</td></tr>
+          <tr><td>适用客户</td><td>单口径 / 小预算</td><td>多口径 / 中预算</td><td>多口径 + 多通道 / 大预算</td></tr>
+          <tr><td>成交</td><td>已上线，可月付。微信人工，页内不下单</td><td>已上线，可月付。微信人工，页内不下单</td><td>已上线，可月付。微信人工，页内不下单</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="sel" id="selbox">
+      <div class="f"><label>客户档位</label><select id="s_tier"><option value="2800">基础版 ¥2,800</option><option value="4800" selected>高级版 ¥4,800</option><option value="9800">企业版 ¥9,800</option></select></div>
+      <div class="f"><label>是否已购 90 天优化</label><select id="s_opt"><option value="1">否</option><option value="0">是（7 折）</option></select></div>
+      <div class="f"><label>是否托管客户</label><select id="s_host"><option value="1" selected>否</option><option value="0">是（5 折）</option></select></div>
+      <div class="f"><label>是否年付</label><select id="s_year"><option value="1" selected>否</option><option value="0">是（×0.9）</option></select></div>
+      <button type="button" onclick="calcSel()">试算报价</button>
+      <div class="quote" id="s_quote">月价 <b id="s_m">4,800</b> 元 · 年价 <b id="s_y">57,600</b> 元 · <span id="s_note">无折扣（原价）</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="sens">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">定价区间 · 敏感性</div>
+      <h2>客户预算 × 价值提取率 → 报价上限</h2>
+      <p>同一矩阵随托管计算器参数联动；低于成本下限的格被成本下限托底。</p>
+    </div>
+    <div class="chartbox">
+      <div id="sens"></div>
+    </div>
+    <div class="sens-note">横轴为客户年营销预算（万元），纵轴为价值提取率。颜色越深代表建议报价上限越高；浅黄交点 = 默认基线（800 万 × 50% = 20,000 元/月）。</div>
+  </div>
+</section>
+
+<section class="sec" id="why" style="background:var(--card)">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">定价逻辑</div>
+      <h2>为什么这样定价</h2>
+    </div>
+    <div class="why">
+      <div class="w"><h3>套餐定结构</h3><p>标准化套餐降低客户的决策成本，前两档负责获客与转化，后两档负责高价值交付。套餐价不是唯一报价方式。</p></div>
+      <div class="w"><h3>价值定价定数字</h3><p>托管档用「预算 × 浪费基准 × 提升假设」算出价值锚定，报价区间可辩护——客户问「为什么不是 1.5 万」时，打开计算器就能解释。</p></div>
+      <div class="w"><h3>成本锚定定底线</h3><p>监测是保险类产品，预防性收益不可证伪，刻意不用「避免损失」式定价，改用成本锚定 + 分级 + 捆绑留存。</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div class="brand">闻见AI · 深圳市凤栖灵犀科技有限公司</div>
+    <div>计算器为估算区间，不锁价、不下单 · 微信 fengqilingxi · <a href="/">回首页</a> · <a href="/demo/">看样报</a> · <a href="/terms.html">服务说明</a> · <a href="/privacy.html">隐私政策</a> · <a href="/disclaimer.html">免责声明</a></div>
+    <div><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">粤ICP备2026071954号-3</a></div>
+  </div>
+</footer>
+
+<!-- ===== 视图：计算逻辑 ===== -->
+<script>
+  function copyWechat(){
+    var id='fengqilingxi';
+    if(navigator.clipboard&&navigator.clipboard.writeText){
+      navigator.clipboard.writeText(id).then(function(){
+        alert('已复制微信 fengqilingxi（彭顾）。约 15 分钟。免费能做的是站点就绪审计，7 天诊断是付费档。');
+      }).catch(function(){prompt('请复制微信',id);});
+    }else{prompt('请复制微信',id);}
+  }
+  const FMT=n=>n.toLocaleString('zh-CN',{maximumFractionDigits:0});
+  const $=id=>document.getElementById(id);
+
+  const cfg={budget:800,vers:5,freq:'每两周',waste:0.15,lift:0.40,extract:0.50,margin:0.35,stdMin:15000,hourly:115,apiMonth:80,revHour:2,isRev:true};
+  function yearly(){return cfg.freq==='每周'?52:cfg.freq==='每两周'?26:cfg.freq==='每月'?12:4;}
+  function recompute(){
+    const y=yearly();
+    const mCost=cfg.vers*(cfg.isRev?cfg.revHour:0)*y;
+    const costFloor=((cfg.vers*3*y+ mCost)/12*cfg.hourly)*(1+cfg.margin)+cfg.apiMonth;
+    const avoid=cfg.budget*10000*cfg.waste*cfg.lift;
+    const valueMonth=avoid*cfg.extract/12;
+    const low=Math.max(costFloor,cfg.stdMin);
+    const high=Math.max(valueMonth,low);
+    return {low,high,valueMonth,costFloor,avoid,yearly:y};
+  }
+  function formatQuoteRange(low, high){
+    const lo=Math.round(low), hi=Math.round(high);
+    if(lo===hi) return {single:true, text:FMT(lo)};
+    return {single:false, low:FMT(lo), high:FMT(hi)};
+  }
+  function paint(){
+    const r=recompute();
+    const q=formatQuoteRange(r.low, r.high);
+    if(q.single){
+      $('r_low').textContent=q.text;
+      $('r_sep').textContent='';
+      $('r_high').textContent='';
+    }else{
+      $('r_low').textContent=q.low;
+      $('r_sep').textContent=' ~ ';
+      $('r_high').textContent=q.high;
+    }
+    $('r_floor').textContent=FMT(Math.round(r.costFloor));
+    const v=$('r_verdict');
+    if(r.valueMonth>=r.costFloor){v.textContent='✔ 价值定价可覆盖成本，报价区间成立';v.className='verdict ok';}
+    else{v.textContent='⚠ 价值锚定不足以覆盖成本：建议按标准报价或重新评估';v.className='verdict bad';}
+    const pct=(r.avoid>0? (Math.round(r.high)*12/r.avoid*100):0).toFixed(1);
+    $('r_pitch').textContent=`口径准确率保守提升，一年约少浪费 ${FMT(Math.round(r.avoid))} 元；托管按上限 ${FMT(Math.round(r.high))} 元/月、一年 ${FMT(Math.round(r.high)*12)} 元，约为避免浪费金额的 ${pct}%。`;
+    drawSens(r.costFloor);
+  }
+  function bind(id,set){const el=$(id);el.addEventListener('input',()=>{set(el.value);paint();});}
+  bind('c_budget',v=>{cfg.budget=+v;$('v_budget').textContent=v+'万';});
+  bind('c_vers',v=>{cfg.vers=+v;$('v_vers').textContent=v;});
+  bind('c_lift',v=>{cfg.lift=v/100;$('v_lift').textContent=v+'%';});
+  bind('c_extract',v=>{cfg.extract=v/100;$('v_extract').textContent=v+'%';});
+  $('c_freq').addEventListener('change',e=>{cfg.freq=e.target.value;paint();});
+
+  function calcSel(){
+    const base=+$('s_tier').value;
+    const opt=$('s_opt').value==='0', host=$('s_host').value==='0', year=$('s_year').value==='0';
+    const disc=host?0.5:opt?0.7:1;
+    const m=base*disc*(year?0.9:1);
+    const note=host?'托管客户 5 折':opt?'已购优化 7 折':year?'年付 9 折':'无折扣（原价）';
+    $('s_m').textContent=FMT(Math.round(m));
+    $('s_y').textContent=FMT(Math.round(m*12));
+    $('s_note').textContent=note;
+  }
+
+  /* ECharts sensitivity heatmap */
+  let chart;
+  function drawSens(floor){
+    const budgets=[400,600,800,1000,1200];
+    const extracts=[0.30,0.40,0.50,0.60,0.70];
+    const data=[];
+    budgets.forEach((b,bi)=>extracts.forEach((e,ei)=>{
+      const val=Math.max(b*10000*cfg.waste*cfg.lift*e/12, floor);
+      data.push([bi,ei,Math.round(val)]);
+    }));
+    if(!chart){chart=echarts.init($('sens'));}
+    chart.setOption({
+      tooltip:{formatter:p=>{
+        const b=budgets[p.value[0]],e=extracts[p.value[1]];
+        return `预算 ${b}万 × 提取率 ${Math.round(e*100)}%<br/>报价上限 ${FMT(p.value[2])} 元/月`;
+      }},
+      grid:{left:60,right:20,top:30,bottom:50},
+      xAxis:{type:'category',data:budgets.map(b=>b+'万'),name:'客户年营销预算',nameLocation:'middle',nameGap:30},
+      yAxis:{type:'category',data:extracts.map(e=>Math.round(e*100)+'%'),name:'价值提取率',nameLocation:'middle',nameGap:40},
+      visualMap:{min:Math.round(floor),max:42000,calculable:true,orient:'horizontal',left:'center',bottom:0,text:['高','低'],inRange:{color:['#0D9488','#14B8A6','#EA580C']}},
+      series:[{type:'heatmap',data,label:{show:true,formatter:p=>FMT(p.value[2])}},
+        {type:'scatter',data:[[2,2]],symbolSize:14,itemStyle:{color:'#F97316',borderColor:'#0A0A0A',borderWidth:1}}]
+    });
+  }
+  window.addEventListener('resize',()=>chart&&chart.resize());
+</script>
+<script src="echarts.min.js"></script>
+<script>paint();calcSel();</script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+/* ============================================================
+   GEOInsight · 浅色「台面」主题 · 深色孪生 + 主题切换胶囊（theme-desk-dark.css）v1.0 · 2026-09-27
+   三页共用：app.html / kb.html / local.html 都 <link> 本表，放在各自浅色表之后。
+   只做三件事：
+   1) html[data-theme="dark"] 时把颜色令牌换成深色同构值 —— 页面只要写 var() 就自动跟着切。
+   2) 浅色表里少数「写死的浅色」（#dbe6ff / #c7d8fb / #cbd5e1 滚动条 / #a6b0c0 占位符 /
+      图表线色）在深色下补一刀。
+   3) #themeToggle 切换胶囊的样式（深浅两态共用，附图里侧栏最底下那一条）。
+   没挂 data-theme="dark" 时，本表只出第 3 条，别的规则一律不生效。
+   ============================================================ */
+html[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0f1319;
+  --surface:#161c24;
+  --surface-2:#1c232d;
+  --line:#26303c;
+  --line-2:#334051;
+  --ink:#e8edf5;
+  --ink-2:#b9c4d4;
+  --sub:#8b97a8;
+  --muted:#6b7688;
+  --blue:#3b82f6;
+  --blue-ink:#7aa8fb;
+  --blue-soft:#16233a;
+  --green:#34d399;
+  --green-soft:#12261f;
+  --red:#f87171;
+  --red-soft:#2a1618;
+  --amber:#fbbf24;
+  --amber-soft:#2a2312;
+  --warn-ink:#f0c674;
+  --danger-ink:#f3a3a0;
+  --navy:#1e40af;
+  --acc:#3b82f6;
+  --shadow-1:0 1px 2px rgba(0,0,0,.40);
+  --shadow-2:0 1px 2px rgba(0,0,0,.35), 0 8px 20px -10px rgba(0,0,0,.60);
+}
+/* -- 浅色表（theme-desk.css / theme-desk-inner.css）里写死的浅色，深色下逐条补 -- */
+html[data-theme="dark"] .topbar{background:rgba(22,28,36,.90)}
+html[data-theme="dark"] .brand{color:var(--ink)}
+html[data-theme="dark"] .ph-ico{border-color:#2a3b5c}
+html[data-theme="dark"] .badge.local{color:#4ade80;border-color:#1f4a35}
+html[data-theme="dark"] .badge.mode{color:#fbbf24;border-color:#4a3a15}
+html[data-theme="dark"] .badge.ver{border-color:#2a3b5c}
+html[data-theme="dark"] .btn.outline{border-color:#2a3b5c}
+html[data-theme="dark"] button:not([class]):hover{border-color:#34435c}
+html[data-theme="dark"] .notice{border-color:#4a3a15}
+html[data-theme="dark"] .notice.danger{border-color:#4d2422}
+html[data-theme="dark"] .card:hover{border-color:#34435c}
+html[data-theme="dark"] .tbl tr:hover td{background:#1b2836}
+html[data-theme="dark"] .bench-strip{border-color:#1f4a35}
+html[data-theme="dark"] .price-card.is-blue{border-color:#2f4a7d}
+html[data-theme="dark"] .price-card.is-green{border-color:#2a5540}
+html[data-theme="dark"] .price-card.is-amber{border-color:#5a4620}
+html[data-theme="dark"] .empty-icon{color:#33415c}
+html[data-theme="dark"] textarea::placeholder,
+html[data-theme="dark"] input::placeholder{color:#5c6a80}
+html[data-theme="dark"] ::-webkit-scrollbar-thumb{background:#39434f;background-clip:content-box}
+html[data-theme="dark"] ::-webkit-scrollbar-thumb:hover{background:#4b5763;background-clip:content-box}
+/* -- 图表：app.js 画的线/字是硬编码色，浅色表已重映射 11 条；这里把「深色下才要的」翻回来 -- */
+html[data-theme="dark"] svg [stroke="#334155"]{stroke:#3a4757}
+html[data-theme="dark"] svg [stroke="#94a3b8"]{stroke:#4d5b6d}
+html[data-theme="dark"] svg [fill="#22d3ee"]{fill:#22d3ee}
+html[data-theme="dark"] svg [stroke="#22d3ee"]{stroke:#22d3ee}
+/* -- app.js 在运营台里拼的「状态字」是内联色，样式表管不到；深色下用属性选择器补两刀 -- */
+html[data-theme="dark"] [style*="color:#b45309"]{color:#fbbf24 !important}
+html[data-theme="dark"] [style*="color:#16a34a"]{color:#34d399 !important}
+
+/* ============================================================
+   主题切换胶囊（附图：侧栏最底下那条「☀ 深色主题 … 浅色」）
+   ============================================================ */
+.theme-toggle{
+  display:flex;align-items:center;gap:9px;width:100%;margin:10px 0 0;padding:9px 12px;
+  border:1px solid var(--line-2);border-radius:10px;background:var(--surface);color:var(--ink);
+  font-family:var(--font);font-size:13px;line-height:1;letter-spacing:.2px;
+  cursor:pointer;box-shadow:var(--shadow-1);
+  transition:background .16s,border-color .16s,color .16s;
+}
+.theme-toggle:hover{background:var(--surface-2);border-color:var(--blue)}
+.theme-toggle:focus-visible{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px rgba(37,99,235,.18)}
+.theme-toggle .tp-ico{flex:none;width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.7;
+  stroke-linecap:round;stroke-linejoin:round;color:var(--blue)}
+.theme-toggle .tp-on{font-weight:700;color:var(--ink)}
+.theme-toggle .tp-alt{margin-left:auto;font-weight:600;color:var(--muted)}
+.theme-toggle .tp-moon{display:none}
+html[data-theme="dark"] .theme-toggle .tp-sun{display:none}
+html[data-theme="dark"] .theme-toggle .tp-moon{display:inline}
+/* 内页（kb.html / local.html）没有左侧导航：胶囊改放「页头右上」（.inline）而不走浮动 ——
+   浮动会盖住 kb 表格最左那一列「重要」星标（截图发现，batch152 改）。 */
+.theme-toggle.inline{width:auto;margin:0;padding:6px 12px;font-size:12.5px;box-shadow:none}
+.theme-toggle.inline .tp-ico{width:14px;height:14px}
+.head-tools{display:inline-flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+.hero-right{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}

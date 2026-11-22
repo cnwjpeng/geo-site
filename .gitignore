@@ -1,0 +1,19 @@
+# 依赖
+node_modules/
+vendor/
+
+# 备份与快照
+*.bak
+*.bak.*
+*.bak-*
+_bak_*/
+*.zip
+
+# macOS 元数据
+._*
+.DS_Store
+
+# 临时文件
+*.tmp
+*.tmpcheck
+*.log

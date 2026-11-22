@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=20260925b">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=20260925b">
+<title>查询扇出实验室 · 简体中文问句 | 闻见AI</title>
+<meta name="description" content="把一条品类问题拆成无提示、有提示、比较、事实、建议五层问句。默认简体中文。实际交付所测的引擎，以合同或报价单为准。">
+<link rel="stylesheet" href="theme-paper.css?v=20261102a">
+<meta name="theme-color" content="#0A0A0A">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+body::before{content:"";position:fixed;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--geo),var(--gold),transparent);opacity:.9;z-index:99}
+.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:24px;height:76px}
+.logo{display:flex;align-items:center;gap:14px;font-weight:800;font-size:21px;white-space:nowrap}
+.logo i{width:44px;height:44px;border-radius:10px;background:var(--grad);display:grid;place-items:center;font-style:normal;font-size:21px;color:#fff;font-weight:900}
+.logo .en{display:block;font-size:8.5px;font-weight:600;letter-spacing:2px;color:var(--gold);margin-top:1px}
+.logo .slogan{color:var(--gold);font-size:10.5px;font-weight:600;margin-left:7px}
+.nav .r{margin-left:auto;display:flex;gap:14px;align-items:center}
+.nav a.back{font-size:13px;color:var(--mut);transition:.18s}
+.nav a.back:hover{color:var(--brand)}
+.cta{background:var(--grad-dual);color:#fff;font-weight:700;padding:9px 20px;border-radius:8px;font-size:13px;box-shadow:0 8px 22px rgba(42,85,104,.3);transition:.2s}
+.cta:hover{filter:brightness(1.07);transform:translateY(-1px)}
+.hero{padding:56px 0 20px;text-align:center}
+.hero .tag{display:inline-block;font-size:12px;letter-spacing:3px;color:var(--gold);border:1px solid rgba(196,165,116,.3);border-radius:999px;padding:6px 16px;background:rgba(196,165,116,.08);margin-bottom:18px}
+.hero h1{font-family:var(--font-display);font-size:clamp(26px,4.2vw,40px);font-weight:700;color:var(--ink);letter-spacing:.4px}
+.hero h1 em{font-style:normal;background:linear-gradient(100deg,var(--gold-light),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{max-width:680px;margin:14px auto 0;color:var(--mut);font-size:15px}
+.form{margin:28px auto 0;max-width:720px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:var(--shadow-glow)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{display:block;font-size:12px;font-weight:700;color:var(--mut);margin-bottom:4px}
+input,select{width:100%;height:44px;border:1px solid var(--line2);border-radius:8px;padding:0 12px;font-size:14px;font-family:inherit;background:var(--bg2,#171717);color:var(--ink,#F2F2F2);caret-color:var(--ink,#F2F2F2);outline:none;transition:.18s;color-scheme:dark}
+input::placeholder{color:var(--mut,#9A9A9A);opacity:1}
+input:focus,select:focus{border-color:var(--geo);box-shadow:0 0 0 3px rgba(20,184,166,.18);color:var(--ink,#F2F2F2)}
+select option{color:#F2F2F2;background:#171717}
+.full{grid-column:1/-1}
+button.go{margin-top:14px;width:100%;height:48px;border:none;border-radius:10px;background:var(--grad-dual);color:#fff;font-weight:700;font-size:15px;cursor:pointer;box-shadow:0 8px 24px rgba(42,85,104,.28);transition:.2s}
+button.go:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.err{display:none;margin-top:10px;color:#9b1c1c;font-size:13px;background:#fde8e8;border:1px solid rgba(155,28,28,.25);border-radius:8px;padding:8px 12px}
+.err.show{display:block}
+.out{display:none;margin:28px 0 20px}
+.out.show{display:block}
+.note{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:13.5px;color:var(--mut);margin-bottom:16px;line-height:1.7}
+.cluster{border:1px solid var(--line);border-radius:14px;padding:18px 18px 10px;margin-bottom:14px;background:var(--card);box-shadow:var(--shadow-card)}
+.cluster h3{font-size:16px;color:var(--ink);font-weight:700}
+.cluster .why{font-size:13px;color:var(--mut);margin:6px 0 10px;line-height:1.6}
+.row{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-top:1px dashed var(--line);font-size:13.5px}
+.row b{flex:1;font-weight:600;color:var(--ink)}
+.row span{color:var(--mut);white-space:nowrap;font-size:12px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin:8px 0 40px}
+.cta-row a,.cta-row button{padding:11px 20px;border-radius:8px;font-weight:700;font-size:14px;border:1px solid var(--line2);background:var(--bg2,#171717);color:var(--geo-bright,#14B8A6);cursor:pointer;font-family:inherit;transition:.2s}
+.cta-row a:hover,.cta-row button:hover{background:var(--bg2);transform:translateY(-1px)}
+.cta-row a.solid{background:var(--grad-dual);color:#fff;border:none;box-shadow:0 8px 22px rgba(42,85,104,.3)}
+.cta-row a.solid:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.foot{margin:10px 0 48px;text-align:center;font-size:12px;color:var(--mut);line-height:2}
+@media(max-width:720px){.grid{grid-template-columns:1fr}.nav .r a.back{display:none}}
+</style>
+</head>
+<body>
+<div class="page-bg" aria-hidden="true"></div>
+<nav><div class="wrap nav">
+  <a class="logo logo-mark" href="index.html" aria-label="闻见AI">
+    <img src="assets/phoenix-logo.png?v=20260925b" width="120" height="120" alt="PHOENIX 0518" style="height:40px;width:auto;display:block">
+    <span>闻见AI<span class="slogan"> · GEO智见Insight</span></span>
+  </a>
+  <div class="r"><a class="back" href="index.html#about">公司与产品</a><a class="back" href="audit.html">就绪审计</a><a class="back" href="/pricing/">服务定价</a><a class="back" href="index.html#method">公司口径</a><a class="cta" href="demo/">看样报</a></div>
+</div></nav>
+<div class="wrap">
+  <div class="hero">
+    <span class="tag">PROMPT LAB · 查询扇出</span>
+    <h1>用户没提你的名字时，<em>AI 还会推荐你吗？</em></h1>
+    <p class="sub">默认生成简体中文问句，可粘贴进你正在用的 AI 对话。五层是：无提示、有提示、比较、事实、建议。实际交付所测的引擎，以合同或报价单为准。问句里不含品牌名的，用来看没被点名时会不会提到你。只有选「英文（海外引擎）」才出英文。</p>
+  </div>
+  <form class="form" onsubmit="run(event)">
+    <div class="grid">
+      <div><label>品牌名</label><input id="brand" required placeholder="例如：云清"></div>
+      <div><label>行业包</label><select id="industry"></select></div>
+      <div><label>品类词（可改）</label><input id="category" placeholder="例如：企业服务"></div>
+      <div><label>问句语言</label><select id="locale"><option value="zh" selected>简体中文（国内引擎）</option><option value="en">英文（海外引擎）</option></select></div>
+      <div><label>竞品（逗号分隔，最多 3 个）</label><input id="comps" placeholder="例如：科沃斯, 云鲸"></div>
+      <div class="full"><label>补充种子问题（可选）</label><input id="seeds" placeholder="例如：适合老人的扫地机器人, 扫拖一体哪款静音"></div>
+    </div>
+    <button class="go" type="submit">生成探针清单</button>
+    <div class="err" id="err"></div>
+  </form>
+  <div class="out" id="out">
+    <div class="note" id="note"></div>
+    <div id="clusters"></div>
+    <div class="cta-row">
+      <button type="button" onclick="copyAll()">复制全部查询</button>
+      <a class="solid" href="demo/">看样报 →</a>
+      <a href="audit.html">回头做官网就绪审计</a>
+    </div>
+  </div>
+  <div class="foot">深圳市凤栖灵犀科技有限公司 · 闻见AI<br>本页只生成可监测查询清单，不伪造引用率。<br><a href="terms.html">服务说明</a> · <a href="privacy.html">隐私政策</a> · <a href="disclaimer.html">免责声明</a></div>
+</div>
+<script>
+var LAST=null;
+function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[c];});}
+fetch("/api/prompt_industries").then(function(r){return r.json();}).then(function(d){
+  var sel=document.getElementById("industry");
+  (d.industries||[]).forEach(function(it){
+    var o=document.createElement("option"); o.value=it.id; o.textContent=it.label; sel.appendChild(o);
+  });
+}).catch(function(){});
+function run(e){
+  e.preventDefault();
+  var err=document.getElementById("err"); err.classList.remove("show");
+  var body={brand:document.getElementById("brand").value,industry:document.getElementById("industry").value||"generic",
+    category:document.getElementById("category").value,competitors:document.getElementById("comps").value,seeds:document.getElementById("seeds").value,
+    locale:document.getElementById("locale").value||"zh"};
+  fetch("/api/prompt_fanout",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)})
+    .then(function(r){return r.json().then(function(d){return {ok:r.ok,d:d};});})
+    .then(function(x){
+      if(!x.ok){err.textContent=x.d.error||"生成失败";err.classList.add("show");return;}
+      LAST=x.d; render(x.d);
+    }).catch(function(ex){err.textContent=ex.message||"网络失败";err.classList.add("show");});
+}
+var ZH={unaided:"未提示",aided:"有提示",comparison:"比较",factual:"事实",advice:"建议"};
+function labelOf(p){return ZH[p.intent]||p.intent||"";}
+function render(d){
+  document.getElementById("out").classList.add("show");
+  document.getElementById("note").textContent=d.unaided_share_note+" "+(d.method||"");
+  document.getElementById("clusters").innerHTML=(d.clusters||[]).map(function(c){
+    var rows=(c.prompts||[]).map(function(p){
+      return '<div class="row"><b>'+esc(p.prompt)+'</b><span>'+esc(labelOf(p))+'</span></div>';
+    }).join("");
+    return '<div class="cluster"><h3>'+esc(c.title)+'</h3><div class="why">'+esc(c.why)+'</div>'+rows+'</div>';
+  }).join("");
+  document.getElementById("out").scrollIntoView({behavior:"smooth",block:"start"});
+}
+function copyAll(){
+  if(!LAST) return;
+  var lines=["# "+LAST.brand+" 查询扇出","# "+LAST.unaided_share_note,""];
+  (LAST.clusters||[]).forEach(function(c){
+    lines.push("## "+c.title);
+    (c.prompts||[]).forEach(function(p){ lines.push("- "+p.prompt); });
+    lines.push("");
+  });
+  var t=lines.join("\n");
+  if(navigator.clipboard&&navigator.clipboard.writeText) navigator.clipboard.writeText(t);
+  else { var ta=document.createElement("textarea"); ta.value=t; document.body.appendChild(ta); ta.select(); document.execCommand("copy"); document.body.removeChild(ta); }
+  alert("已复制 "+LAST.total+" 条查询");
+}
+</script>
+</body>
+</html>

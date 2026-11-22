@@ -1,0 +1,145 @@
+# GEO智见Insight · 欢迎 AI 爬虫读我们愿意公开的部分
+#
+# 本文件分三层意思，不要混：
+#   1) Allow: / —— 首页与公司/口径/就绪审计页，欢迎读；
+#   2) Disallow: /xxx.html —— 商业页面（查分、下单、合同、留资）不对外。
+#   3) 对客材料（报价方案 v3 / 作废报价壳 / 客户培训页 / credit 面板）同样不对 AI 爬虫开放收录；这几页另有 meta noindex。
+#
+# 这份名单是「允许收录」，不是「保证被收录」——不要拿它当效果承诺。
+# 这份名单是「允许收录」，不是「保证被收录」——不要拿它当效果承诺。
+# noindex 与 Disallow 双保险：页面里另有 meta noindex。
+# /metrics/v01/ 与 /credit.html 目前是 404，仍保持 Disallow：这两条本来就不对公网发布。
+
+User-agent: *
+Allow: /
+Disallow: /metrics/v01/
+Disallow: /score.html
+Disallow: /order.html
+Disallow: /contract.html
+Disallow: /%E5%85%8D%E8%B4%B9%E4%BD%93%E6%A3%80_%E7%95%99%E8%B5%84%E9%A1%B5.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E6%8A%A5%E4%BB%B7%E6%96%B9%E6%A1%88_%E5%AE%A2%E6%88%B7%E7%89%88_v3.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E6%8A%A5%E4%BB%B7%E6%96%B9%E6%A1%88_%E5%AE%A2%E6%88%B7%E7%89%88.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E5%AE%A2%E6%88%B7%E5%9F%B9%E8%AE%AD_%E5%93%81%E7%89%8C%E5%A6%82%E4%BD%95%E8%A2%AB%E7%9C%8B%E8%A7%81.html
+Disallow: /credit.html
+
+User-agent: GPTBot
+Allow: /
+Disallow: /metrics/v01/
+Disallow: /score.html
+Disallow: /order.html
+Disallow: /contract.html
+Disallow: /%E5%85%8D%E8%B4%B9%E4%BD%93%E6%A3%80_%E7%95%99%E8%B5%84%E9%A1%B5.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E6%8A%A5%E4%BB%B7%E6%96%B9%E6%A1%88_%E5%AE%A2%E6%88%B7%E7%89%88_v3.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E6%8A%A5%E4%BB%B7%E6%96%B9%E6%A1%88_%E5%AE%A2%E6%88%B7%E7%89%88.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E5%AE%A2%E6%88%B7%E5%9F%B9%E8%AE%AD_%E5%93%81%E7%89%8C%E5%A6%82%E4%BD%95%E8%A2%AB%E7%9C%8B%E8%A7%81.html
+Disallow: /credit.html
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /metrics/v01/
+Disallow: /score.html
+Disallow: /order.html
+Disallow: /contract.html
+Disallow: /%E5%85%8D%E8%B4%B9%E4%BD%93%E6%A3%80_%E7%95%99%E8%B5%84%E9%A1%B5.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E6%8A%A5%E4%BB%B7%E6%96%B9%E6%A1%88_%E5%AE%A2%E6%88%B7%E7%89%88_v3.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E6%8A%A5%E4%BB%B7%E6%96%B9%E6%A1%88_%E5%AE%A2%E6%88%B7%E7%89%88.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E5%AE%A2%E6%88%B7%E5%9F%B9%E8%AE%AD_%E5%93%81%E7%89%8C%E5%A6%82%E4%BD%95%E8%A2%AB%E7%9C%8B%E8%A7%81.html
+Disallow: /credit.html
+
+User-agent: ChatGPT-User
+Allow: /
+Disallow: /metrics/v01/
+Disallow: /score.html
+Disallow: /order.html
+Disallow: /contract.html
+Disallow: /%E5%85%8D%E8%B4%B9%E4%BD%93%E6%A3%80_%E7%95%99%E8%B5%84%E9%A1%B5.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E6%8A%A5%E4%BB%B7%E6%96%B9%E6%A1%88_%E5%AE%A2%E6%88%B7%E7%89%88_v3.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E6%8A%A5%E4%BB%B7%E6%96%B9%E6%A1%88_%E5%AE%A2%E6%88%B7%E7%89%88.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E5%AE%A2%E6%88%B7%E5%9F%B9%E8%AE%AD_%E5%93%81%E7%89%8C%E5%A6%82%E4%BD%95%E8%A2%AB%E7%9C%8B%E8%A7%81.html
+Disallow: /credit.html
+
+User-agent: ClaudeBot
+Allow: /
+Disallow: /metrics/v01/
+Disallow: /score.html
+Disallow: /order.html
+Disallow: /contract.html
+Disallow: /%E5%85%8D%E8%B4%B9%E4%BD%93%E6%A3%80_%E7%95%99%E8%B5%84%E9%A1%B5.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E6%8A%A5%E4%BB%B7%E6%96%B9%E6%A1%88_%E5%AE%A2%E6%88%B7%E7%89%88_v3.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E6%8A%A5%E4%BB%B7%E6%96%B9%E6%A1%88_%E5%AE%A2%E6%88%B7%E7%89%88.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E5%AE%A2%E6%88%B7%E5%9F%B9%E8%AE%AD_%E5%93%81%E7%89%8C%E5%A6%82%E4%BD%95%E8%A2%AB%E7%9C%8B%E8%A7%81.html
+Disallow: /credit.html
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /metrics/v01/
+Disallow: /score.html
+Disallow: /order.html
+Disallow: /contract.html
+Disallow: /%E5%85%8D%E8%B4%B9%E4%BD%93%E6%A3%80_%E7%95%99%E8%B5%84%E9%A1%B5.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E6%8A%A5%E4%BB%B7%E6%96%B9%E6%A1%88_%E5%AE%A2%E6%88%B7%E7%89%88_v3.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E6%8A%A5%E4%BB%B7%E6%96%B9%E6%A1%88_%E5%AE%A2%E6%88%B7%E7%89%88.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E5%AE%A2%E6%88%B7%E5%9F%B9%E8%AE%AD_%E5%93%81%E7%89%8C%E5%A6%82%E4%BD%95%E8%A2%AB%E7%9C%8B%E8%A7%81.html
+Disallow: /credit.html
+
+User-agent: PerplexityBot
+Allow: /
+Disallow: /metrics/v01/
+Disallow: /score.html
+Disallow: /order.html
+Disallow: /contract.html
+Disallow: /%E5%85%8D%E8%B4%B9%E4%BD%93%E6%A3%80_%E7%95%99%E8%B5%84%E9%A1%B5.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E6%8A%A5%E4%BB%B7%E6%96%B9%E6%A1%88_%E5%AE%A2%E6%88%B7%E7%89%88_v3.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E6%8A%A5%E4%BB%B7%E6%96%B9%E6%A1%88_%E5%AE%A2%E6%88%B7%E7%89%88.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E5%AE%A2%E6%88%B7%E5%9F%B9%E8%AE%AD_%E5%93%81%E7%89%8C%E5%A6%82%E4%BD%95%E8%A2%AB%E7%9C%8B%E8%A7%81.html
+Disallow: /credit.html
+
+User-agent: Google-Extended
+Allow: /
+Disallow: /metrics/v01/
+Disallow: /score.html
+Disallow: /order.html
+Disallow: /contract.html
+Disallow: /%E5%85%8D%E8%B4%B9%E4%BD%93%E6%A3%80_%E7%95%99%E8%B5%84%E9%A1%B5.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E6%8A%A5%E4%BB%B7%E6%96%B9%E6%A1%88_%E5%AE%A2%E6%88%B7%E7%89%88_v3.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E6%8A%A5%E4%BB%B7%E6%96%B9%E6%A1%88_%E5%AE%A2%E6%88%B7%E7%89%88.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E5%AE%A2%E6%88%B7%E5%9F%B9%E8%AE%AD_%E5%93%81%E7%89%8C%E5%A6%82%E4%BD%95%E8%A2%AB%E7%9C%8B%E8%A7%81.html
+Disallow: /credit.html
+
+User-agent: Bytespider
+Allow: /
+Disallow: /metrics/v01/
+Disallow: /score.html
+Disallow: /order.html
+Disallow: /contract.html
+Disallow: /%E5%85%8D%E8%B4%B9%E4%BD%93%E6%A3%80_%E7%95%99%E8%B5%84%E9%A1%B5.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E6%8A%A5%E4%BB%B7%E6%96%B9%E6%A1%88_%E5%AE%A2%E6%88%B7%E7%89%88_v3.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E6%8A%A5%E4%BB%B7%E6%96%B9%E6%A1%88_%E5%AE%A2%E6%88%B7%E7%89%88.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E5%AE%A2%E6%88%B7%E5%9F%B9%E8%AE%AD_%E5%93%81%E7%89%8C%E5%A6%82%E4%BD%95%E8%A2%AB%E7%9C%8B%E8%A7%81.html
+Disallow: /credit.html
+
+User-agent: Baiduspider
+Allow: /
+Disallow: /metrics/v01/
+Disallow: /score.html
+Disallow: /order.html
+Disallow: /contract.html
+Disallow: /%E5%85%8D%E8%B4%B9%E4%BD%93%E6%A3%80_%E7%95%99%E8%B5%84%E9%A1%B5.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E6%8A%A5%E4%BB%B7%E6%96%B9%E6%A1%88_%E5%AE%A2%E6%88%B7%E7%89%88_v3.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E6%8A%A5%E4%BB%B7%E6%96%B9%E6%A1%88_%E5%AE%A2%E6%88%B7%E7%89%88.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E5%AE%A2%E6%88%B7%E5%9F%B9%E8%AE%AD_%E5%93%81%E7%89%8C%E5%A6%82%E4%BD%95%E8%A2%AB%E7%9C%8B%E8%A7%81.html
+Disallow: /credit.html
+
+User-agent: YisouSpider
+Allow: /
+Disallow: /metrics/v01/
+Disallow: /score.html
+Disallow: /order.html
+Disallow: /contract.html
+Disallow: /%E5%85%8D%E8%B4%B9%E4%BD%93%E6%A3%80_%E7%95%99%E8%B5%84%E9%A1%B5.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E6%8A%A5%E4%BB%B7%E6%96%B9%E6%A1%88_%E5%AE%A2%E6%88%B7%E7%89%88_v3.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E6%8A%A5%E4%BB%B7%E6%96%B9%E6%A1%88_%E5%AE%A2%E6%88%B7%E7%89%88.html
+Disallow: /GEO%E6%99%BA%E8%A7%81_%E5%AE%A2%E6%88%B7%E5%9F%B9%E8%AE%AD_%E5%93%81%E7%89%8C%E5%A6%82%E4%BD%95%E8%A2%AB%E7%9C%8B%E8%A7%81.html
+Disallow: /credit.html
+
+Sitemap: https://geo.fqlx0518.cn/sitemap.xml

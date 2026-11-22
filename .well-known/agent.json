@@ -1,0 +1,102 @@
+{
+  "name": "闻见AI · A2A 预埋名片",
+  "description": "深圳市凤栖灵犀科技有限公司的闻见AI 公开口径入口，主业是 GEO。本名片仅支持发现与转人工；不支持自动下单、支付或履约。",
+  "url": "https://geo.fqlx0518.cn/",
+  "brand": "闻见AI",
+  "legalName": "深圳市凤栖灵犀科技有限公司",
+  "identifier": {
+    "scheme": "统一社会信用代码",
+    "value": "91440300MAKEJKLH7Q"
+  },
+  "provider": {
+    "organization": "深圳市凤栖灵犀科技有限公司",
+    "url": "https://geo.fqlx0518.cn/"
+  },
+  "verification": {
+    "note": "备案号 粤ICP备2026071954号-3 可在工信部备案系统按号查询；本站首页 Organization 结构化数据 @id https://geo.fqlx0518.cn/#org",
+    "sameAs": [
+      "https://geo.fqlx0518.cn/llms.txt",
+      "https://geo.fqlx0518.cn/kb/fengqilingxi.json"
+    ]
+  },
+  "version": "a2a-preembed-1.0.0",
+  "documentationUrl": "https://geo.fqlx0518.cn/llms.txt",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": false
+  },
+  "defaultInputModes": [
+    "text/plain",
+    "application/json"
+  ],
+  "defaultOutputModes": [
+    "text/plain",
+    "application/json"
+  ],
+  "skills": [
+    {
+      "id": "discover_offerings",
+      "name": "了解服务与口径",
+      "description": "读取公开的 GEO 方法论、四档服务与红线说明。不创建订单。",
+      "tags": [
+        "discovery",
+        "read-only"
+      ],
+      "examples": [
+        "你们做什么？",
+        "四档怎么选？",
+        "有哪些红线？"
+      ]
+    },
+    {
+      "id": "get_public_pricing",
+      "name": "公开价格口径",
+      "description": "返回已公开的诊断/优化/监测参考价。不锁库存、不收款。",
+      "tags": [
+        "pricing",
+        "read-only"
+      ],
+      "examples": [
+        "诊断多少钱？",
+        "90 天大概什么价？"
+      ]
+    },
+    {
+      "id": "request_human_contact",
+      "name": "转人工商务",
+      "description": "给出微信/邮件留资方式。成交必须人确认，智能体不得自动签约或派单。",
+      "tags": [
+        "handoff",
+        "human-in-the-loop"
+      ],
+      "examples": [
+        "怎么联系？",
+        "想约诊断"
+      ]
+    }
+  ],
+  "authentication": {
+    "schemes": [
+      "none"
+    ],
+    "credentials": "公开发现无需密钥；成交与改资料必须人工确认"
+  },
+  "fengqilingxi": {
+    "mode": "preembed",
+    "live": false,
+    "project": "fxlx",
+    "layer": "shallow_aao_plus_a2a_discovery",
+    "redlines": [
+      "live=False：不点真成交",
+      "护理类永不自动派单",
+      "不把演习计入 SLA 真测",
+      "公网 Card 不得指向 127.0.0.1 或引擎口"
+    ],
+    "contact": {
+      "wechat": "fengqilingxi",
+      "email": "l.peng@fengqilingxi.cn"
+    },
+    "generated_at": "2026-09-25T03:28:08Z"
+  }
+}

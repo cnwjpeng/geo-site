@@ -1,0 +1,12 @@
+{
+  "brand": "闻见AI",
+  "fake": true,
+  "caliber": "v0.1",
+  "note": "脱敏样例。数字是空的，因为这不是探针结果。真实三指标不对公网开放，授权客户单独下发。",
+  "latest": {
+    "mention_rate": null,
+    "avg_first_position": null,
+    "price_conflicts": null,
+    "total_answers": null
+  }
+}

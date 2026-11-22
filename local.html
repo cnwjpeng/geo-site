@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#eef1f7">
+<title>本地资料台 · GEO智见</title>
+<link rel="stylesheet" href="theme-desk-inner.css?v=20260927b">
+<link rel="stylesheet" href="theme-reader.css?v=20260927i">
+<link rel="stylesheet" href="theme-desk-dark.css?v=20260927b">
+<script src="theme-toggle.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;min-height:100vh}
+a{color:inherit}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 22px 72px}
+.hero{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:flex-end;margin-bottom:18px}
+h1{font-size:26px;font-weight:600;letter-spacing:.06em}
+h1 small{display:block;margin-top:6px;font-size:13px;font-weight:400;color:var(--mut);letter-spacing:0}
+.badge{font-size:12px;color:var(--blue-ink);border:1px solid var(--line-2);padding:3px 10px;border-radius:999px}
+.bar{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0 18px}
+.bar input,.bar button{height:38px;border-radius:8px;border:1px solid var(--line);background:var(--surface);color:var(--ink);font-family:inherit;font-size:14px}
+.bar input{padding:0 12px;min-width:220px}
+.bar input.search{flex:1;min-width:240px}
+.bar button{padding:0 14px;cursor:pointer}
+.bar button.pri{background:var(--blue);color:#fff;border-color:transparent;font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:18px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.stat .k{font-size:12px;color:var(--mut)}
+.stat .v{font-size:22px;font-weight:700;margin-top:2px}
+.notice{font-size:13px;color:var(--mut);border:1px solid var(--line);background:var(--card);border-radius:12px;padding:10px 14px;margin-bottom:16px}
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.tabs button{border:0;background:transparent;color:var(--mut);padding:6px 10px;border-radius:8px;cursor:pointer;font-size:13px;font-family:inherit}
+.tabs button.on{background:var(--blue-soft);color:var(--blue-ink);font-weight:700}
+.sec{margin-bottom:22px}
+.sec h2{font-size:14px;color:var(--sub);margin-bottom:10px;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+.card{display:block;text-decoration:none;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:13px 14px;min-height:108px}
+.card:hover{border-color:var(--blue)}
+.card b{display:block;font-size:14.5px;font-weight:650}
+.card span{display:block;font-size:12px;color:var(--mut);margin-top:6px}
+.card .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;font-size:11px;color:var(--muted)}
+.tag{border:1px solid var(--line);border-radius:999px;padding:1px 7px}
+.lock{color:var(--amber)}
+.empty,.err{color:var(--mut);padding:20px 0}
+.nav{display:flex;gap:14px;flex-wrap:wrap;font-size:13px;margin-top:8px}
+.nav a{color:var(--brand)}
+.scope{margin-top:10px;font-size:12px;color:var(--mut);line-height:1.7;max-width:52em}
+.scope a{color:var(--brand)}
+.scope b{color:var(--ink)}
+</style>
+</head>
+<body>
+<div class="page-bg"></div>
+<div class="wrap">
+  <div class="hero">
+    <div>
+      <span class="badge">引擎口 · 不上官网</span>
+      <h1>本地资料台<small>不上公网的文档、台账、引擎工具，都从这里打开</small></h1>
+      <div class="nav">
+        <a href="/app.html">运营台</a>
+        <a href="/kb.html">知识库</a>
+        <a href="/app.html">线索 / 订单</a>
+      </div>
+      <p class="scope">只读入口：本页只做索引与取件，<b>不在本页写业务数据</b>（写线索 / 订单 / 收款台账去 <a href="/app.html">运营台</a>）；带「口令」标的要运营口令。</p>
+    </div>
+    <div class="hero-right"><div id="ver"></div><button id="themeToggle" class="theme-toggle inline" type="button" aria-pressed="false"><svg class="tp-ico tp-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></svg><svg class="tp-ico tp-moon" viewBox="0 0 24 24"><path d="M20.4 14.9A8.9 8.9 0 0 1 9.1 3.6 8.9 8.9 0 1 0 20.4 14.9z"/></svg><span class="tp-on">深色主题</span><span class="tp-alt">浅色</span></button></div>
+  </div>
+  <div class="bar">
+    <input class="search" id="q" placeholder="搜索标题、路径、分组">
+    <input id="tok" type="password" placeholder="运营口令（打开内部文档）">
+    <button class="pri" id="saveTok" type="button">记住口令</button>
+  </div>
+  <div class="notice" id="notice">加载中…</div>
+  <div class="stats" id="stats"></div>
+  <div class="tabs" id="tabs"></div>
+  <div id="board"></div>
+</div>
+<script>
+(function(){
+  var TOKEN_KEY = "ops_token";
+  var data = null, groupOn = "全部";
+  var qs = new URLSearchParams(location.search);
+  var tok = qs.get("token") || sessionStorage.getItem(TOKEN_KEY) || "";
+  document.getElementById("tok").value = tok;
+  document.getElementById("saveTok").onclick = function(){
+    tok = (document.getElementById("tok").value || "").trim();
+    sessionStorage.setItem(TOKEN_KEY, tok);
+    render();
+  };
+  function withTok(href, need){
+    if (!href) return "";
+    if (!need && href.indexOf("/internal/") < 0 && href.indexOf("/api/local/file") < 0) return href;
+    if (!tok) return href;
+    return href + (href.indexOf("?") >= 0 ? "&" : "?") + "token=" + encodeURIComponent(tok);
+  }
+  function esc(s){
+    return String(s || "").replace(/[&<>"']/g, function(c){
+      return ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"})[c];
+    });
+  }
+  function allItems(){
+    var out = [];
+    (data.groups || []).forEach(function(g){
+      (g.items || []).forEach(function(it){ it._group = g.name; out.push(it); });
+    });
+    return out;
+  }
+  function filtered(){
+    var q = (document.getElementById("q").value || "").trim().toLowerCase();
+    return allItems().filter(function(it){
+      if (groupOn !== "全部" && it._group !== groupOn) return false;
+      if (!q) return true;
+      return (it.title + " " + (it.blurb||"") + " " + (it.path||"") + " " + (it.tag||"") + " " + (it._group||"")).toLowerCase().indexOf(q) >= 0;
+    });
+  }
+  function grouped(list){
+    var map = {}, order = [];
+    list.forEach(function(it){
+      var g = it._group || "资料";
+      if (!map[g]) { map[g] = []; order.push(g); }
+      map[g].push(it);
+    });
+    return order.map(function(g){ return {name:g, items:map[g]}; });
+  }
+  function render(){
+    if (!data) return;
+    var c = data.counts || {};
+    document.getElementById("ver").innerHTML = "<span class='badge'>v" + esc(data.version||"") + " · :" + esc(data.engine_port||"") + "</span>";
+    document.getElementById("notice").textContent = data.notice || "";
+    document.getElementById("stats").innerHTML = [
+      ["资料", c.items||0],
+      ["留资", c.leads||0],
+      ["订单", c.orders||0],
+      ["快照", c.snapshots||0],
+      ["知识库柜", c.vault||0],
+      ["密钥 · 仅有无", c.keys_present ? "有" : "无"]
+    ].map(function(x){ return "<div class='stat'><div class='k'>"+esc(x[0])+"</div><div class='v'>"+esc(x[1])+"</div></div>"; }).join("");
+    var names = ["全部"].concat((data.groups||[]).map(function(g){ return g.name; }));
+    document.getElementById("tabs").innerHTML = names.map(function(n){
+      return "<button type='button' data-g='"+esc(n)+"' class='"+(n===groupOn?"on":"")+"'>"+esc(n)+"</button>";
+    }).join("");
+    var list = filtered();
+    if (!list.length){
+      document.getElementById("board").innerHTML = "<div class='empty'>没有匹配的资料</div>";
+      return;
+    }
+    document.getElementById("board").innerHTML = grouped(list).map(function(g){
+      return "<section class='sec'><h2>"+esc(g.name)+" · "+g.items.length+"</h2><div class='grid'>" +
+        g.items.map(function(it){
+          var href = withTok(it.href, it.need_token);
+          var lock = it.need_token ? "<span class='tag lock'>口令</span>" : "";
+          var inner = "<b>"+esc(it.title)+"</b><span>"+esc(it.blurb||"")+"</span><div class='meta'>" +
+            (it.tag ? "<span class='tag'>"+esc(it.tag)+"</span>" : "") + lock +
+            (it.mtime ? "<span>"+esc(it.mtime)+"</span>" : "") +
+            (it.path ? "<span>"+esc(it.path)+"</span>" : "") + "</div>";
+          if (!href) return "<div class='card'>"+inner+"</div>";
+          return "<a class='card' href='"+esc(href)+"' target='_blank' rel='noopener'>"+inner+"</a>";
+        }).join("") + "</div></section>";
+    }).join("");
+  }
+  document.getElementById("tabs").addEventListener("click", function(e){
+    var b = e.target.closest("button");
+    if (!b) return;
+    groupOn = b.getAttribute("data-g") || "全部";
+    render();
+  });
+  document.getElementById("q").addEventListener("input", render);
+  fetch("/api/local").then(function(r){
+    if (r.status === 403 || r.status === 404) throw new Error("此页只在本机引擎口打开（127.0.0.1:8738）");
+    if (!r.ok) throw new Error("加载失败 " + r.status);
+    return r.json();
+  }).then(function(d){
+    data = d;
+    render();
+  }).catch(function(err){
+    document.getElementById("notice").textContent = err.message || "加载失败";
+    document.getElementById("board").innerHTML = "<div class='err'>公网没有这页。本机请走 http://127.0.0.1:8738/local.html ，远程请 SSH 隧道：ssh -N -L 8738:127.0.0.1:8738 admin@服务器</div>";
+  });
+})();
+</script>
+</body>
+</html>

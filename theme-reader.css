@@ -1,0 +1,115 @@
+/* ============================================================
+   GEOInsight · 蓝色「层次面板」主题层（theme-reader.css）v3.2 · 2026-09-27
+   用户令：「再度鲜明些，要有边框线，参考这个」（参考图 = 蓝灰底 + 纯白盒 + 看得见的细线）。
+   v3.2 相对 v3.1 只做两件事：①把「线」加重并补到该有框的地方（图表框/提示条/侧栏分组）
+   ②页底与内层再深一档 —— 线要看得见，得先让线和底不是同一个灰度。
+   五层（自上而下，色差拉开才叫「层次」）：
+     L-1 侧栏  #f2f7ff  微蓝白 + 右侧 1px 线（只 app.html 左栏；内页 .tabs 是筛选器不在 body 下）
+     L0  页底  #dbe6f7  浅蓝灰（v3.1 是 #e2ebf8，本版再深一档）
+     L1  面板  #ffffff + 边 #c3d4ea（v3.1 是 #d9e2f0，本版加重）+ 投影 0 18px 34px -24px
+     L2  内层  #e8eff9  表头 / 行 hover / 图表框（v3.1 是 #edf2fa，本版再深一档）
+     L3  药丸  #e0ebff 底 + 蓝字 徽章 / 提示条 / 选中筛选
+   主色一律蓝：--blue #2563eb、链接深蓝 #1d4ed8、选中态蓝药丸、品牌字 #16233d。
+   深色：整层 html:not([data-theme="dark"]) 限定 —— theme-desk-dark.css 全权负责，一个字节不动。
+   ============================================================ */
+html:not([data-theme="dark"]){
+  --bg:#dbe6f7;
+  --surface:#ffffff;
+  --surface-2:#e8eff9;
+  --line:#c3d4ea;
+  --line-2:#adc2de;
+  --ink:#16233d;
+  --ink-2:#3d4a63;
+  --sub:#5c6a82;
+  --muted:#8794a8;
+  --blue:#2563eb;
+  --blue-ink:#1d4ed8;
+  --blue-soft:#e0ebff;
+  --navy:#2563eb;
+  --acc:#2563eb;
+  --btn:#2563eb;
+  --gold:var(--blue);
+  --brand:var(--blue-ink);
+  --green:#15803d;
+  --green-soft:#eaf8ef;
+  --red:#dc2626;
+  --red-soft:#fef3f2;
+  --amber:#c2740a;
+  --amber-soft:#fff6e6;
+  --warn-ink:#8a5a06;
+  --danger-ink:#b42318;
+  --card:var(--surface);
+  --mut:var(--sub);
+  --star:var(--amber);
+  --shadow-1:0 1px 2px rgba(16,24,40,.08);
+  --shadow-2:0 1px 2px rgba(16,24,40,.06), 0 18px 34px -24px rgba(29,58,120,.55);
+}
+/* ---------- L-1 侧栏：微蓝白 + 右侧一条线（只 app.html 左栏） ---------- */
+html:not([data-theme="dark"]) body > .tabs{background:#f2f7ff;border-right:1px solid #c3d4ea}
+html:not([data-theme="dark"]) .brand{color:#16233d}
+html:not([data-theme="dark"]) .nav-head{border-bottom-color:#d5e2f5}
+/* 分组标题上一条分隔线（参考图里「作战台 / 影棚 / 系统」就是这么分的）；第一个紧接品牌区，不再叠线 */
+html:not([data-theme="dark"]) .nav-sec{margin-top:16px;padding-top:12px;border-top:1px solid #dbe7f8}
+html:not([data-theme="dark"]) .nav-head + .nav-sec{margin-top:14px;padding-top:0;border-top:none}
+html:not([data-theme="dark"]) .nav-foot{border-top-color:#d5e2f5}
+/* ---------- 选中态：蓝药丸 ---------- */
+html:not([data-theme="dark"]) .tab.active{background:#2563eb;color:#fff;box-shadow:0 6px 14px -6px rgba(37,99,235,.55)}
+html:not([data-theme="dark"]) .tab.active:hover{background:#1d4ed8;color:#fff}
+html:not([data-theme="dark"]) .tab:hover{background:#e8f1ff}
+/* ---------- L1 面板 / 白卡：纯白 + 看得见的 1px 线 + 冷投影 ---------- */
+html:not([data-theme="dark"]) .panel,
+html:not([data-theme="dark"]) .card,
+html:not([data-theme="dark"]) .stat,
+html:not([data-theme="dark"]) .fileboard,
+html:not([data-theme="dark"]) details.gen,
+html:not([data-theme="dark"]) .keys,
+html:not([data-theme="dark"]) .local{
+  background:#fff;border-color:#c3d4ea;
+  box-shadow:0 1px 2px rgba(16,24,40,.06), 0 18px 34px -24px rgba(29,58,120,.55)}
+html:not([data-theme="dark"]) .card:hover{border-color:#8fb3ea}
+html:not([data-theme="dark"]) .rec{border-color:#c3d4ea}
+html:not([data-theme="dark"]) .rec.low{border-left-color:#a9b6c8}
+html:not([data-theme="dark"]) .scroll{border-color:#c3d4ea}
+html:not([data-theme="dark"]) .tip{border-color:#cbd9ee;background:#eef4fd}
+html:not([data-theme="dark"]) .empty-icon{color:#8fa3c0}
+/* 面板里的 h2 / h3 分隔线跟着线令牌走，这里只把它们钉到「线」档 */
+html:not([data-theme="dark"]) h2{border-bottom-color:#c3d4ea}
+/* ---------- L2 内层：表头 / 表格线 / 行 hover / 图表框 ---------- */
+html:not([data-theme="dark"]) .tbl th,
+html:not([data-theme="dark"]) table.kb th{background:#e8eff9;color:#3d4a63}
+html:not([data-theme="dark"]) .tbl th,
+html:not([data-theme="dark"]) .tbl td,
+html:not([data-theme="dark"]) table.kb th,
+html:not([data-theme="dark"]) table.kb td{border-color:#cfdcef}
+html:not([data-theme="dark"]) .tbl tr:hover td,
+html:not([data-theme="dark"]) table.kb tbody tr:hover td{background:#eef4fd}
+html:not([data-theme="dark"]) .chart-box{background:#fbfdff;border:1px solid #cfdcef;border-radius:12px;padding:12px 14px}
+html:not([data-theme="dark"]) .price-card{border-color:#c3d4ea}
+html:not([data-theme="dark"]) .price-card.is-blue{border-color:#a9c4fb}
+html:not([data-theme="dark"]) .price-card.is-green{border-color:#a4dcb6}
+html:not([data-theme="dark"]) .price-card.is-amber{border-color:#f0cd84}
+html:not([data-theme="dark"]) .bench-strip{border-color:#a4dcb6}
+/* ---------- L3 药丸：提示条（加左粗线）/ 徽章 ---------- */
+html:not([data-theme="dark"]) .notice{background:#e8f1ff;border-color:#c6dbff;border-left:3px solid #2563eb;color:#1d3a6e}
+html:not([data-theme="dark"]) .notice.danger{background:#fef3f2;border-color:#f7d3ce;border-left-color:#dc2626;color:#b42318}
+html:not([data-theme="dark"]) .badge{background:#fff;border-color:#adc2de}
+html:not([data-theme="dark"]) .badge.local{border-color:#a4dcb6}
+html:not([data-theme="dark"]) .badge.mode{border-color:#f0cd84}
+html:not([data-theme="dark"]) .badge.ver{background:#e0ebff;border-color:#bcd3ff;color:#1d4ed8}
+html:not([data-theme="dark"]) .tag{border-color:#adc2de}
+/* ---------- 表单 / 按钮：边看得见，聚焦环蓝 ---------- */
+html:not([data-theme="dark"]) textarea,
+html:not([data-theme="dark"]) input[type=text],
+html:not([data-theme="dark"]) input[type=password],
+html:not([data-theme="dark"]) select{border-color:#adc2de}
+html:not([data-theme="dark"]) textarea::placeholder,
+html:not([data-theme="dark"]) input::placeholder{color:#9aa7bb}
+html:not([data-theme="dark"]) textarea:focus,
+html:not([data-theme="dark"]) input:focus,
+html:not([data-theme="dark"]) select:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.14)}
+html:not([data-theme="dark"]) .btn.outline{border-color:#a9c1e6}
+html:not([data-theme="dark"]) button:not([class]):hover{border-color:#a9c1e6}
+/* ---------- 顶栏 / 滚动条 ---------- */
+html:not([data-theme="dark"]) .topbar{background:rgba(255,255,255,.9);border-bottom-color:#c3d4ea}
+html:not([data-theme="dark"]) ::-webkit-scrollbar-thumb{background:#b3c4dd;background-clip:content-box}
+html:not([data-theme="dark"]) ::-webkit-scrollbar-thumb:hover{background:#94a9c8;background-clip:content-box}

@@ -1,0 +1,53 @@
+/* ============================================================
+   GEOInsight · 浅色「台面」主题 · 内页层（theme-desk-inner.css）v1.0 · 2026-09-27
+   给 kb.html / local.html 用：只出「颜色令牌 + 底 + 滚动条 + 表单字色」，不带左侧导航栏规则。
+   为什么不直接引 theme-desk.css：那张表把 .tabs 定义成 248px 固定左栏、body 还带 padding-left，
+   而内页的 .tabs 是页内筛选器 —— 混用会把版面拆掉。故「令牌同值、规则分开」。
+   深色孪生在 theme-desk-dark.css（app.html / kb.html / local.html 三页共用）。
+   令牌值与 theme-desk.css 的 :root 同源：改一处，两处一起改（batch152 已逐项核对一致）。
+   ============================================================ */
+:root{
+  --bg:#eef1f7;
+  --surface:#ffffff;
+  --surface-2:#f6f8fc;
+  --line:#e4e8f0;
+  --line-2:#d6dce8;
+  --ink:#1b2333;
+  --ink-2:#4a5568;
+  --sub:#6b7688;
+  --muted:#93a0b4;
+  --blue:#2563eb;
+  --blue-ink:#1d4ed8;
+  --blue-soft:#eef4ff;
+  --green:#16a34a;
+  --green-soft:#eefaf1;
+  --red:#dc2626;
+  --red-soft:#fef3f2;
+  --amber:#d97706;
+  --amber-soft:#fff8ea;
+  --warn-ink:#8a5a06;
+  --danger-ink:#b42318;
+  --navy:#1d2a44;
+  --acc:#2563eb;
+  --radius:12px;
+  --radius-sm:9px;
+  --shadow-1:0 1px 2px rgba(16,24,40,.05);
+  --shadow-2:0 1px 2px rgba(16,24,40,.04), 0 6px 16px -8px rgba(16,24,40,.10);
+  --font:"Inter","SF Pro Text","Segoe UI","PingFang SC","Microsoft YaHei",system-ui,sans-serif;
+  /* 内页历史写法用的别名（页面里已引用；深色时随基础令牌自动跟着变） */
+  --card:var(--surface);
+  --mut:var(--sub);
+  --gold:var(--blue);
+  --brand:var(--blue-ink);
+  --btn:var(--blue);
+  --star:var(--amber);
+}
+html{color-scheme:light;background-color:var(--bg)}
+body{background:var(--bg);color:var(--ink);font-family:var(--font);
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+/* 表单控件默认用 UA 的 fieldtext 色，跟着 color-scheme 走；这里统一压成 --ink 免得深色下发灰 */
+input,textarea,select{color:var(--ink);font-family:inherit}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:99px;border:2px solid transparent;background-clip:content-box}
+::-webkit-scrollbar-thumb:hover{background:#a9b6c8;background-clip:content-box}

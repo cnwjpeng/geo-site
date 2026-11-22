@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png?v=20260925b">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=20260925b">
+<title>GEO 服务商防骗自查 · 8 项可核对清单 | 闻见AI</title>
+<meta name="description" content="免费自查：识别 48 小时见效、小众刷数、算法对接费、批量灌稿等套路；用真实案例、数据透明、可自测、讲清原理四项验证靠谱服务商。不承诺提到百分之几。">
+<link rel="stylesheet" href="theme-paper.css?v=20261102a">
+<meta name="theme-color" content="#0A0A0A">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--ink);line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+body::before{content:"";position:fixed;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--geo),var(--gold),transparent);opacity:.9;z-index:99}
+.wrap{max-width:860px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:50;background:var(--nav-bg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;gap:24px;height:76px}
+.logo{display:flex;align-items:center;gap:14px;font-weight:800;font-size:21px;color:#fff;white-space:nowrap}
+.logo i{width:44px;height:44px;border-radius:10px;background:var(--grad);display:grid;place-items:center;font-style:normal;font-size:21px;color:#fff;font-weight:900}
+.logo .slogan{color:var(--gold-light);font-size:10.5px;font-weight:600;margin-left:7px}
+.nav .r{margin-left:auto;display:flex;gap:14px;align-items:center}
+.nav a.back{font-size:13px;color:rgba(255,255,255,.72);transition:.18s}
+.nav a.back:hover{color:#fff}
+.cta{background:var(--grad-dual);color:#fff;font-weight:700;padding:9px 20px;border-radius:8px;font-size:13px;box-shadow:0 8px 22px rgba(42,85,104,.3);transition:.2s}
+.cta:hover{filter:brightness(1.07);transform:translateY(-1px)}
+.hero{padding:56px 0 20px}
+.tag{display:inline-block;font-size:12px;letter-spacing:3px;color:var(--gold);border:1px solid rgba(196,165,116,.3);border-radius:999px;padding:6px 16px;background:rgba(196,165,116,.08);margin-bottom:16px}
+h1{font-family:var(--font-display);font-size:clamp(26px,4vw,38px);font-weight:700;line-height:1.25;color:var(--ink);letter-spacing:.4px}
+h1 em{font-style:normal;background:linear-gradient(100deg,var(--gold-light),var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mut);margin-top:10px;font-size:15.5px;max-width:640px}
+.scorebar{margin:22px 0 8px;padding:16px 18px;background:var(--card);border:1px solid var(--line);border-radius:12px;display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;box-shadow:var(--shadow-card)}
+.scorebar b{font-size:28px;font-variant-numeric:tabular-nums;color:var(--ink)}
+.scorebar span{font-size:13px;color:var(--mut)}
+.scorebar .hint{flex:1 1 100%;font-size:12.5px;color:var(--mut)}
+h2{font-size:17px;margin:28px 0 10px;color:var(--ink);font-weight:700}
+.list{border:1px solid var(--line);border-radius:12px;background:var(--card);overflow:hidden}
+.item{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:flex-start;padding:14px 16px;border-top:1px solid var(--line);font-size:14px}
+.item:first-child{border-top:none}
+.item label{display:contents;cursor:pointer}
+.item input{margin-top:4px;width:18px;height:18px;accent-color:var(--brand)}
+.item .t{color:var(--ink);line-height:1.55}
+.item .t small{display:block;margin-top:4px;color:var(--mut);font-size:12.5px}
+.item .badge{font-size:11px;font-weight:700;padding:3px 8px;border-radius:6px;white-space:nowrap}
+.badge.bad{background:#fde8e8;color:#9b1c1c}
+.badge.ok{background:#e6f4ea;color:#1e6b3a}
+.note{margin:18px 0 8px;font-size:13px;color:var(--mut);line-height:1.7}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0 40px}
+.cta-row a{padding:11px 20px;border-radius:8px;font-weight:700;font-size:14px;border:1px solid var(--line2);background:#fff;color:var(--brand);transition:.2s}
+.cta-row a:hover{background:var(--bg2);transform:translateY(-1px)}
+.cta-row a.solid{background:var(--grad-dual);color:#fff;border:none;box-shadow:0 8px 22px rgba(42,85,104,.3)}
+.foot{margin:10px 0 48px;text-align:center;font-size:12px;color:var(--mut);line-height:2}
+@media(max-width:640px){.nav .r a.back{display:none}.item{grid-template-columns:auto 1fr}}
+</style>
+</head>
+<body>
+<div class="page-bg" aria-hidden="true"></div>
+<nav><div class="wrap nav">
+  <a class="logo logo-mark" href="index.html" aria-label="闻见AI">
+    <img src="assets/phoenix-logo.png?v=20260925b" width="120" height="120" alt="PHOENIX 0518" style="height:40px;width:auto;display:block">
+    <span>闻见AI<span class="slogan"> · GEO智见Insight</span></span>
+  </a>
+  <div class="r">
+    <a class="back" href="index.html#about">公司与产品</a>
+    <a class="back" href="audit.html">就绪审计</a>
+    <a class="back" href="/pricing/">服务定价</a>
+    <a class="back" href="index.html#method">公司口径</a>
+    <a class="cta" href="demo/">看样报</a>
+  </div>
+</div></nav>
+<div class="wrap">
+  <div class="hero">
+    <span class="tag">SELF-SERVE · 防骗清单</span>
+    <h1>选 GEO 服务商前，先过<em>8 项</em></h1>
+    <p class="sub">前 4 项是常见套路（应尽量没有）；后 4 项是靠谱信号（应尽量具备）。勾选后只在本机计数，不上传。本页不构成效果承诺，也不替代合同。</p>
+  </div>
+
+  <div class="scorebar" id="scorebar" aria-live="polite">
+    <div><b id="avoid">0</b><span> / 4 已避开套路</span></div>
+    <div><b id="pass">0</b><span> / 4 已具备验证</span></div>
+    <p class="hint" id="verdict">勾选下方条目，查看自查结果说明。</p>
+  </div>
+
+  <h2>应避开的 4 类套路</h2>
+  <div class="list" id="avoid-list">
+    <div class="item">
+      <label>
+        <input type="checkbox" data-g="avoid" data-k="a1">
+        <span class="t">对方承诺「48 小时见效 / 保排名 / 提到百分之几」<small>正规交付认证据与周期，不认玄学百分比。</small></span>
+        <span class="badge bad">套路</span>
+      </label>
+    </div>
+    <div class="item">
+      <label>
+        <input type="checkbox" data-g="avoid" data-k="a2">
+        <span class="t">只用小众 AI 平台刷截图，不敢在豆包/通义等主流引擎复测<small>应允许你用同一问题自己再问一遍。</small></span>
+        <span class="badge bad">套路</span>
+      </label>
+    </div>
+    <div class="item">
+      <label>
+        <input type="checkbox" data-g="avoid" data-k="a3">
+        <span class="t">额外收取「算法对接费 / 内部通道费」却说不清交付物<small>钱应对应可核对材料，而不是神秘通道。</small></span>
+        <span class="badge bad">套路</span>
+      </label>
+    </div>
+    <div class="item">
+      <label>
+        <input type="checkbox" data-g="avoid" data-k="a4">
+        <span class="t">低价套餐 + 批量灌稿 / 软文海投当「GEO」<small>这与信息投毒风险相邻；要精品口径与可机读事实。</small></span>
+        <span class="badge bad">套路</span>
+      </label>
+    </div>
+  </div>
+
+  <h2>应具备的 4 项验证</h2>
+  <div class="list" id="pass-list">
+    <div class="item">
+      <label>
+        <input type="checkbox" data-g="pass" data-k="p1">
+        <span class="t">能出示真实案例或样报（原话 + 配对截图一类证据）<small>闻见交付认原话、截图、快照哈希。</small></span>
+        <span class="badge ok">验证</span>
+      </label>
+    </div>
+    <div class="item">
+      <label>
+        <input type="checkbox" data-g="pass" data-k="p2">
+        <span class="t">按你的行业/口径定制，而不是一套模板全行业复用<small>价格、范围、否定说明应来自你的事实。</small></span>
+        <span class="badge ok">验证</span>
+      </label>
+    </div>
+    <div class="item">
+      <label>
+        <input type="checkbox" data-g="pass" data-k="p3">
+        <span class="t">数据透明：告诉你指标怎么算，允许客户自测<small>提到率：提到品牌的答案条数 ÷ 本轮问题总条数（字面命中含别名，排除引用来源区）。未取到答案的问题照样计入分母，并记为「未提到」。按引擎分别统计，也统计合计。平均首次出现位置：在提到品牌的答案里，品牌第一次出现在第几段（自然段从 1 数）的平均值。没提到的答案不进分母。价格不一致条数：同一价格对象（同品牌 + 同时间单位）在不同答案里出现不止一个价格取值，就记 1 条。v0.1 只统计条数，不判断谁对谁错。</small></span>
+        <span class="badge ok">验证</span>
+      </label>
+    </div>
+    <div class="item">
+      <label>
+        <input type="checkbox" data-g="pass" data-k="p4">
+        <span class="t">能讲清工作原理与不做事项（红线）<small>例如：不招代理、不卖排名、模拟数据必须标明。</small></span>
+        <span class="badge ok">验证</span>
+      </label>
+    </div>
+  </div>
+
+  <p class="note">说明：上面「套路」勾选表示「对方有此行为」——勾得越多风险越高。「验证」勾选表示「对方已具备」——勾得越多越可继续谈。本页由凤栖灵犀提供，用于教育筛选；合作请以当期官网定价与合同为准。</p>
+
+  <div class="cta-row">
+    <a class="solid" href="audit.html">下一步：免费就绪审计 →</a>
+    <a href="prompts.html">查询扇出实验室</a>
+    <a href="demo/">看样报</a>
+    <a href="knowledge.html">公开知识库</a>
+  </div>
+  <div class="foot">深圳市凤栖灵犀科技有限公司 · 统一社会信用代码 91440300MAKEJKLH7Q<br>不承诺提到百分之几 · 监测已上线，可月付；成交走微信<br><a href="terms.html">服务说明</a> · <a href="privacy.html">隐私政策</a> · <a href="disclaimer.html">免责声明</a></div>
+</div>
+<script>
+(function(){
+  var avoidEl=document.getElementById('avoid');
+  var passEl=document.getElementById('pass');
+  var verdict=document.getElementById('verdict');
+  function count(g){
+    return document.querySelectorAll('input[data-g="'+g+'"]:checked').length;
+  }
+  function paint(){
+    var a=count('avoid'), p=count('pass');
+    avoidEl.textContent=String(4-a);
+    /* 「已避开」= 未勾选的套路数 */
+    avoidEl.textContent=String(4-a);
+    passEl.textContent=String(p);
+    var msg;
+    if(a===0 && p===0){
+      msg='勾选下方条目，查看自查结果说明。';
+    }else if(a>=2){
+      msg='检测到多项高风险话术/做法，建议先暂停付款，改要可复跑证据或换服务商。';
+    }else if(a===1 && p<3){
+      msg='仍有可疑点，且验证项不足。可继续要样报与自测步骤，暂勿签长约。';
+    }else if(a===0 && p>=3){
+      msg='套路项未出现、验证项较全，可进入样报/7 天诊断沟通。仍请书面确认交付物与红线。';
+    }else if(a===0 && p>0){
+      msg='未见明显套路，请继续补齐真实案例、指标口径与客户自测权。';
+    }else{
+      msg='综合谨慎：有套路信号或验证不足。优先要「原话+截图+可自测」，不要只看承诺句。';
+    }
+    verdict.textContent=msg;
+  }
+  document.querySelectorAll('input[type=checkbox]').forEach(function(el){
+    el.addEventListener('change',paint);
+  });
+  paint();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>隐私政策 | 闻见AI · 深圳市凤栖灵犀科技有限公司</title>
+<meta name="description" content="闻见AI 隐私政策。咨询表单收集姓名和手机号。track.js 只上报按钮点击，不上传手机号。">
+<link rel="canonical" href="https://geo.fqlx0518.cn/privacy.html">
+<link rel="stylesheet" href="theme-paper.css?v=20261102a">
+<style>
+body{font-family:var(--font-sans);background:var(--bg);color:var(--ink);line-height:1.8;margin:0}
+.wrap{max-width:760px;margin:0 auto;padding:48px 24px 72px}
+a{color:var(--geo-bright)}
+h1{font-size:28px;line-height:1.3;margin:0 0 8px;color:var(--ink)}
+.meta{color:var(--mut);font-size:13px;margin-bottom:28px}
+h2{font-size:18px;margin:28px 0 8px;color:var(--ink)}
+p,li{font-size:15px}
+ul{padding-left:1.2em}
+.note{border:1px solid var(--line);padding:12px 14px;font-size:14px}
+.foot{margin-top:36px;color:var(--mut);font-size:13px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <p class="meta"><a href="/">闻见AI</a> · 深圳市凤栖灵犀科技有限公司</p>
+  <h1>隐私政策</h1>
+  <p class="meta">生效日期：2026-11-02。本页增补公开脚本与表单的说明：2026-11-18。访问日志存放位置与保留期限的运营确认：2026-11-19。处理者：深圳市凤栖灵犀科技有限公司。</p>
+  <h2>我们不建账号</h2>
+  <p>本站没有注册、登录或密码。你不需要交出账号信息才能看样报、做站点就绪审计或生成问句。</p>
+  <h2>咨询和审计表单收什么</h2>
+  <p>首页「产品咨询」在你勾选同意本政策并提交后，向 <code>/api/lead</code> 发送：姓名、手机号、需求说明；职位、公司、地区、行业、邮箱和了解来源是选填。站点就绪审计页的预约表单同样在勾选同意后发送：审计域名、称呼、手机号，以及选填的公司、需求和补充说明。</p>
+  <p>手机号用于和你联系。页面上的成交不在本站完成，后续沟通可以走微信 fengqilingxi 或邮件。微信里的对话不在本页产生，本页也读不到微信记录。</p>
+  <h2>点击记录</h2>
+  <p>首页和审计页加载 <code>track.js</code>。它只在「预约咨询」「提交咨询」「审计页提交」这几类按钮上，向 <code>/api/track</code> 发送 JSON：事件名、页面路径、按钮名称和页面名称。这份请求不包含姓名、手机号或需求正文，也不携带 Cookie（脚本使用 <code>credentials: "omit"</code>）。</p>
+  <h2>Cookie、本地存储和 IP</h2>
+  <p>截至 2026-11-18 对公开页面和 <code>track.js</code> 的核对：这些脚本没有读写 <code>document.cookie</code>、<code>localStorage</code> 或 <code>sessionStorage</code>。同日抽查首页 HTTPS 响应，没有 <code>Set-Cookie</code>。</p>
+  <div class="note">
+    <p>2026-11-19 经服务器核对：本站 nginx 访问日志存放在同一台网站服务器的 <code>/www/wwwlogs/geo.fqlx0518.cn.log</code>，使用默认 combined 格式，其中包含访问者 IP、请求路径、状态码、来源页和浏览器标识。该文件自 2026-09-19 起持续写入。同日已配置每天自动切割、压缩，并保留 30 天；切割使用 copytruncate，不因此 reload nginx。配置生效前已积累的日志会随后续轮转逐步纳入这套期限，本页不把历史长度写成已经删除。</p>
+    <p>咨询表单提交的信息保存在同一台服务器的应用数据文件 <code>leads.json</code>，不写入访问 IP。新线索会通知到已配置的企业微信群，以及邮箱 l.peng@fengqilingxi.cn。咨询信息保留到这次沟通结束，或你来信要求删除。</p>
+    <p><code>track.js</code> 产生的点击记录保存在同一台服务器的应用数据文件 <code>analytics_events.jsonl</code>，字段为时间、事件名、页面路径，以及允许的按钮或页面属性；不记录 IP、姓名或联系方式。该文件自 2026-11-13 起追加写入，同样未见自动切割规则。</p>
+    <p>来信邮箱 l.peng@fengqilingxi.cn，微信 fengqilingxi。</p>
+  </div>
+  <h2>站点就绪审计</h2>
+  <p>审计只请求你填写的域名上已经公开的文件（例如 robots.txt、llms.txt、首页）。我们不登录你的网站，也不读取内网地址。审计分数在你提交联系方式之前就可以看到。</p>
+  <h2>查询扇出与三指标</h2>
+  <p>问句在服务端按你填写的品牌、品类和竞品拼出来。这一页不回传提到率，也不把问句保存成客户档案。三指标结果不对公网开放，不在查分页里按品牌查询。</p>
+  <p class="foot"><a href="terms.html">服务说明</a> · <a href="disclaimer.html">免责声明</a> · <a href="/">回首页</a></p>
+</div>
+</body>
+</html>
